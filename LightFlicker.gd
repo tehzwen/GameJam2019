@@ -34,3 +34,7 @@ func _physics_process(delta):
 			timer = startTimer
 		else:
 			light.light_energy= startEnergy
+			
+# Trigger function to be called by a trigger
+func Trigger():
+	flicker = true
