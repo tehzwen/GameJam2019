@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/washer.obj-cf79e69b6f3bb193119ad39401c0fb39.mesh"
+
+[deps]
+
+files=[ "res://.import/washer.obj-cf79e69b6f3bb193119ad39401c0fb39.mesh" ]
+
+source_file="res://Models/WashingMachine/washer.obj"
+dest_files=[ "res://.import/washer.obj-cf79e69b6f3bb193119ad39401c0fb39.mesh", "res://.import/washer.obj-cf79e69b6f3bb193119ad39401c0fb39.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
@@ -18,6 +18,8 @@
 [ext_resource path="res://Table.tscn" type="PackedScene" id=16]
 [ext_resource path="res://TV.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Fridge.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Sink.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Toilet.tscn" type="PackedScene" id=20]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -236,7 +238,7 @@ valign = 2
 script = ExtResource( 12 )
 
 [node name="Couch" parent="." instance=ExtResource( 13 )]
-transform = Transform( 0.101369, 0, 0, 0, 0.101369, 0, 0, 0, 0.101369, -8.01073, 0.449714, -8.76871 )
+transform = Transform( 0.122468, 0, 0, 0, 0.122468, 0, 0, 0, 0.122468, -8.01073, 0.449714, -8.76871 )
 
 [node name="Bathtub" parent="." instance=ExtResource( 14 )]
 transform = Transform( 0.27548, 0, 0, 0, 0.27548, 0, 0, 0, 0.27548, 0, 0.411967, -12.5389 )
@@ -252,6 +254,12 @@ transform = Transform( 0.0258359, 0, 0, 0, 0.0258359, 0, 0, 0, 0.0258359, 3.4972
 
 [node name="Fridge" parent="." instance=ExtResource( 18 )]
 transform = Transform( 0.0129179, 0, 0, 0, 0.0129179, 0, 0, 0, 0.0129179, 5.59765, 0.485939, -8.68886 )
+
+[node name="Sink" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.457409, -16.6192 )
+
+[node name="Toilet" parent="." instance=ExtResource( 20 )]
+transform = Transform( 0.174808, 0, 0, 0, 0.174808, 0, 0, 0, 0.174808, -1.6139, 0.479942, -12.8055 )
 [connection signal="focus_exited" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_focus_exited"]
 [connection signal="gui_input" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_gui_input"]
 [connection signal="modal_closed" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_modal_closed"]
