@@ -12,6 +12,7 @@ func disable():
 	secondaryTimer = 0
 	glowEnabled = false
 	visible = false
+	currentEmission = originalEmission
 	
 func enable(time):
 	timer = time
@@ -21,7 +22,7 @@ func enable(time):
 
 func _ready():
 	originalMaterial = get_surface_material(0)
-	originalEmission = originalMaterial.emission
+	originalEmission = originalMaterial.duplicate().emission
 	currentEmission = originalEmission
 
 func _process(delta):
@@ -29,7 +30,7 @@ func _process(delta):
 		currentEmission.r -= 0.008
 		currentEmission.g -= 0.008
 		currentEmission.b -= 0.008
-		var tempMaterial = originalMaterial
+		var tempMaterial = originalMaterial.duplicate()
 		tempMaterial.emission = currentEmission
 		set_surface_material(0, tempMaterial)
 		timer -= delta
@@ -41,7 +42,7 @@ func _process(delta):
 			currentEmission.r += 0.008
 			currentEmission.g += 0.008
 			currentEmission.b += 0.008
-			var tempMaterial = originalMaterial
+			var tempMaterial = originalMaterial.duplicate()
 			tempMaterial.emission = currentEmission
 			set_surface_material(0, tempMaterial)
 			

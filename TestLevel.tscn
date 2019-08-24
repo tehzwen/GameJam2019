@@ -52,6 +52,7 @@ glow_intensity = 5.37
 
 [node name="TestLevel" type="Spatial"]
 script = ExtResource( 1 )
+player = NodePath("Player")
 
 [node name="Floor" parent="." instance=ExtResource( 2 )]
 

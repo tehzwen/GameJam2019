@@ -63,7 +63,11 @@ func _physics_process(delta):
 			elif (lastInteracted):
 				lastInteracted.disable()
 				lastInteracted = null
-				
+		else:
+			if(lastInteracted):
+				lastInteracted.disable()
+				lastInteracted = null
+		
 	else:
 		if(lastInteracted):
 			lastInteracted.disable()
