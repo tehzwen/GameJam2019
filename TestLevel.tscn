@@ -2,10 +2,10 @@
 
 [ext_resource path="res://TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Player.gd" type="Script" id=4]
-[ext_resource path="res://crosshair.png" type="Texture" id=5]
-[ext_resource path="res://Outline.gd" type="Script" id=6]
+[ext_resource path="res://Outline.gd" type="Script" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player.gd" type="Script" id=5]
+[ext_resource path="res://CameraController.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -54,24 +54,6 @@ glow_intensity = 5.37
 script = ExtResource( 1 )
 
 [node name="Floor" parent="." instance=ExtResource( 2 )]
-
-[node name="Player" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3, 0 )
-script = ExtResource( 4 )
-
-[node name="CameraController" type="Spatial" parent="Player"]
-
-[node name="Camera" type="Camera" parent="Player/CameraController"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
-current = true
-
-[node name="RayCast" type="RayCast" parent="Player/CameraController/Camera"]
-transform = Transform( 1, 0, 0, 0, -4.37113e-08, -1, 0, 9.405, -4.11106e-07, 0, 0, 0 )
-enabled = true
-
-[node name="Sprite3D" type="Sprite3D" parent="Player/CameraController/Camera"]
-transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, -1.20331 )
-texture = ExtResource( 5 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 12 )
@@ -125,7 +107,7 @@ shape = SubResource( 5 )
 visible = false
 mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
-script = ExtResource( 6 )
+script = ExtResource( 3 )
 
 [node name="Popup" type="Popup" parent="TestCube/MeshInstance"]
 margin_right = 1022.0
@@ -140,3 +122,9 @@ text = "Fuck you fegget"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 8 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3, 0 )
+script = ExtResource( 5 )
+
+[node name="CameraController" parent="Player" instance=ExtResource( 6 )]

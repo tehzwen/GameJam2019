@@ -19,20 +19,13 @@ func _physics_process(delta):
 	direction = Vector3()
 	var aim = $CameraController/Camera.get_global_transform().basis
 	
-	if (Input.is_action_pressed("ui_up")):
-		direction -= aim.z
-	if (Input.is_action_pressed("ui_down")):
-		direction += aim.z
-	if (Input.is_action_pressed("ui_left")):
-		direction -= aim.x
-	if (Input.is_action_pressed("ui_right")):
-		direction += aim.x
+	handleMovementInput(aim)
 		
 	direction = direction.normalized()
 	direction = direction * speed * delta	
 	#velocity.y = aim.y
 	
-	#velocity.y -= aim.y.y * gravity * delta
+	velocity.y -= gravity * delta
 	velocity.z = direction.z
 	velocity.x = direction.x
 	
@@ -80,6 +73,16 @@ func _physics_process(delta):
 		var selectedObj = raycast.get_collider()
 		if ("Interactable" in selectedObj.get_groups()):
 			selectedObj.get_parent().get_node("Popup").popup()
+
+func handleMovementInput(aim):
+	if (Input.is_action_pressed("ui_up")):
+		direction -= aim.z
+	if (Input.is_action_pressed("ui_down")):
+		direction += aim.z
+	if (Input.is_action_pressed("ui_left")):
+		direction -= aim.x
+	if (Input.is_action_pressed("ui_right")):
+		direction += aim.x
 
 func _input(event):
 	if (event is InputEventMouseMotion):
