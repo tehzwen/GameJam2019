@@ -53,7 +53,6 @@ glow_intensity = 5.37
 
 [node name="TestLevel" type="Spatial"]
 script = ExtResource( 1 )
-player = NodePath("Player")
 
 [node name="Floor" parent="." instance=ExtResource( 2 )]
 
@@ -113,9 +112,9 @@ script = ExtResource( 3 )
 
 [node name="Popup" type="WindowDialog" parent="TestCube/MeshInstance"]
 visible = true
-margin_left = 239.0
+margin_left = 241.585
 margin_top = 98.0
-margin_right = 761.0
+margin_right = 763.585
 margin_bottom = 495.0
 
 [node name="Label" type="Label" parent="TestCube/MeshInstance/Popup"]
@@ -134,10 +133,7 @@ script = ExtResource( 5 )
 walkSpeed = 300
 
 [node name="CameraController" parent="Player" instance=ExtResource( 6 )]
-
-[node name="Spatial" type="Spatial" parent="."]
-script = ExtResource( 7 )
-lightSourceNodePath = NodePath("OmniLight")
-startTimer = 15
-
-[node name="OmniLight" type="OmniLight" parent="Spatial"]
+[connection signal="focus_exited" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_popup_hide"]

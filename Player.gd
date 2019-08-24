@@ -1,6 +1,7 @@
 extends KinematicBody
 
 export (int) var walkSpeed
+export (bool) var isInteracting
 
 var speed = walkSpeed
 var camAngle = 0
@@ -15,6 +16,7 @@ var direction = Vector3()
 
 func _ready():
 	raycast = $CameraController/Camera/RayCast
+	isInteracting = false
 	
 func _physics_process(delta):
 	direction = Vector3()
@@ -77,7 +79,11 @@ func _physics_process(delta):
 	if (Input.is_key_pressed(KEY_E) && raycast.is_colliding()):
 		var selectedObj = raycast.get_collider()
 		if ("Interactable" in selectedObj.get_groups()):
+			isInteracting = true
 			selectedObj.get_parent().get_node("Popup").popup_centered()
+			
+	if (Input.is_key_pressed(KEY_ESCAPE) && isInteracting == true):
+		isInteracting = false
 
 func handleMovementInput(aim):
 	if (Input.is_action_pressed("ui_up")):
@@ -90,11 +96,10 @@ func handleMovementInput(aim):
 		direction += aim.x
 
 func _input(event):
-	if (event is InputEventMouseMotion):
+	if (event is InputEventMouseMotion && isInteracting == false):
 		rotate_y(deg2rad(-event.relative.x * mouseSens))
 
 		var change = -event.relative.y * mouseSens
 		if (change + camAngle < 90 and change + camAngle > -90):
 			$CameraController/Camera.rotate_x(deg2rad(change))
 			camAngle += change
-		
