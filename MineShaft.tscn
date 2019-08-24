@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://CameraController.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[node name="MineShaft" type="Spatial"]
+
+[node name="EntranceFloor" type="Spatial" parent="."]
+transform = Transform( 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0, 0.125, -0.375 )
+
+[node name="MeshInstance" type="MeshInstance" parent="EntranceFloor"]
+transform = Transform( 10, 0, 0, 0, 0.1, 0, 0, 0, 4, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="EntranceFloor/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="EntranceFloor/MeshInstance/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="EntranceFloor6" type="Spatial" parent="."]
+transform = Transform( 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 2.92803, 9.44023, -0.872517 )
+
+[node name="MeshInstance" type="MeshInstance" parent="EntranceFloor6"]
+transform = Transform( 10, 0, 0, 0, 0.1, 0, 0, 0, 4, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="EntranceFloor6/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="EntranceFloor6/MeshInstance/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="EntranceFloor4" type="Spatial" parent="."]
+transform = Transform( 0.936317, 0.252817, 0.24371, -0.350934, 0.648971, 0.675042, 0.0125011, -0.71758, 0.696364, 0, 2.875, 7.625 )
+
+[node name="MeshInstance" type="MeshInstance" parent="EntranceFloor4"]
+transform = Transform( 9.95069, -0.00691325, -0.284601, 0.69044, 0.0997609, -0.0148226, 0.712362, -0.000122454, 3.98984, 0.608216, 1.10105, -0.718541 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="EntranceFloor4/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="EntranceFloor4/MeshInstance/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="EntranceFloor5" type="Spatial" parent="."]
+transform = Transform( 0.960166, -0.143189, 0.239954, -0.25152, -0.816979, 0.518924, 0.121733, -0.558607, -0.820451, 1.69195, 8.91984, 5.94781 )
+
+[node name="MeshInstance" type="MeshInstance" parent="EntranceFloor5"]
+transform = Transform( 9.95069, -0.00691325, -0.284601, 0.69044, 0.0997609, -0.0148226, 0.712362, -0.000122454, 3.98984, 0.608216, 1.10105, -0.718541 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="EntranceFloor5/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="EntranceFloor5/MeshInstance/StaticBody"]
+transform = Transform( 1, 4.40195e-10, -5.82077e-09, -7.7486e-07, 1, 7.62939e-06, -9.40636e-08, 3.72529e-09, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="EntranceFloor2" type="Spatial" parent="."]
+transform = Transform( 0.96334, 0.195293, -0.183949, -0.267993, 0.668536, -0.693714, -0.0125011, 0.71758, 0.696364, 1, 2.75, -7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="EntranceFloor2"]
+transform = Transform( 10, 5.00586e-09, 4.4331e-07, 4.02331e-07, 0.1, -2.98023e-06, -9.68575e-08, 3.35276e-08, 4, -0.24396, 0.130571, 0.220078 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="EntranceFloor2/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="EntranceFloor2/MeshInstance/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="EntranceFloor3" type="Spatial" parent="."]
+transform = Transform( 0.970076, -0.171866, -0.171508, -0.242352, -0.728401, -0.640856, -0.0147854, 0.663245, -0.748257, 2.5, 8, -6.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="EntranceFloor3"]
+transform = Transform( 10, 5.00586e-09, 4.4331e-07, 4.02331e-07, 0.1, -2.98023e-06, -9.68575e-08, 3.35276e-08, 4, -0.24396, 0.130571, 0.220078 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="EntranceFloor3/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="EntranceFloor3/MeshInstance/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -8.5, 5.25, 0 )
+script = ExtResource( 2 )
+walkSpeed = 200
+sprintEnergy = 60
+
+[node name="CameraController" parent="Player" instance=ExtResource( 3 )]
