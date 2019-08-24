@@ -98,7 +98,7 @@ light_indirect_energy = 4.1
 shadow_enabled = true
 
 [node name="Wall" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38375, -12.448 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38375, -19.948 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
