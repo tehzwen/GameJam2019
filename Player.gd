@@ -24,6 +24,7 @@ func _ready():
 	raycast = $CameraController/Camera/RayCast
 	isInteracting = false
 	originalSprintEnergy = sprintEnergy
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	
 func _process(delta):
@@ -112,6 +113,9 @@ func _physics_process(delta):
 
 	if (Input.is_key_pressed(KEY_ESCAPE) && isInteracting == true):
 		isInteracting = false
+	
+	if (Input.is_key_pressed(KEY_Q)):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 #handling movement function
 func handleMovementInput(aim):
