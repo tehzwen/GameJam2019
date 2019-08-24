@@ -17,10 +17,18 @@ func _ready():
 	light = get_node(lightSourceNodePath) # get the lightsource node
 	timer = startTimer # set the timer to the startTimer value before counting down
 	startEnergy = light.light_energy # set the startEnergy to the default value
-	
+
+# Update for physics	
 func _physics_process(delta):
+	# If flicker is true, play flicker animation
 	if (flicker):
+		# decrement the timer
 		timer -= 1.0 * delay
+		
+		# if the timer is less than or equal to zero,
+		# flicker the light to the flickerEnergy
+		# then reset the timer
+		# else, set the light energy back to the start energy
 		if (timer <= 0):
 			light.light_energy = flickerEnergy
 			timer = startTimer
