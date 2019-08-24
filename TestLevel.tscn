@@ -230,8 +230,6 @@ transform = Transform( 0.101369, 0, 0, 0, 0.101369, 0, 0, 0, 0.101369, -8.01073,
 
 [node name="Bathtub" parent="." instance=ExtResource( 13 )]
 transform = Transform( 0.27548, 0, 0, 0, 0.27548, 0, 0, 0, 0.27548, 0, 0.411967, -12.5389 )
-
-[node name="Monitor" type="Spatial" parent="."]
 [connection signal="focus_exited" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_focus_exited"]
 [connection signal="gui_input" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_gui_input"]
 [connection signal="modal_closed" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_modal_closed"]
