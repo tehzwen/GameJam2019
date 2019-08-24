@@ -1,6 +1,7 @@
 extends KinematicBody
 
-var walkSpeed = 300
+export (int) var walkSpeed
+
 var speed = walkSpeed
 var camAngle = 0
 var mouseSens = 0.3

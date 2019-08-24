@@ -126,5 +126,6 @@ environment = SubResource( 8 )
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3, 0 )
 script = ExtResource( 5 )
+walkSpeed = 300
 
 [node name="CameraController" parent="Player" instance=ExtResource( 6 )]
