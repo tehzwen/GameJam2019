@@ -1,12 +1,15 @@
 extends KinematicBody
 
 export (int) var walkSpeed
+export (int) var sprintEnergy
 export (bool) var isInteracting
 
-var speed = walkSpeed
+var originalSprintEnergy
+var sprintThreshold
 var camAngle = 0
 var mouseSens = 0.3
-var runSpeed = walkSpeed * 2
+var speed
+var runSpeed
 var gravity = 9.8 * 3
 var raycast
 var lastInteracted = null
@@ -15,8 +18,19 @@ var velocity = Vector3()
 var direction = Vector3()
 
 func _ready():
+	sprintThreshold = 0
+	speed = walkSpeed
+	runSpeed = walkSpeed * 3
 	raycast = $CameraController/Camera/RayCast
 	isInteracting = false
+	originalSprintEnergy = sprintEnergy
+	
+	
+func _process(delta):
+#	$"/root/global".lives -= 1
+#	print($"/root/global".lives)
+	#print(sprintEnergy)
+	pass
 	
 func _physics_process(delta):
 	direction = Vector3()
@@ -46,11 +60,21 @@ func _physics_process(delta):
 		velocity.y = 5
 	
 	#handle sprinting
-	if (Input.is_key_pressed(KEY_SHIFT)):
+	if (Input.is_key_pressed(KEY_SHIFT) && sprintEnergy > sprintThreshold):
 		speed = runSpeed
+		sprintEnergy -= 1
+	
+	elif (Input.is_key_pressed(KEY_SHIFT) && sprintEnergy <= sprintThreshold):
+		speed = walkSpeed
+	
 	else:
 		speed = walkSpeed
+		if (sprintEnergy < originalSprintEnergy):
+			sprintEnergy += 1
+	
+	print(sprintEnergy)
 		
+			
 	#perform raycast to see current target in sight
 	if (raycast.is_colliding()):
 		var raycastObj = raycast.get_collider()
