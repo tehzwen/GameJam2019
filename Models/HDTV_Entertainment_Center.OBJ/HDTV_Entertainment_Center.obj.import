@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/HDTV_Entertainment_Center.obj-7ffde1899281f274bff93e46fcb496b6.mesh"
+
+[deps]
+
+files=[ "res://.import/HDTV_Entertainment_Center.obj-7ffde1899281f274bff93e46fcb496b6.mesh" ]
+
+source_file="res://Models/HDTV_Entertainment_Center.OBJ/HDTV_Entertainment_Center.obj"
+dest_files=[ "res://.import/HDTV_Entertainment_Center.obj-7ffde1899281f274bff93e46fcb496b6.mesh", "res://.import/HDTV_Entertainment_Center.obj-7ffde1899281f274bff93e46fcb496b6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
