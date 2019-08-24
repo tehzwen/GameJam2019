@@ -71,8 +71,6 @@ func _physics_process(delta):
 		speed = walkSpeed
 		if (sprintEnergy < originalSprintEnergy):
 			sprintEnergy += 1
-	
-	print(sprintEnergy)
 		
 			
 	#perform raycast to see current target in sight
@@ -99,6 +97,7 @@ func _physics_process(delta):
 			lastInteracted.disable()
 			lastInteracted = null
 
+	#if we are looking at an interactable object and we press interact key
 	if (Input.is_key_pressed(KEY_E) && raycast.is_colliding()):
 		var selectedObj = raycast.get_collider()
 		# interact with object if e key is pressed and object is interactable
@@ -112,6 +111,7 @@ func _physics_process(delta):
 	if (Input.is_key_pressed(KEY_ESCAPE) && isInteracting == true):
 		isInteracting = false
 
+#handling movement function
 func handleMovementInput(aim):
 	if (Input.is_action_pressed("ui_up")):
 		direction -= aim.z
@@ -122,6 +122,7 @@ func handleMovementInput(aim):
 	if (Input.is_action_pressed("ui_right")):
 		direction += aim.x
 
+#handle mouse camera movement controls
 func _input(event):
 	if (event is InputEventMouseMotion && isInteracting == false):
 		rotate_y(deg2rad(-event.relative.x * mouseSens))
