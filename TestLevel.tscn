@@ -114,7 +114,6 @@ material/0 = SubResource( 7 )
 script = ExtResource( 3 )
 
 [node name="Popup" type="WindowDialog" parent="TestCube/MeshInstance"]
-visible = true
 margin_left = 241.585
 margin_top = 98.0
 margin_right = 763.585
@@ -133,7 +132,8 @@ environment = SubResource( 8 )
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3, 0 )
 script = ExtResource( 5 )
-walkSpeed = 300
+walkSpeed = 200
+sprintEnergy = 60
 
 [node name="CameraController" parent="Player" instance=ExtResource( 6 )]
 
@@ -153,6 +153,10 @@ PlayerNodePath = NodePath("../Player")
 
 [node name="CollisionShape" type="CollisionShape" parent="LightTrigger"]
 shape = SubResource( 9 )
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_right = 1024.0
+margin_bottom = 590.0
 [connection signal="focus_exited" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_focus_exited"]
 [connection signal="gui_input" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_gui_input"]
 [connection signal="modal_closed" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_modal_closed"]
