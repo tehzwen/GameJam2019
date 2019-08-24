@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Door.obj-4a719e2e234cda3bbef049401f5f8848.mesh"
+
+[deps]
+
+files=[ "res://.import/Door.obj-4a719e2e234cda3bbef049401f5f8848.mesh" ]
+
+source_file="res://Models/Interior door/Door.obj"
+dest_files=[ "res://.import/Door.obj-4a719e2e234cda3bbef049401f5f8848.mesh", "res://.import/Door.obj-4a719e2e234cda3bbef049401f5f8848.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
