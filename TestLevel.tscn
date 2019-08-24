@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Key_2_Release.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://ApartmentKeyLabel.gd" type="Script" id=10]
 [ext_resource path="res://Couch.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Bathtub.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -223,6 +224,9 @@ script = ExtResource( 10 )
 
 [node name="Couch" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.101369, 0, 0, 0, 0.101369, 0, 0, 0, 0.101369, -8.01073, 0.449714, -8.76871 )
+
+[node name="Bathtub" parent="." instance=ExtResource( 12 )]
+transform = Transform( 0.27168, 0, 0, 0, 0.27168, 0, 0, 0, 0.27168, 0, 0.411967, -12.5389 )
 [connection signal="focus_exited" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_focus_exited"]
 [connection signal="gui_input" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_gui_input"]
 [connection signal="modal_closed" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_modal_closed"]
