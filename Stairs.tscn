@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Models/Stairs/lightwave stairs/objects/stairs.lwo.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Materials/Metal.tres" type="Material" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="Stairs" type="Spatial"]
+
+[node name="stairslwo" type="MeshInstance" parent="."]
+transform = Transform( 1.99756, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="stairslwo"]
+
+[node name="CollisionShape" type="CollisionShape" parent="stairslwo/StaticBody"]
+transform = Transform( -0.500611, 0, -6.55938e-08, -7.51543e-08, 0.207509, 1.14575, 1.07331e-07, 0.145299, -1.6363, 0.00392021, 0.983598, -0.172025 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="stairslwo/StaticBody"]
+transform = Transform( -0.125153, 0, -1.63984e-08, -1.07425e-07, 0.658794, 1.63773, 1.35046e-07, -0.247576, -2.05881, 0.472286, 1.81351, 0.00827098 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="stairslwo/StaticBody"]
+transform = Transform( -0.125153, 0, -1.63984e-08, -1.07425e-07, 0.658794, 1.63773, 1.35046e-07, -0.247576, -2.05881, -0.476576, 1.81351, 0.00827098 )
+shape = SubResource( 1 )

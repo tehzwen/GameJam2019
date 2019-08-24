@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stairs.lwo.obj-f66d115a988b8c25c432760eda5b4555.mesh"
+
+[deps]
+
+files=[ "res://.import/stairs.lwo.obj-f66d115a988b8c25c432760eda5b4555.mesh" ]
+
+source_file="res://Models/Stairs/lightwave stairs/objects/stairs.lwo.obj"
+dest_files=[ "res://.import/stairs.lwo.obj-f66d115a988b8c25c432760eda5b4555.mesh", "res://.import/stairs.lwo.obj-f66d115a988b8c25c432760eda5b4555.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
