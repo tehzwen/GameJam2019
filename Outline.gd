@@ -49,8 +49,6 @@ func _process(delta):
 			glowEnabled = false
 			var tempMaterial = originalMaterial
 	
-	else:
-		visible = false
 			
 			
 			

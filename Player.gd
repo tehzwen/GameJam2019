@@ -19,20 +19,20 @@ func _physics_process(delta):
 	direction = Vector3()
 	var aim = $CameraController/Camera.get_global_transform().basis
 	
-	if (Input.is_key_pressed(KEY_W)):
+	if (Input.is_action_pressed("ui_up")):
 		direction -= aim.z
-	if (Input.is_key_pressed(KEY_S)):
+	if (Input.is_action_pressed("ui_down")):
 		direction += aim.z
-	if (Input.is_key_pressed(KEY_A)):
+	if (Input.is_action_pressed("ui_left")):
 		direction -= aim.x
-	if (Input.is_key_pressed(KEY_D)):
+	if (Input.is_action_pressed("ui_right")):
 		direction += aim.x
 	
 	direction = direction.normalized()
 	direction = direction * speed * delta	
 	#velocity.y = aim.y
 	
-	velocity.y -= aim.y.y * gravity * delta
+	#velocity.y -= aim.y.y * gravity * delta
 	velocity.z = direction.z
 	velocity.x = direction.x
 	
@@ -43,9 +43,6 @@ func _physics_process(delta):
 		var collidedObj = get_slide_collision(i).collider
 		if (collidedObj.name == "Pillar"):
 			collidedObj.queue_free()
-		#elif (collidedObj.name == "Wall"):
-			#print(collidedObj.get_owner())
-			#collidedObj.get_owner().queue_free()
 		
 	
 	#handle jumping
@@ -65,7 +62,6 @@ func _physics_process(delta):
 		var raycastObjGroups = raycastObj.get_groups()
 		if (len(raycastObjGroups) > 0):
 			if ("Interactable" in raycastObjGroups):
-				
 				var outline = raycastObj.get_node("Outline")
 				lastInteracted = outline
 				if (outline && !outline.glowEnabled):
@@ -74,9 +70,10 @@ func _physics_process(delta):
 				lastInteracted.disable()
 				lastInteracted = null
 				
-	elif (lastInteracted):
-		lastInteracted.disable()
-		lastInteracted = null
+	else:
+		if(lastInteracted):
+			lastInteracted.disable()
+			lastInteracted = null
 
 func _input(event):
 	if (event is InputEventMouseMotion):
