@@ -2,10 +2,17 @@
 
 [ext_resource path="res://TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
+<<<<<<< HEAD
 [ext_resource path="res://Outline.gd" type="Script" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player.gd" type="Script" id=5]
 [ext_resource path="res://CameraController.tscn" type="PackedScene" id=6]
+=======
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player.gd" type="Script" id=4]
+[ext_resource path="res://Outline.gd" type="Script" id=5]
+[ext_resource path="res://LightFlicker.gd" type="Script" id=6]
+>>>>>>> Add LightFlicker script to flicker the lights
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -127,9 +134,19 @@ text = "TestCube Content"
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 8 )
 
+<<<<<<< HEAD
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3, 0 )
 script = ExtResource( 5 )
 walkSpeed = 300
 
 [node name="CameraController" parent="Player" instance=ExtResource( 6 )]
+=======
+[node name="Light" type="Spatial" parent="."]
+script = ExtResource( 6 )
+lightSourceNodePath = NodePath("OmniLight")
+startTimer = 15
+
+[node name="OmniLight" type="OmniLight" parent="Light"]
+light_energy = 0.2
+>>>>>>> Add LightFlicker script to flicker the lights
