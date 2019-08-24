@@ -155,8 +155,10 @@ margin_bottom = 498.0
 custom_styles/panel = SubResource( 8 )
 
 [node name="Label" type="Label" parent="TestCube/MeshInstance/Popup"]
-margin_right = 413.0
-margin_bottom = 397.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 380.0
+margin_bottom = 380.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "A child wrote this shit"

@@ -3,4 +3,8 @@
 [ext_resource path="res://FemaleHandwriting.ttf" type="DynamicFontData" id=1]
 
 [resource]
+extra_spacing_top = 10
+extra_spacing_bottom = 10
+extra_spacing_char = 10
+extra_spacing_space = 10
 font_data = ExtResource( 1 )

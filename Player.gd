@@ -113,13 +113,13 @@ func _physics_process(delta):
 
 #handling movement function
 func handleMovementInput(aim):
-	if (Input.is_action_pressed("ui_up")):
+	if (Input.is_action_pressed("ui_up") && isInteracting == false):
 		direction -= aim.z
-	if (Input.is_action_pressed("ui_down")):
+	if (Input.is_action_pressed("ui_down") && isInteracting == false):
 		direction += aim.z
-	if (Input.is_action_pressed("ui_left")):
+	if (Input.is_action_pressed("ui_left") && isInteracting == false):
 		direction -= aim.x
-	if (Input.is_action_pressed("ui_right")):
+	if (Input.is_action_pressed("ui_right") && isInteracting == false):
 		direction += aim.x
 
 #handle mouse camera movement controls
