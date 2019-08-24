@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Bathtube update-2016.obj-02719f2e5a24cee99c1c8d27a01757bb.mesh"
+
+[deps]
+
+files=[ "res://.import/Bathtube update-2016.obj-02719f2e5a24cee99c1c8d27a01757bb.mesh" ]
+
+source_file="res://Models/Bathtubeupdate Obj/Bathtube update-2016.obj"
+dest_files=[ "res://.import/Bathtube update-2016.obj-02719f2e5a24cee99c1c8d27a01757bb.mesh", "res://.import/Bathtube update-2016.obj-02719f2e5a24cee99c1c8d27a01757bb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
