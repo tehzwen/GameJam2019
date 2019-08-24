@@ -27,7 +27,7 @@ func _physics_process(delta):
 		direction -= aim.x
 	if (Input.is_action_pressed("ui_right")):
 		direction += aim.x
-	
+		
 	direction = direction.normalized()
 	direction = direction * speed * delta	
 	#velocity.y = aim.y
@@ -74,6 +74,12 @@ func _physics_process(delta):
 		if(lastInteracted):
 			lastInteracted.disable()
 			lastInteracted = null
+	
+	# interact with object if e key is pressed
+	if (Input.is_key_pressed(KEY_E) && raycast.is_colliding()):
+		var selectedObj = raycast.get_collider()
+		if ("Interactable" in selectedObj.get_groups()):
+			selectedObj.get_parent().get_node("Popup").popup()
 
 func _input(event):
 	if (event is InputEventMouseMotion):

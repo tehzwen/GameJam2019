@@ -127,5 +127,16 @@ mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
 script = ExtResource( 6 )
 
+[node name="Popup" type="Popup" parent="TestCube/MeshInstance"]
+margin_right = 1022.0
+margin_bottom = 595.0
+
+[node name="Label" type="Label" parent="TestCube/MeshInstance/Popup"]
+margin_left = 299.282
+margin_top = 146.92
+margin_right = 728.282
+margin_bottom = 393.92
+text = "Fuck you fegget"
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 8 )
