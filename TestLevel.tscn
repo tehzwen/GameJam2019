@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://Fridge.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Sink.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Toilet.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Dresser.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Note.tscn" type="PackedScene" id=22]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -93,6 +95,29 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
+[sub_resource type="ConvexPolygonShape" id=14]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="ArrayMesh" id=15]
+surfaces/0 = {
+"aabb": AABB( -1.02887, -1.02887, -1.02887, 2.05773, 2.05774, 2.05774 ),
+"array_data": PoolByteArray( 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 63, 0, 0, 127, 0, 127, 0, 0, 127, 0, 0, 0, 0, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 191, 0, 0, 129, 0, 129, 0, 0, 127, 85, 57, 0, 0, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 63, 0, 0, 127, 0, 127, 0, 0, 127, 85, 53, 0, 0, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 191, 0, 0, 129, 0, 129, 0, 0, 127, 0, 60, 0, 0, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 63, 0, 0, 127, 0, 127, 0, 0, 127, 0, 0, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 191, 0, 0, 129, 0, 129, 0, 0, 127, 85, 57, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 63, 0, 0, 127, 0, 127, 0, 0, 127, 85, 53, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 191, 0, 0, 129, 0, 129, 0, 0, 127, 0, 60, 0, 56, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 63, 127, 0, 0, 0, 0, 0, 129, 127, 85, 53, 0, 0, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 191, 129, 0, 0, 0, 0, 0, 127, 127, 0, 0, 0, 56, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 191, 127, 0, 0, 0, 0, 0, 129, 127, 85, 57, 0, 0, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 63, 129, 0, 0, 0, 0, 0, 127, 127, 85, 53, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 63, 127, 0, 0, 0, 0, 0, 129, 127, 85, 53, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 191, 129, 0, 0, 0, 0, 0, 127, 127, 0, 0, 0, 60, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 191, 127, 0, 0, 0, 0, 0, 129, 127, 85, 57, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 63, 129, 0, 0, 0, 0, 0, 127, 127, 85, 53, 0, 60, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 63, 0, 127, 0, 0, 129, 0, 0, 127, 85, 53, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 63, 0, 129, 0, 0, 127, 0, 0, 127, 85, 57, 0, 56, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 63, 0, 127, 0, 0, 129, 0, 0, 127, 85, 57, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 63, 0, 129, 0, 0, 127, 0, 0, 127, 0, 60, 0, 56, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 191, 0, 127, 0, 0, 129, 0, 0, 127, 85, 53, 0, 60, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 191, 0, 129, 0, 0, 127, 0, 0, 127, 85, 57, 0, 60, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 191, 0, 127, 0, 0, 129, 0, 0, 127, 85, 57, 0, 60, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 191, 0, 129, 0, 0, 127, 0, 0, 127, 0, 60, 0, 60 ),
+"array_index_data": PoolByteArray( 0, 0, 4, 0, 2, 0, 2, 0, 4, 0, 6, 0, 1, 0, 5, 0, 3, 0, 3, 0, 5, 0, 7, 0, 8, 0, 12, 0, 10, 0, 10, 0, 12, 0, 14, 0, 9, 0, 13, 0, 11, 0, 11, 0, 13, 0, 15, 0, 16, 0, 20, 0, 18, 0, 18, 0, 20, 0, 22, 0, 17, 0, 21, 0, 19, 0, 19, 0, 21, 0, 23, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 36,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="SpatialMaterial" id=16]
+emission_enabled = true
+emission = Color( 0.803922, 1, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
 [node name="TestLevel" type="Spatial"]
 script = ExtResource( 1 )
 
@@ -133,7 +158,6 @@ material/0 = null
 shape = SubResource( 2 )
 
 [node name="TestCube" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( 0.370567, 0, 0, 0, 0.440798, 0, 0, 0, 0.176165, 0, 0.864953, -3.67018 )
 
 [node name="MeshInstance" type="MeshInstance" parent="TestCube"]
@@ -174,7 +198,6 @@ valign = 1
 environment = SubResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3, 0 )
 script = ExtResource( 7 )
 walkSpeed = 200
@@ -260,8 +283,50 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.457409, -16.6192 )
 
 [node name="Toilet" parent="." instance=ExtResource( 20 )]
 transform = Transform( 0.174808, 0, 0, 0, 0.174808, 0, 0, 0, 0.174808, -1.6139, 0.479942, -12.8055 )
+
+[node name="Dresser" parent="." instance=ExtResource( 21 )]
+transform = Transform( 1.21641, 0, 0, 0, 1.21641, 0, 0, 0, 1.21641, 0, 0.393533, 1.45754 )
+
+[node name="Note" parent="." instance=ExtResource( 22 )]
+transform = Transform( 0.1541, 0, 0.164342, 0, 0.00544001, 0, -0.152247, 0, 0.166341, -1.69708, 1.34627, -8.90001 )
+
+[node name="NoteCollider" type="StaticBody" parent="Note" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Note/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 14 )
+
+[node name="Outline" type="MeshInstance" parent="Note/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+script = ExtResource( 3 )
+
+[node name="Popup" type="PopupPanel" parent="Note"]
+visible = true
+margin_left = 295.0
+margin_top = 101.0
+margin_right = 708.0
+margin_bottom = 498.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="Label" type="Label" parent="Note/Popup"]
+margin_right = 413.0
+margin_bottom = 397.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "A child wrote this shit"
+align = 1
+valign = 1
 [connection signal="focus_exited" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_focus_exited"]
 [connection signal="gui_input" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_gui_input"]
 [connection signal="modal_closed" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_modal_closed"]
 [connection signal="popup_hide" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_popup_hide"]
 [connection signal="body_entered" from="LightTrigger" to="Player" method="_on_Area_body_entered"]
+[connection signal="focus_exited" from="Note/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="Note/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="Note/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="Note/Popup" to="Player" method="_on_Popup_popup_hide"]
