@@ -98,3 +98,8 @@ func _input(event):
 			$CameraController/Camera.rotate_x(deg2rad(change))
 			camAngle += change
 		
+
+
+func _on_Area_body_entered(body):
+	if (body.name == "Player"):
+		print("Trigger")
