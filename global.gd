@@ -1,11 +1,6 @@
-extends Label
+extends Node
 
-func showLabel():
-	get_parent().visible = false
-	visible = true
-	yield(get_tree().create_timer(2.0), "timeout")
-	visible = false
-	global.hasApartmentKey = true
+var hasApartmentKey = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
