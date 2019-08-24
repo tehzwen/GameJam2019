@@ -11,13 +11,13 @@
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.270588, 0.145098, 0.145098, 1 )
 
-[sub_resource type="CubeMesh" id=3]
-material = SubResource( 5 )
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
 
-[sub_resource type="ConvexPolygonShape" id=4]
+[sub_resource type="ConvexPolygonShape" id=5]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [sub_resource type="ArrayMesh" id=6]
@@ -104,7 +104,7 @@ editor/display_folded = true
 transform = Transform( 0.370567, 0, 0, 0, 0.440798, 0, 0, 0, 0.176165, 0, 0.864953, -3.67018 )
 
 [node name="MeshInstance" type="MeshInstance" parent="TestCube"]
-mesh = SubResource( 3 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="TestCubeCollder" type="StaticBody" parent="TestCube/MeshInstance" groups=[
@@ -112,7 +112,7 @@ material/0 = null
 ]]
 
 [node name="CollisionShape" type="CollisionShape" parent="TestCube/MeshInstance/TestCubeCollder"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Outline" type="MeshInstance" parent="TestCube/MeshInstance/TestCubeCollder"]
 visible = false
