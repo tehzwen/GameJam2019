@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
@@ -15,6 +15,9 @@
 [ext_resource path="res://Couch.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Bathtub.tscn" type="PackedScene" id=14]
 [ext_resource path="res://ApartmentAudio.gd" type="Script" id=15]
+[ext_resource path="res://Table.tscn" type="PackedScene" id=16]
+[ext_resource path="res://TV.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Fridge.tscn" type="PackedScene" id=18]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -99,6 +102,7 @@ light_indirect_energy = 4.1
 shadow_enabled = true
 
 [node name="Wall" type="Spatial" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38375, -19.948 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall"]
@@ -127,6 +131,7 @@ material/0 = null
 shape = SubResource( 2 )
 
 [node name="TestCube" type="Spatial" parent="."]
+editor/display_folded = true
 transform = Transform( 0.370567, 0, 0, 0, 0.440798, 0, 0, 0, 0.176165, 0, 0.864953, -3.67018 )
 
 [node name="MeshInstance" type="MeshInstance" parent="TestCube"]
@@ -156,7 +161,7 @@ custom_styles/panel = SubResource( 8 )
 
 [node name="Label" type="Label" parent="TestCube/MeshInstance/Popup"]
 margin_right = 413.0
-margin_bottom = 393.0
+margin_bottom = 397.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "A child wrote this shit"
@@ -176,6 +181,7 @@ sprintEnergy = 60
 [node name="CameraController" parent="Player" instance=ExtResource( 8 )]
 
 [node name="FlickeringLight" type="Spatial" parent="."]
+editor/display_folded = true
 script = ExtResource( 9 )
 lightSourceNodePath = NodePath("../FlickeringLight/OmniLight")
 flicker = false
@@ -237,6 +243,15 @@ transform = Transform( 0.27548, 0, 0, 0, 0.27548, 0, 0, 0, 0.27548, 0, 0.411967,
 
 [node name="ApartmentAudio" type="Node" parent="."]
 script = ExtResource( 15 )
+
+[node name="Table" parent="." instance=ExtResource( 16 )]
+transform = Transform( 0.0285191, 0, 0, 0, 0.0285191, 0, 0, 0, 0.0285191, -2.47428, 0.399694, -9.1826 )
+
+[node name="TV" parent="." instance=ExtResource( 17 )]
+transform = Transform( 0.0258359, 0, 0, 0, 0.0258359, 0, 0, 0, 0.0258359, 3.49724, 0.485939, -8.68886 )
+
+[node name="Fridge" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.0129179, 0, 0, 0, 0.0129179, 0, 0, 0, 0.0129179, 5.59765, 0.485939, -8.68886 )
 [connection signal="focus_exited" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_focus_exited"]
 [connection signal="gui_input" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_gui_input"]
 [connection signal="modal_closed" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_modal_closed"]
