@@ -1,0 +1,86 @@
+# Blender MTL File: 'None'
+# Material Count: 8
+
+newmtl ChromeMate
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.066667 0.066667 0.066667
+Ks 2.000000 2.000000 2.000000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Glass
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.203922 0.203922 0.203922
+Ks 2.000000 2.000000 2.000000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 2
+refl Map #435
+
+newmtl aluminium
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.156863 0.156863 0.156863
+Ks 2.000000 2.000000 2.000000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 2
+refl /home/zach/Downloads/3DDesign/Textures/Metals/Metals.Ornamental Metals.Aluminum.Brushed.jpg
+
+newmtl logo
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.988235 0.988235 0.988235
+Ks 2.000000 2.000000 2.000000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd /home/zach/Downloads/PC/3DDesign/Reference/wf8500nhw_yle_(1)_16865 logo.jpg
+
+newmtl panel
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.988235 0.988235 0.988235
+Ks 2.000000 2.000000 2.000000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd /home/zach/Downloads/PC/3DDesign/Reference/wf8500nhw_yle_(1)_16865.jpg
+
+newmtl plastic
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.992157 0.992157 0.992157
+Ks 2.000000 2.000000 2.000000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl plastic2
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.290196 0.290196 0.290196
+Ks 2.000000 2.000000 2.000000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl white
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.992157 0.992157 0.992157
+Ks 2.000000 2.000000 2.000000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 2

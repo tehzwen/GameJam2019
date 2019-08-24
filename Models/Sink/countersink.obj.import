@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/countersink.obj-9fd578063af4267ad5ac8b5d25d5cced.mesh"
+
+[deps]
+
+files=[ "res://.import/countersink.obj-9fd578063af4267ad5ac8b5d25d5cced.mesh" ]
+
+source_file="res://Models/Sink/countersink.obj"
+dest_files=[ "res://.import/countersink.obj-9fd578063af4267ad5ac8b5d25d5cced.mesh", "res://.import/countersink.obj-9fd578063af4267ad5ac8b5d25d5cced.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

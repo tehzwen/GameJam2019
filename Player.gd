@@ -108,6 +108,8 @@ func _physics_process(delta):
 		# pick up object if e key is pressed and object is obtainable
 		elif ("Obtainable" in selectedObj.get_groups()):
 			selectedObj.get_parent().get_node("Label").showLabel()
+		elif ("Door" in selectedObj.get_groups()):
+			print("DOOR")
 
 	if (Input.is_key_pressed(KEY_ESCAPE) && isInteracting == true):
 		isInteracting = false
