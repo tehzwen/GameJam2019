@@ -57,7 +57,7 @@ func _physics_process(delta):
 
 		var raycastObjGroups = raycastObj.get_groups()
 		if (len(raycastObjGroups) > 0):
-			if ("Interactable" in raycastObjGroups):
+			if (("Interactable" in raycastObjGroups) or ("Obtainable" in raycastObjGroups)):
 				var outline = raycastObj.get_node("Outline")
 				lastInteracted = outline
 				if (outline && !outline.glowEnabled):
@@ -74,14 +74,17 @@ func _physics_process(delta):
 		if(lastInteracted):
 			lastInteracted.disable()
 			lastInteracted = null
-	
-	# interact with object if e key is pressed
+
 	if (Input.is_key_pressed(KEY_E) && raycast.is_colliding()):
 		var selectedObj = raycast.get_collider()
+		# interact with object if e key is pressed and object is interactable
 		if ("Interactable" in selectedObj.get_groups()):
 			isInteracting = true
 			selectedObj.get_parent().get_node("Popup").popup_centered()
-			
+		# pick up object if e key is pressed and object is obtainable
+		elif ("Obtainable" in selectedObj.get_groups()):
+			selectedObj.get_parent().get_node("Label").showLabel()
+
 	if (Input.is_key_pressed(KEY_ESCAPE) && isInteracting == true):
 		isInteracting = false
 
@@ -98,13 +101,10 @@ func handleMovementInput(aim):
 func _input(event):
 	if (event is InputEventMouseMotion && isInteracting == false):
 		rotate_y(deg2rad(-event.relative.x * mouseSens))
-
 		var change = -event.relative.y * mouseSens
 		if (change + camAngle < 90 and change + camAngle > -90):
 			$CameraController/Camera.rotate_x(deg2rad(change))
 			camAngle += change
-		
-
 
 func _on_Area_body_entered(body):
 	if (body.name == "Player"):
