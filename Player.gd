@@ -73,7 +73,7 @@ func _physics_process(delta):
 	if (Input.is_key_pressed(KEY_E) && raycast.is_colliding()):
 		var selectedObj = raycast.get_collider()
 		if ("Interactable" in selectedObj.get_groups()):
-			selectedObj.get_parent().get_node("Popup").popup()
+			selectedObj.get_parent().get_node("Popup").popup_centered()
 
 func handleMovementInput(aim):
 	if (Input.is_action_pressed("ui_up")):
