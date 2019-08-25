@@ -1,12 +1,33 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://CameraController.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Rocks.tres" type="Material" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.gd" type="Script" id=3]
+[ext_resource path="res://CameraController.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Textures/WoodBeam/Wood.jpg" type="Texture" id=5]
+[ext_resource path="res://MineShaftAudio.gd" type="Script" id=6]
 
 [sub_resource type="CubeMesh" id=1]
+material = ExtResource( 1 )
 
 [sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 1, 0.643137, 0.643137, 1 )
+albedo_texture = ExtResource( 5 )
+uv1_scale = Vector3( 0.1, 2, 0.01 )
+
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
+
+[sub_resource type="ConvexPolygonShape" id=5]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=6]
+material = ExtResource( 1 )
+
+[sub_resource type="ConvexPolygonShape" id=7]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [node name="MineShaft" type="Spatial"]
@@ -90,10 +111,77 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="EntranceFloor3/MeshInstance/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -8.5, 5.25, 0 )
-script = ExtResource( 2 )
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.41476, 4.49493, 0 )
+script = ExtResource( 3 )
 walkSpeed = 200
 sprintEnergy = 60
 
-[node name="CameraController" parent="Player" instance=ExtResource( 3 )]
+[node name="CameraController" parent="Player" instance=ExtResource( 4 )]
+
+[node name="WoodBeam" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="WoodBeam"]
+transform = Transform( 0.589812, 0, 0, 0, 6, 0, 0, 0, 0.191152, -4.51347, 5.16224, -5.19945 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WoodBeam/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WoodBeam/MeshInstance/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="WoodBeam"]
+transform = Transform( 0.589812, 0, 0, 0, 6, 0, 0, 0, 0.191152, -4.51347, 5.16224, 4.57559 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WoodBeam/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WoodBeam/MeshInstance2/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="WoodBeam"]
+transform = Transform( 0.589812, 0, 0, 0, 6, 0, 0, 0, 0.191152, 5.38115, 1.08113, 4.57559 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WoodBeam/MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WoodBeam/MeshInstance3/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="WoodBeam"]
+transform = Transform( 0.589812, 0, 0, 0, 6, 0, 0, 0, 0.191152, 5.38115, 2.74398, -5.71913 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WoodBeam/MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WoodBeam/MeshInstance4/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="SideWalls" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="SideWalls"]
+transform = Transform( 9.64698, 1.31679, 0, -2.63358, 4.82349, 0, 0, 0, 0.1, 1.32876, 4.9493, -6.82672 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="SideWalls/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="SideWalls/MeshInstance/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="SideWalls"]
+transform = Transform( 9.64698, 1.31679, 0, -2.63358, 4.82349, 0, 0, 0, 0.1, 1.25147, 4.98633, 5.99366 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="SideWalls/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="SideWalls/MeshInstance2/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 6 )
