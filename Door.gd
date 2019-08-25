@@ -18,3 +18,7 @@ func playDoorSqueak():
 	player.stream = load("res://DoorSqueak.wav")
 	player.volume_db = -22
 	player.play()
+func CloseDoor():
+	if (open && !anim.is_playing()):
+		anim.play("Close")
+		open = false
