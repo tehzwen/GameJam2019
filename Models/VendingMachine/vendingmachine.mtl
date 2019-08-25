@@ -1,0 +1,15 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl Material_#1
+Ns 4607.999939
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump -bm 0.140017 -s 2.000000 2.000000 1.000000 H:/3dsMaxBackups/Scenes/Turbosquid/SnackMachine/SnackMachine.fbm/SnackMachine_NM.tga
+map_Kd H:/3dsMaxBackups/Scenes/Turbosquid/SnackMachine/SnackMachine.fbm/SnackMachine_Diffuse.tga
+map_d H:/3dsMaxBackups/Scenes/Turbosquid/SnackMachine/SnackMachine.fbm/SnackMachine_Diffuse.tga

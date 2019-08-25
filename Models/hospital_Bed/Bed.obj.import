@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Bed.obj-3f84836705f1c9bef61182bb90a451f5.mesh"
+
+[deps]
+
+files=[ "res://.import/Bed.obj-3f84836705f1c9bef61182bb90a451f5.mesh" ]
+
+source_file="res://Models/hospital_Bed/Bed.obj"
+dest_files=[ "res://.import/Bed.obj-3f84836705f1c9bef61182bb90a451f5.mesh", "res://.import/Bed.obj-3f84836705f1c9bef61182bb90a451f5.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

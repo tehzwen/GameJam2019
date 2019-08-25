@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/SnackMachine_DF.png-7c6ada3124763e683817ef86ec4a16df.s3tc.stex"
+path.etc2="res://.import/SnackMachine_DF.png-7c6ada3124763e683817ef86ec4a16df.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Models/VendingMachine/SnackMachine_DF.png"
+dest_files=[ "res://.import/SnackMachine_DF.png-7c6ada3124763e683817ef86ec4a16df.s3tc.stex", "res://.import/SnackMachine_DF.png-7c6ada3124763e683817ef86ec4a16df.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

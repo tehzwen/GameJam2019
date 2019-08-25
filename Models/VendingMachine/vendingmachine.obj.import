@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/vendingmachine.obj-5a3cb309a8b680bc955709e89dddea87.mesh"
+
+[deps]
+
+files=[ "res://.import/vendingmachine.obj-5a3cb309a8b680bc955709e89dddea87.mesh" ]
+
+source_file="res://Models/VendingMachine/vendingmachine.obj"
+dest_files=[ "res://.import/vendingmachine.obj-5a3cb309a8b680bc955709e89dddea87.mesh", "res://.import/vendingmachine.obj-5a3cb309a8b680bc955709e89dddea87.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

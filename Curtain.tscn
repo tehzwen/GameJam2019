@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Models/Curtains/3ds files/tende1.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Models/Curtains/maps/cinc 2.jpg" type="Texture" id=2]
+[ext_resource path="res://Materials/MetallicSilver.tres" type="Material" id=3]
+
+
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.545098, 0.658824, 1, 1 )
+normal_enabled = true
+normal_scale = 0.46
+normal_texture = ExtResource( 2 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 8.83406, 13.6599, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="ConvexPolygonShape" id=4]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[node name="Curtain" type="Spatial"]
+
+[node name="tende1" type="MeshInstance" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -9.40411 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="tende1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="tende1/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 85.9764, 131.788, 105.119 )
+shape = SubResource( 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.241179, 0, 0, 0, 14.5999, 0, 0, 0, 0.198064, -0.734871, 12.8849, 1.32208 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 0.241179, 0, 0, 0, 14.5999, 0, 0, 0, 0.198064, 18.5724, 12.8849, 1.32208 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( -1.05422e-08, -9.01688, 0, 0.241179, -3.9414e-07, 0, 0, 0, 0.198064, 9.01224, 27.4008, 1.20871 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance3/StaticBody"]
+shape = SubResource( 4 )

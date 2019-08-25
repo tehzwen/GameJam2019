@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Models/DeadGuy/mydeadguytorso.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Models/DeadGuy/mydeadguyhead.obj" type="ArrayMesh" id=2]
+
+[node name="Bob" type="Spatial"]
+
+[node name="mydeadguytorso" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="mydeadguyhead" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.094412, -0.341761, 0.118176 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+material/2 = null

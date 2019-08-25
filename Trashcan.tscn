@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Models/Trashcan/FREE_TRASHCAN_1_OBJ.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Textures/Plaster/Plaster03_col.jpg" type="Texture" id=2]
+[ext_resource path="res://Textures/Plaster/Plaster03_disp.jpg" type="Texture" id=3]
+[ext_resource path="res://Textures/Plaster/Plaster03_nrm.jpg" type="Texture" id=4]
+[ext_resource path="res://Textures/Plaster/Plaster03_rgh.jpg" type="Texture" id=5]
+[ext_resource path="res://Materials/MetallicSilver.tres" type="Material" id=6]
+[ext_resource path="res://Materials/ChairBack.tres" type="Material" id=7]
+
+
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.137255, 0.105882, 0.0784314, 1 )
+albedo_texture = ExtResource( 2 )
+roughness_texture = ExtResource( 5 )
+normal_enabled = true
+normal_scale = 3.71
+normal_texture = ExtResource( 4 )
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 3 )
+uv1_scale = Vector3( 10, 10, 10 )
+
+[node name="Trashcan" type="Spatial"]
+
+[node name="FREE_TRASHCAN_1_OBJ" type="MeshInstance" parent="."]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+material/1 = ExtResource( 6 )
+material/2 = ExtResource( 7 )

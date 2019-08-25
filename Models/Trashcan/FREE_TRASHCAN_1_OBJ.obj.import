@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/FREE_TRASHCAN_1_OBJ.obj-707de3cf5f01ff8135333ddca640bfab.mesh"
+
+[deps]
+
+files=[ "res://.import/FREE_TRASHCAN_1_OBJ.obj-707de3cf5f01ff8135333ddca640bfab.mesh" ]
+
+source_file="res://Models/Trashcan/FREE_TRASHCAN_1_OBJ.obj"
+dest_files=[ "res://.import/FREE_TRASHCAN_1_OBJ.obj-707de3cf5f01ff8135333ddca640bfab.mesh", "res://.import/FREE_TRASHCAN_1_OBJ.obj-707de3cf5f01ff8135333ddca640bfab.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

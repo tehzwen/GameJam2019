@@ -1,0 +1,14 @@
+# Blender MTL File: 'mybones.blend'
+# Material Count: 1
+
+newmtl body
+Ns 28.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.721700 0.565200 0.505200
+Ks 0.603000 0.603000 0.603000
+Ke 0.0 0.0 0.0
+Ni 1.500000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 /Bump.tga
+map_Kd pacient_body.jpg
