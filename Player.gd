@@ -84,7 +84,12 @@ func _physics_process(delta):
 				var outline = raycastObj.get_node("Outline")
 				lastInteracted = outline
 				if (outline && !outline.glowEnabled):
-					outline.enable(0.65)
+					outline.enable(0.65)		
+			elif ("LightSwitch" in raycastObjGroups):
+				var outline = raycastObj.get_node("Outline")
+				lastInteracted = outline
+				if (outline && !outline.glowEnabled):
+					outline.enable(0.65)	
 			elif (lastInteracted):
 				lastInteracted.disable()
 				lastInteracted = null
@@ -99,21 +104,24 @@ func _physics_process(delta):
 			lastInteracted = null
 
 	#if we are looking at an interactable object and we press interact key
-	if (Input.is_key_pressed(KEY_E) && raycast.is_colliding()):
+	if (Input.is_action_just_pressed("Use") && raycast.is_colliding()):
 		var selectedObj = raycast.get_collider()
-		print(selectedObj.name)
+		var selectedObjGroups = selectedObj.get_groups()
 		# interact with object if e key is pressed and object is interactable
-		if ("Interactable" in selectedObj.get_groups()):
+		if ("Interactable" in selectedObjGroups):
 			isInteracting = true
 			selectedObj.get_parent().get_node("Popup").popup_centered()
 		# pick up object if e key is pressed and object is obtainable
-		elif ("Obtainable" in selectedObj.get_groups()):
+		elif ("Obtainable" in selectedObjGroups):
 			selectedObj.get_parent().get_node("Label").showLabel()
-		elif ("Door" in selectedObj.get_groups()):
+		elif ("Door" in selectedObjGroups):
 			if (!selectedObj.get_parent().get_parent().open):
 				selectedObj.get_parent().get_parent().OpenDoor()
 			else:
 				selectedObj.get_parent().get_parent().CloseDoor()
+				
+		elif ("LightSwitch" in selectedObjGroups):
+			selectedObj.get_parent().get_parent().toggle()
 
 	if (Input.is_key_pressed(KEY_ESCAPE) && isInteracting == true):
 		isInteracting = false
