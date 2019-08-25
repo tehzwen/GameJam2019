@@ -1,12 +1,13 @@
 extends Spatial
 
 export (NodePath) var lightPath
-var enabled = false
+var enabled
 var light
 var originalEnergy
 var player
 
 func _ready():
+	enabled = true
 	if(lightPath):
 		light = get_node(lightPath)
 		if(light):

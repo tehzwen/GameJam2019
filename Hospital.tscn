@@ -1,46 +1,50 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=38 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://CameraController.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Textures/Hospital Floor/Tiles02_col.jpg" type="Texture" id=4]
-[ext_resource path="res://Textures/Hospital Floor/Tiles02_disp.jpg" type="Texture" id=5]
-[ext_resource path="res://Textures/Hospital Floor/Tiles02_nrm.jpg" type="Texture" id=6]
-[ext_resource path="res://Textures/Hospital Floor/Tiles02_rgh.jpg" type="Texture" id=7]
-[ext_resource path="res://Textures/Plaster/Plaster03_col.jpg" type="Texture" id=8]
-[ext_resource path="res://Textures/Plaster/Plaster03_disp.jpg" type="Texture" id=9]
-[ext_resource path="res://Textures/Plaster/Plaster03_nrm.jpg" type="Texture" id=10]
-[ext_resource path="res://Textures/Plaster/Plaster03_rgh.jpg" type="Texture" id=11]
-[ext_resource path="res://HospitalDoor.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Materials/HospitalWall.tres" type="Material" id=13]
-[ext_resource path="res://Materials/RedPaint.tres" type="Material" id=14]
-[ext_resource path="res://HospitalBed.tscn" type="PackedScene" id=15]
-[ext_resource path="res://DeadBody.tscn" type="PackedScene" id=16]
-[ext_resource path="res://DeadBody2.tscn" type="PackedScene" id=17]
-[ext_resource path="res://DeadBody3.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Couch.tscn" type="PackedScene" id=19]
-[ext_resource path="res://VendingMachine.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Bob.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Trashcan.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Curtain.tscn" type="PackedScene" id=23]
-[ext_resource path="res://FullBob.tscn" type="PackedScene" id=24]
-[ext_resource path="res://BloodSpatter.tscn" type="PackedScene" id=25]
-[ext_resource path="res://HospitalSlidingDoor.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Hospital.gd" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.gd" type="Script" id=3]
+[ext_resource path="res://CameraController.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Textures/Hospital Floor/Tiles02_col.jpg" type="Texture" id=5]
+[ext_resource path="res://Textures/Hospital Floor/Tiles02_disp.jpg" type="Texture" id=6]
+[ext_resource path="res://Textures/Hospital Floor/Tiles02_nrm.jpg" type="Texture" id=7]
+[ext_resource path="res://Textures/Hospital Floor/Tiles02_rgh.jpg" type="Texture" id=8]
+[ext_resource path="res://Textures/Plaster/Plaster03_col.jpg" type="Texture" id=9]
+[ext_resource path="res://Textures/Plaster/Plaster03_disp.jpg" type="Texture" id=10]
+[ext_resource path="res://Textures/Plaster/Plaster03_nrm.jpg" type="Texture" id=11]
+[ext_resource path="res://Textures/Plaster/Plaster03_rgh.jpg" type="Texture" id=12]
+[ext_resource path="res://HospitalDoor.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Materials/HospitalWall.tres" type="Material" id=14]
+[ext_resource path="res://Materials/RedPaint.tres" type="Material" id=15]
+[ext_resource path="res://Button.tscn" type="PackedScene" id=16]
+[ext_resource path="res://HospitalBed.tscn" type="PackedScene" id=17]
+[ext_resource path="res://DeadBody.tscn" type="PackedScene" id=18]
+[ext_resource path="res://DeadBody2.tscn" type="PackedScene" id=19]
+[ext_resource path="res://DeadBody3.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Couch.tscn" type="PackedScene" id=21]
+[ext_resource path="res://VendingMachine.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Bob.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Trashcan.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Curtain.tscn" type="PackedScene" id=25]
+[ext_resource path="res://FullBob.tscn" type="PackedScene" id=26]
+[ext_resource path="res://BloodSpatter.tscn" type="PackedScene" id=27]
+[ext_resource path="res://HospitalSlidingDoor.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Countertop.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Dresser.tscn" type="PackedScene" id=30]
 
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]
-albedo_texture = ExtResource( 4 )
-roughness_texture = ExtResource( 7 )
+albedo_texture = ExtResource( 5 )
+roughness_texture = ExtResource( 8 )
 normal_enabled = true
 normal_scale = 1.0
-normal_texture = ExtResource( 6 )
+normal_texture = ExtResource( 7 )
 depth_enabled = true
 depth_scale = -0.01
 depth_deep_parallax = false
 depth_flip_tangent = false
 depth_flip_binormal = false
-depth_texture = ExtResource( 5 )
+depth_texture = ExtResource( 6 )
 uv1_scale = Vector3( 20, 20, 20 )
 
 [sub_resource type="ConvexPolygonShape" id=3]
@@ -48,17 +52,17 @@ points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1,
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.627451, 0.627451, 0.627451, 1 )
-albedo_texture = ExtResource( 8 )
-roughness_texture = ExtResource( 11 )
+albedo_texture = ExtResource( 9 )
+roughness_texture = ExtResource( 12 )
 normal_enabled = true
 normal_scale = 1.0
-normal_texture = ExtResource( 10 )
+normal_texture = ExtResource( 11 )
 depth_enabled = true
 depth_scale = -0.01
 depth_deep_parallax = false
 depth_flip_tangent = false
 depth_flip_binormal = false
-depth_texture = ExtResource( 9 )
+depth_texture = ExtResource( 10 )
 uv1_scale = Vector3( 20, 20, 20 )
 
 [sub_resource type="CubeMesh" id=5]
@@ -79,14 +83,17 @@ glow_enabled = true
 glow_intensity = 4.59
 
 [node name="Hospital" type="Spatial"]
+script = ExtResource( 1 )
+Buttons = [ NodePath("Lobby/Button1"), NodePath("Lobby/Button2"), NodePath("Lobby/Button3"), NodePath("Lobby/Button4") ]
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( -1, 1.50996e-07, -6.60024e-15, 0, -4.37114e-08, -1, -1.50996e-07, -1, 4.37114e-08, 5.12974e-07, 2.88841, -38.5813 )
-script = ExtResource( 2 )
+[node name="Player" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
+transform = Transform( -1, 1.50996e-07, -6.60024e-15, 0, -4.37114e-08, -1, -1.50996e-07, -1, 4.37114e-08, -12.3611, 2.88841, 12.9635 )
+script = ExtResource( 3 )
 walkSpeed = 200
 sprintEnergy = 60
 
-[node name="CameraController" parent="Player" instance=ExtResource( 3 )]
+[node name="CameraController" parent="Player" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.89606 )
 
 [node name="Walls" type="Spatial" parent="."]
@@ -133,31 +140,53 @@ material/0 = SubResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="Walls/Ceiling/MeshInstance/StaticBody"]
 shape = SubResource( 3 )
 
-[node name="HospitalDoor" parent="Walls" instance=ExtResource( 12 )]
+[node name="HospitalDoor" parent="Walls" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.49073, 0, -28.1318 )
 
-[node name="HospitalDoor2" parent="Walls" instance=ExtResource( 12 )]
+[node name="HospitalDoor2" parent="Walls" instance=ExtResource( 13 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 2.89117, 0, -20.4892 )
 
-[node name="HospitalDoor3" parent="Walls" instance=ExtResource( 12 )]
+[node name="HospitalDoor3" parent="Walls" instance=ExtResource( 13 )]
 transform = Transform( 1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, -12.4768, 0, -3.82639 )
 
 [node name="EntranceWall" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( 20.1798, 0, 0, 0, 3.52481, 0, 0, 0, 0.149563, 0, 3.70974, -40.8835 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall/StaticBody"]
 shape = SubResource( 6 )
 
+[node name="EntranceWall8" type="MeshInstance" parent="Walls"]
+editor/display_folded = true
+transform = Transform( -8.82087e-07, 0, 0.149563, 0, 3.52481, 0, -20.1798, 0, -6.53761e-09, -20.1549, 3.70974, 23.4516 )
+mesh = SubResource( 5 )
+material/0 = ExtResource( 14 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall8/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="EntranceWall9" type="MeshInstance" parent="Walls"]
+editor/display_folded = true
+transform = Transform( -10.3408, 0, 0.128434, 0, 3.52481, 0, -17.329, 0, -0.0766407, -9.60305, 3.70974, 28.6481 )
+mesh = SubResource( 5 )
+material/0 = ExtResource( 14 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall9/StaticBody"]
+shape = SubResource( 6 )
+
 [node name="EntranceWall6" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( -8.82087e-07, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, -6.53761e-09, 20.0903, 3.70974, -21.4948 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall6"]
 
@@ -168,7 +197,7 @@ shape = SubResource( 6 )
 editor/display_folded = true
 transform = Transform( -8.82087e-07, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, -6.53761e-09, 20.0987, 3.70974, 18.7325 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/InnerWall2"]
 
@@ -179,7 +208,7 @@ shape = SubResource( 6 )
 editor/display_folded = true
 transform = Transform( -20.1798, 0, 2.25834e-08, 0, 3.52481, 0, -3.04707e-06, 0, -0.149563, -0.224566, 3.70974, 38.9234 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/InnerWall3"]
 
@@ -190,7 +219,7 @@ shape = SubResource( 6 )
 editor/display_folded = true
 transform = Transform( -11.1866, 0, 2.25834e-08, 0, 3.52481, 0, -1.68912e-06, 0, -0.149563, 14.7392, 3.70974, -6.83866 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/InnerWall"]
 
@@ -201,7 +230,7 @@ shape = SubResource( 6 )
 editor/display_folded = true
 transform = Transform( -8.82087e-07, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, -6.53761e-09, -19.8562, 3.70974, -21.4948 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall7"]
 
@@ -212,7 +241,7 @@ shape = SubResource( 6 )
 editor/display_folded = true
 transform = Transform( -8.82087e-07, 0, 0.149563, 0, 3.52481, 0, -20.1798, 0, -6.5376e-09, -5.87436, 3.70974, -50.6975 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall2"]
 
@@ -223,7 +252,7 @@ shape = SubResource( 6 )
 editor/display_folded = true
 transform = Transform( 1.52353e-06, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, 1.12917e-08, 3.41045, 3.70974, -43.0223 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall4"]
 
@@ -234,7 +263,7 @@ shape = SubResource( 6 )
 editor/display_folded = true
 transform = Transform( 1.92001e-07, 0, -0.106271, 0, 1.38674, 0, 2.54313, 0, 8.02328e-09, 3.39144, 5.72817, -20.4173 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/DoorTopEntrance"]
 
@@ -245,7 +274,7 @@ shape = SubResource( 6 )
 editor/display_folded = true
 transform = Transform( 2.54313, 0, 1.26685e-08, 0, 1.38674, 0, -3.03165e-07, 0, 0.106271, -12.4746, 5.72817, -4.26105 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/DoorTopEntrance3"]
 
@@ -256,7 +285,7 @@ shape = SubResource( 6 )
 editor/display_folded = true
 transform = Transform( 2.17644, 0, 1.26685e-08, 0, 3.45574, 0, -2.59451e-07, 0, 0.106271, -7.92431, 3.43422, -4.39188 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 14 )
+material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/InnerSmallWall"]
 
@@ -267,7 +296,7 @@ shape = SubResource( 6 )
 editor/display_folded = true
 transform = Transform( 2.6604, 0, 1.26685e-08, 0, 3.45574, 0, -3.17145e-07, 0, 0.106271, -17.4017, 3.43422, -4.39188 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 14 )
+material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/InnerSmallWall2"]
 
@@ -278,18 +307,29 @@ shape = SubResource( 6 )
 editor/display_folded = true
 transform = Transform( 1.92001e-07, 0, -0.106271, 0, 1.38674, 0, 2.54313, 0, 8.02328e-09, -5.808, 5.72817, -28.2136 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/DoorTopEntrance2"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/DoorTopEntrance2/StaticBody"]
 shape = SubResource( 6 )
 
+[node name="DoorTopEntrance4" type="MeshInstance" parent="Walls"]
+editor/display_folded = true
+transform = Transform( 1.92001e-07, 0, -0.106271, 0, 0.961631, 0, 2.54313, 0, 8.02324e-09, -20.1402, 6.17193, 0.860033 )
+mesh = SubResource( 5 )
+material/0 = ExtResource( 14 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/DoorTopEntrance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/DoorTopEntrance4/StaticBody"]
+shape = SubResource( 6 )
+
 [node name="EntranceWall3" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( -4.64865e-07, 0, 0.149563, 0, 3.52481, 0, -10.6349, 0, -6.5376e-09, -5.87436, 3.70974, -15.0601 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall3"]
 
@@ -300,125 +340,128 @@ shape = SubResource( 6 )
 editor/display_folded = true
 transform = Transform( 4.31762e-07, 0, -0.149563, 0, 3.52481, 0, 5.71886, 0, 1.12917e-08, 3.41045, 3.70974, -12.3665 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall5"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall5/StaticBody"]
 shape = SubResource( 6 )
 
+[node name="Button" parent="Walls" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40762, -30.8448 )
+
 [node name="RoomProps" type="Spatial" parent="."]
 editor/display_folded = true
 
-[node name="HospitalBed" parent="RoomProps" instance=ExtResource( 15 )]
+[node name="HospitalBed" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( 2.35513, 0, 0, 0, 2.35513, 0, 0, 0, 2.35513, -15.8315, 0.770157, -22.73 )
 
-[node name="HospitalBed5" parent="RoomProps" instance=ExtResource( 15 )]
+[node name="HospitalBed5" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( 2.35513, 0, 0, 0, 2.35513, 0, 0, 0, 2.35513, -15.8315, 0.770157, -33.3963 )
 
-[node name="HospitalBed6" parent="RoomProps" instance=ExtResource( 15 )]
+[node name="HospitalBed6" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( 1.91764, 0, 1.36723, 0, 2.35513, 0, -1.36723, 0, 1.91764, -15.8315, 0.770157, -36.8518 )
 
-[node name="HospitalBed4" parent="RoomProps" instance=ExtResource( 15 )]
+[node name="HospitalBed4" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( 0.0178259, 0, -2.35506, 0, 2.35513, 0, 2.35506, 0, 0.0178259, -17.6012, 0.770157, -29.9922 )
 
-[node name="HospitalBed3" parent="RoomProps" instance=ExtResource( 15 )]
+[node name="HospitalBed3" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( 2.18015, 0.890843, 0, -0.890843, 2.18015, 0, 0, 0, 2.35513, -16.1001, 1.52908, -28.5415 )
 
-[node name="HospitalBed2" parent="RoomProps" instance=ExtResource( 15 )]
+[node name="HospitalBed2" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( 2.03981, 0, 1.17721, 0, 2.35513, 0, -1.17721, 0, 2.03981, -16.3805, 0.770157, -25.6028 )
 
-[node name="DeadBody1" parent="RoomProps" instance=ExtResource( 16 )]
+[node name="DeadBody1" parent="RoomProps" instance=ExtResource( 18 )]
 transform = Transform( 0.0221738, 0, 0, 0, 0.0221738, 0, 0, 0, 0.0221738, -13.1143, 0, -27.7506 )
 
-[node name="DeadBody2" parent="RoomProps" instance=ExtResource( 16 )]
+[node name="DeadBody2" parent="RoomProps" instance=ExtResource( 18 )]
 transform = Transform( 0.0221738, 0, 0, 0, 0.0221738, 0, 0, 0, 0.0221738, -16.0573, 1.48216, -33.5928 )
 
-[node name="DeadBody3" parent="RoomProps" instance=ExtResource( 17 )]
+[node name="DeadBody3" parent="RoomProps" instance=ExtResource( 19 )]
 transform = Transform( -0.00152711, 0, 0.0190254, 0, 0.0190866, 0, -0.0190254, 0, -0.00152711, -17.7, 1.34776, -29.7105 )
 
-[node name="DeadBody4" parent="RoomProps" instance=ExtResource( 17 )]
+[node name="DeadBody4" parent="RoomProps" instance=ExtResource( 19 )]
 transform = Transform( 0.0190786, 0, 0.000551442, 0, 0.0190866, 0, -0.000551442, 0, 0.0190786, -16.8375, 0.170874, -18.9663 )
 
-[node name="DeadBody5" parent="RoomProps" instance=ExtResource( 18 )]
+[node name="DeadBody5" parent="RoomProps" instance=ExtResource( 20 )]
 transform = Transform( -0.0127671, 0, 0.00119387, 0, 0.0128228, 0, -0.00119387, 0, -0.0127671, -10.6856, 0.174752, -23.6088 )
 
-[node name="Couch" parent="RoomProps" instance=ExtResource( 19 )]
+[node name="Couch" parent="RoomProps" instance=ExtResource( 21 )]
 transform = Transform( 0.141062, -4.05066e-05, -0.147041, 3.95519e-05, 0.203763, -1.81888e-05, 0.147041, -1.59498e-05, 0.141062, 12.5013, 0.297598, -0.514404 )
 
-[node name="VendingMachine" parent="RoomProps" instance=ExtResource( 20 )]
+[node name="VendingMachine" parent="RoomProps" instance=ExtResource( 22 )]
 transform = Transform( 1.97246, 0, -0.0706546, 0, 1.97373, 0, 0.0706546, 0, 1.97246, 5.29132, 0.239033, -6.15241 )
 
-[node name="Bob" parent="RoomProps" instance=ExtResource( 21 )]
-transform = Transform( -0.036371, 0, -0.463199, 0, 0.464624, 0, 0.463199, 0, -0.036371, 4.05653, 0.355647, -22.0446 )
+[node name="Bob" parent="RoomProps" instance=ExtResource( 23 )]
+transform = Transform( -0.036371, 0, -0.463199, 0, 0.464624, 0, 0.463199, 0, -0.036371, 4.07012, 0.355647, -22.2177 )
 
-[node name="Trashcan" parent="RoomProps" instance=ExtResource( 22 )]
+[node name="Trashcan" parent="RoomProps" instance=ExtResource( 24 )]
 transform = Transform( 0.347265, 0, 0, 0, 0.347265, 0, 0, 0, 0.347265, 16.8741, 0.232947, 2.75077 )
 
-[node name="Curtain" parent="RoomProps" instance=ExtResource( 23 )]
+[node name="Curtain" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -0.124568, 0, -0.095413, 0, 0.15691, 0, 0.095413, 0, -0.124568, 18.7941, 0.663358, 8.98 )
 
-[node name="Curtain2" parent="RoomProps" instance=ExtResource( 23 )]
+[node name="Curtain2" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -0.11544, 0, -0.106275, 0, 0.15691, 0, 0.106275, 0, -0.11544, 16.2292, 0.663358, 10.9446 )
 
-[node name="Curtain3" parent="RoomProps" instance=ExtResource( 23 )]
+[node name="Curtain3" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -0.11544, 0, -0.106275, 0, 0.15691, 0, 0.106275, 0, -0.11544, 13.7492, 0.663358, 13.2277 )
 
-[node name="Curtain4" parent="RoomProps" instance=ExtResource( 23 )]
+[node name="Curtain4" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -0.150458, 0, 0.0445319, 0, 0.15691, 0, -0.0445319, 0, -0.150458, 11.4272, 0.663358, 15.6808 )
 
-[node name="Curtain5" parent="RoomProps" instance=ExtResource( 23 )]
+[node name="Curtain5" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -0.0260412, 0, -0.154734, 0, 0.15691, 0, 0.154734, 0, -0.0260412, 8.7935, 0.663358, 14.8278 )
 
-[node name="Curtain7" parent="RoomProps" instance=ExtResource( 23 )]
+[node name="Curtain7" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -0.0949157, 0, -0.124947, 0, 0.15691, 0, 0.124947, 0, -0.0949157, 7.68875, 0.663358, 21.3921 )
 
-[node name="Curtain8" parent="RoomProps" instance=ExtResource( 23 )]
+[node name="Curtain8" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -0.0620592, 0, -0.144116, 0, 0.15691, 0, 0.144116, 0, -0.0620592, 5.66388, 0.663358, 24.0576 )
 
-[node name="Curtain10" parent="RoomProps" instance=ExtResource( 23 )]
+[node name="Curtain10" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -0.0975753, 0, -0.122881, 0, 0.15691, 0, 0.122881, 0, -0.0975753, 2.89033, 0.663358, 30.1632 )
 
-[node name="Curtain11" parent="RoomProps" instance=ExtResource( 23 )]
+[node name="Curtain11" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -0.0975753, 0, -0.122881, 0, 0.15691, 0, 0.122881, 0, -0.0975753, 0.819733, 0.663358, 32.7708 )
 
-[node name="Curtain12" parent="RoomProps" instance=ExtResource( 23 )]
+[node name="Curtain12" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -0.0273373, 0, -0.15451, 0, 0.15691, 0, 0.15451, 0, -0.0273373, -1.29776, 0.663358, 35.4375 )
 
-[node name="Curtain9" parent="RoomProps" instance=ExtResource( 23 )]
+[node name="Curtain9" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -0.0620592, 0, -0.144116, 0, 0.15691, 0, 0.144116, 0, -0.0620592, 4.31777, -0.473705, 27.1836 )
 
-[node name="Curtain6" parent="RoomProps" instance=ExtResource( 23 )]
+[node name="Curtain6" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -0.0365002, -0.0123092, -0.152108, -0.0219925, 0.15519, -0.00728129, 0.151013, 0.0196257, -0.0378255, 8.27743, 0.663358, 17.8943 )
 
-[node name="DeadBody6" parent="RoomProps" instance=ExtResource( 16 )]
+[node name="DeadBody6" parent="RoomProps" instance=ExtResource( 18 )]
 transform = Transform( 0.0255738, 0, 0.0234928, 0, 0.0347265, 0, -0.0234928, 0, 0.0255738, 14.9687, 0.232947, 18.3097 )
 
-[node name="FullBob" parent="RoomProps" instance=ExtResource( 24 )]
+[node name="FullBob" parent="RoomProps" instance=ExtResource( 26 )]
 transform = Transform( -0.411388, -0.631412, 2.98256e-09, 0.0486367, -0.0316886, 0.751366, -0.629536, 0.410166, 0.0580491, 17.2638, 0.661456, 17.0521 )
 
-[node name="HospitalBed7" parent="RoomProps" instance=ExtResource( 15 )]
+[node name="HospitalBed7" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( 2.09778, 0, 1.65234, 0, 2.67038, 0, -1.65234, 0, 2.09778, 17.4443, 0.715095, 22.0987 )
 
-[node name="HospitalBed9" parent="RoomProps" instance=ExtResource( 15 )]
+[node name="HospitalBed9" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( -1.7621, 0, 2.00647, 0, 2.67038, 0, -2.00647, 0, -1.7621, 15.2154, 0.715095, 23.8543 )
 
-[node name="HospitalBed10" parent="RoomProps" instance=ExtResource( 15 )]
+[node name="HospitalBed10" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( -0.0911243, 0, 2.66882, 0, 2.67038, 0, -2.66882, 0, -0.0911243, 14.5137, 0.715095, 36.3502 )
 
-[node name="HospitalBed12" parent="RoomProps" instance=ExtResource( 15 )]
+[node name="HospitalBed12" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( 0.0911085, -0.00169598, 2.66882, -0.0497003, -2.66992, -6.06995e-10, 2.66836, -0.0496713, -0.0911243, 9.65871, 1.42277, 36.6675 )
 
-[node name="HospitalBed11" parent="RoomProps" instance=ExtResource( 15 )]
+[node name="HospitalBed11" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( 0.864021, 0, 2.52673, 0, 2.67038, 0, -2.52673, 0, 0.864021, 11.7588, 0.715095, 36.4443 )
 
-[node name="HospitalBed8" parent="RoomProps" instance=ExtResource( 15 )]
+[node name="HospitalBed8" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( 2.06836, -0.350106, 1.65234, 0.445669, 2.63293, -3.28988e-08, -1.62916, 0.275765, 2.09778, 16.4137, 2.12936, 22.9104 )
 
-[node name="DeadBody7" parent="RoomProps" instance=ExtResource( 18 )]
+[node name="DeadBody7" parent="RoomProps" instance=ExtResource( 20 )]
 transform = Transform( -0.00973912, 0, 0.0110897, 0, 0.0147591, 0, -0.0110897, 0, -0.00973912, 13.1347, 0.283099, 25.6816 )
 
-[node name="BloodSpatter" parent="RoomProps" instance=ExtResource( 25 )]
+[node name="BloodSpatter" parent="RoomProps" instance=ExtResource( 27 )]
 transform = Transform( -0.220817, 0, 0.975315, 0, 1, 0, -0.975315, 0, -0.220817, 10.2225, 0.334637, 28.4457 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -445,6 +488,24 @@ light_color = Color( 0.560784, 0.8, 0.929412, 1 )
 shadow_enabled = true
 omni_range = 6.64208
 
+[node name="OmniLight5" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1959, 5.24378, 2.26066 )
+light_color = Color( 0.560784, 0.8, 0.929412, 1 )
+shadow_enabled = true
+omni_range = 6.64208
+
+[node name="OmniLight6" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1959, 5.24378, 26.6031 )
+light_color = Color( 0.560784, 0.8, 0.929412, 1 )
+shadow_enabled = true
+omni_range = 6.64208
+
+[node name="OmniLight7" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54874, 5.24378, 12.217 )
+light_color = Color( 0.560784, 0.8, 0.929412, 1 )
+shadow_enabled = true
+omni_range = 11.9971
+
 [node name="OmniLight4" type="OmniLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05071, 2.63151, -4.36184 )
 light_color = Color( 0.917647, 0.929412, 0.560784, 1 )
@@ -454,5 +515,76 @@ omni_range = 2.0848
 [node name="Lobby" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7295, 0, 15.9772 )
 
-[node name="HospitalSlidingDoor" parent="Lobby" instance=ExtResource( 26 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.409121, 2.78267, 5 )
+[node name="HospitalSlidingDoor" parent="Lobby" instance=ExtResource( 28 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.409121, 2.78267, -13.7831 )
+
+[node name="Countertop" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.598567, 0, 0.419121, 0, 0.730715, 0, -0.419121, 0, -0.598567, 14.1743, 0.60491, -6.06301 )
+
+[node name="Countertop4" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.658349, 0, 0.317051, 0, 0.730715, 0, -0.317051, 0, -0.658349, 13.1722, 0.60491, -6.59775 )
+
+[node name="Countertop5" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.726386, 0, 0.0794256, 0, 0.730715, 0, -0.0794256, 0, -0.726386, 12.1307, 0.60491, -6.89994 )
+
+[node name="Countertop7" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 9.68627, 0.60491, -6.91952 )
+
+[node name="Countertop8" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 8.62754, 0.60491, -6.90091 )
+
+[node name="Countertop9" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 7.55886, 0.60491, -6.88214 )
+
+[node name="Countertop10" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 6.51401, 0.60491, -6.86378 )
+
+[node name="Countertop11" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 5.46732, 0.60491, -6.84538 )
+
+[node name="Countertop12" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 4.41827, 0.60491, -6.82695 )
+
+[node name="Countertop13" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 3.38279, 0.60491, -6.80875 )
+
+[node name="Countertop14" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 2.30822, 0.60491, -6.78987 )
+
+[node name="Countertop2" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.535695, 0, 0.496967, 0, 0.730715, 0, -0.496967, 0, -0.535695, 15.1656, 0.60491, -5.36889 )
+
+[node name="Countertop3" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.443689, 0, 0.58059, 0, 0.730715, 0, -0.58059, 0, -0.443689, 15.9112, 0.60491, -4.5626 )
+
+[node name="Countertop6" parent="Lobby" instance=ExtResource( 29 )]
+transform = Transform( -0.296065, 0, 0.668049, 0, 0.730715, 0, -0.668049, 0, -0.296065, 16.4329, 0.60491, -3.69061 )
+
+[node name="Dresser" parent="Lobby" instance=ExtResource( 30 )]
+transform = Transform( 2.03624, 0, 0, 0, 2.03624, 0, 0, 0, 2.03624, 9.88761, 0.177715, 0.534746 )
+
+[node name="Dresser2" parent="Lobby" instance=ExtResource( 30 )]
+transform = Transform( 2.03624, 0, 0, 0, 2.03624, 0, 0, 0, 2.03624, 11.6822, 0.177715, 0.546906 )
+
+[node name="Button1" parent="Lobby" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2028, 2.3852, 0.360838 )
+Level = NodePath("../..")
+
+[node name="Button2" parent="Lobby" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2593, 2.3852, 0.360838 )
+Level = NodePath("../..")
+
+[node name="Button3" parent="Lobby" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3324, 2.3852, 0.360838 )
+Level = NodePath("../..")
+
+[node name="Button4" parent="Lobby" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.30836, 2.3852, 0.360838 )
+Level = NodePath("../..")
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.83556, 1.53018, -22.5085 )
+shadow_enabled = true
+spot_range = 24.7029
+
+[editable path="Player/CameraController"]

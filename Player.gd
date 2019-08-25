@@ -128,6 +128,9 @@ func _physics_process(delta):
 				
 		elif ("LightSwitch" in selectedObjGroups):
 			selectedObj.get_parent().get_parent().toggle()
+			
+		elif ("Buttons" in selectedObjGroups):
+			selectedObj.get_parent().get_parent().toggle()
 
 	if (Input.is_key_pressed(KEY_ESCAPE) && isInteracting == true):
 		isInteracting = false

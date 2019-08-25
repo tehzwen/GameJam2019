@@ -616,7 +616,6 @@ lightPath = NodePath("../OverheadLight2/OmniLight2")
 transform = Transform( 0.277761, 0, 0, 0, 0.396189, 0, 0, 0, 0.378036, 8.50208, 0.77652, -14.0474 )
 
 [node name="LivingRoom" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Couch" parent="LivingRoom" instance=ExtResource( 39 )]
 transform = Transform( -0.122468, 0, 1.07065e-08, 0, 0.122468, 0, -1.07065e-08, 0, -0.122468, -0.0107298, 0.449714, -14.7687 )
@@ -647,6 +646,10 @@ transform = Transform( -1.21413e-08, 0, -0.322989, 0, 0.386896, 0, 0.277761, 0, 
 [node name="Door2" parent="LivingRoom" instance=ExtResource( 38 )]
 transform = Transform( -0.277761, 0, -3.30489e-08, 0, 0.396189, 0, 2.42826e-08, 0, -0.378036, -5.78813, 0.77652, -13.5213 )
 
+[node name="Pivot" parent="LivingRoom/Door2" index="0"]
+transform = Transform( 0.99623, 0, -0.0867496, 0, 1, 0, 0.0867496, 0, 0.99623, 0, 0, 0 )
+locked = true
+
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, -1, 0, 0, 0, 1, 4.32307, 2.62868, -13.7315 )
 visible = false
@@ -668,3 +671,5 @@ shape = SubResource( 19 )
 [connection signal="modal_closed" from="Kitchen/Table/Note/Popup" to="Player" method="_on_Popup_modal_closed"]
 [connection signal="popup_hide" from="Kitchen/Table/Note/Popup" to="Player" method="_on_Popup_popup_hide"]
 [connection signal="body_entered" from="FallArea" to="." method="_on_FallArea_body_entered"]
+
+[editable path="LivingRoom/Door2"]
