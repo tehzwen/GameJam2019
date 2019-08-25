@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Hospital.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -26,13 +26,14 @@
 [ext_resource path="res://Curtain.tscn" type="PackedScene" id=24]
 [ext_resource path="res://FullBob.tscn" type="PackedScene" id=25]
 [ext_resource path="res://BloodSpatter.tscn" type="PackedScene" id=26]
-[ext_resource path="res://LightFlicker.gd" type="Script" id=27]
-[ext_resource path="res://HospitalSlidingDoor.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Countertop.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Dresser.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Button.tscn" type="PackedScene" id=31]
-[ext_resource path="res://BobDisapearEvent.gd" type="Script" id=32]
-[ext_resource path="res://BobAppearEvent.gd" type="Script" id=33]
+[ext_resource path="res://WorldEnvironment.gd" type="Script" id=27]
+[ext_resource path="res://LightFlicker.gd" type="Script" id=28]
+[ext_resource path="res://HospitalSlidingDoor.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Countertop.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Dresser.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Button.tscn" type="PackedScene" id=32]
+[ext_resource path="res://BobDisapearEvent.gd" type="Script" id=33]
+[ext_resource path="res://BobAppearEvent.gd" type="Script" id=34]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -116,6 +117,7 @@ script/source = "extends Area
 extents = Vector3( 4.71451, 1.50055, 1 )
 
 [sub_resource type="Environment" id=10]
+background_mode = 2
 background_energy = 0.01
 ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.01
@@ -129,6 +131,9 @@ glow_intensity = 4.59
 
 [sub_resource type="BoxShape" id=11]
 extents = Vector3( 2.53792, 1, 2.97976 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 4.70555, 2.77145, 1.5425 )
 
 [node name="Hospital" type="Spatial"]
 script = ExtResource( 1 )
@@ -521,29 +526,28 @@ transform = Transform( -0.220817, 0, 0.975315, 0, 1, 0, -0.975315, 0, -0.220817,
 [node name="EntranceBob" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -1.86332e-05, 0, -0.569701, 0, 0.569701, 0, 0.569701, 0, -1.86332e-05, 5.22449, 0.193994, -22.2499 )
 
+[node name="ToggleBeds" type="Spatial" parent="RoomProps"]
+editor/display_folded = true
+visible = false
+
+[node name="HospitalBed13" parent="RoomProps/ToggleBeds" instance=ExtResource( 17 )]
+transform = Transform( 0.1043, -0.0129033, -2.35278, 0.289154, 2.33731, 0, 2.33498, -0.288866, 0.105096, 4.88753, 0.704688, -21.0364 )
+
+[node name="HospitalBed16" parent="RoomProps/ToggleBeds" instance=ExtResource( 17 )]
+transform = Transform( 0.104493, 0.0112392, -2.35278, -0.251864, 2.34162, -9.24277e-10, 2.33929, 0.251613, 0.105096, 4.93567, 3.0074, -19.9586 )
+
+[node name="HospitalBed15" parent="RoomProps/ToggleBeds" instance=ExtResource( 17 )]
+transform = Transform( 0.0971481, 0.0400915, -2.35278, -0.898427, 2.17703, -4.27118e-09, 2.17486, 0.897532, 0.105096, 4.98613, 1.20823, -18.8289 )
+
+[node name="HospitalBed14" parent="RoomProps/ToggleBeds" instance=ExtResource( 17 )]
+transform = Transform( 0.087754, -0.0578301, -2.35278, 1.29594, 1.96651, 7.56639e-09, 1.96456, -1.29465, 0.105096, 4.81452, 1.41962, -22.6708 )
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 10 )
+script = ExtResource( 27 )
 
 [node name="Lights" type="Spatial" parent="."]
 editor/display_folded = true
-
-[node name="OmniLight" type="OmniLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50754, 5.24378, -33.6529 )
-light_color = Color( 0.560784, 0.8, 0.929412, 1 )
-shadow_enabled = true
-omni_range = 6.64208
-
-[node name="OmniLight2" type="OmniLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50754, 5.24378, -21.1132 )
-light_color = Color( 0.560784, 0.8, 0.929412, 1 )
-shadow_enabled = true
-omni_range = 6.64208
-
-[node name="OmniLight3" type="OmniLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50754, 5.24378, -9.38052 )
-light_color = Color( 0.560784, 0.8, 0.929412, 1 )
-shadow_enabled = true
-omni_range = 6.64208
 
 [node name="OmniLight5" type="OmniLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1959, 5.24378, 2.26066 )
@@ -551,11 +555,15 @@ light_color = Color( 0.560784, 0.8, 0.929412, 1 )
 shadow_enabled = true
 omni_range = 6.64208
 
-[node name="OmniLight6" type="OmniLight" parent="Lights"]
+[node name="CornerWithCurtainLight" type="OmniLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1959, 5.24378, 26.6031 )
 light_color = Color( 0.560784, 0.8, 0.929412, 1 )
 shadow_enabled = true
-omni_range = 6.64208
+omni_range = 12.6136
+script = ExtResource( 28 )
+lightSourceNodePath = NodePath(".")
+delay = 2.5
+flickerEnergy = 4.0
 
 [node name="OmniLight7" type="OmniLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54874, 5.24378, 12.217 )
@@ -568,77 +576,97 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05071, 2.63151, -4.36184 )
 light_color = Color( 0.917647, 0.929412, 0.560784, 1 )
 shadow_enabled = true
 omni_range = 2.0848
-script = ExtResource( 27 )
+script = ExtResource( 28 )
 lightSourceNodePath = NodePath(".")
+
+[node name="HallwayLights" type="Spatial" parent="Lights"]
+
+[node name="OmniLight" type="OmniLight" parent="Lights/HallwayLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50754, 5.24378, -33.6529 )
+light_color = Color( 0.560784, 0.8, 0.929412, 1 )
+shadow_enabled = true
+omni_range = 6.64208
+
+[node name="OmniLight2" type="OmniLight" parent="Lights/HallwayLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50754, 5.24378, -21.1132 )
+light_color = Color( 0.560784, 0.8, 0.929412, 1 )
+shadow_enabled = true
+omni_range = 6.64208
+
+[node name="OmniLight3" type="OmniLight" parent="Lights/HallwayLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50754, 5.24378, -9.38052 )
+light_color = Color( 0.560784, 0.8, 0.929412, 1 )
+shadow_enabled = true
+omni_range = 6.64208
 
 [node name="Lobby" type="Spatial" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7295, 0, 15.9772 )
 
-[node name="HospitalSlidingDoor" parent="Lobby" instance=ExtResource( 28 )]
+[node name="HospitalSlidingDoor" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.409121, 2.78267, -13.7831 )
 
-[node name="Countertop" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.598567, 0, 0.419121, 0, 0.730715, 0, -0.419121, 0, -0.598567, 14.1743, 0.60491, -6.06301 )
 
-[node name="Countertop4" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop4" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.658349, 0, 0.317051, 0, 0.730715, 0, -0.317051, 0, -0.658349, 13.1722, 0.60491, -6.59775 )
 
-[node name="Countertop5" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop5" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.726386, 0, 0.0794256, 0, 0.730715, 0, -0.0794256, 0, -0.726386, 12.1307, 0.60491, -6.89994 )
 
-[node name="Countertop7" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop7" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 9.68627, 0.60491, -6.91952 )
 
-[node name="Countertop8" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop8" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 8.62754, 0.60491, -6.90091 )
 
-[node name="Countertop9" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop9" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 7.55886, 0.60491, -6.88214 )
 
-[node name="Countertop10" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop10" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 6.51401, 0.60491, -6.86378 )
 
-[node name="Countertop11" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop11" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 5.46732, 0.60491, -6.84538 )
 
-[node name="Countertop12" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop12" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 4.41827, 0.60491, -6.82695 )
 
-[node name="Countertop13" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop13" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 3.38279, 0.60491, -6.80875 )
 
-[node name="Countertop14" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop14" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 2.30822, 0.60491, -6.78987 )
 
-[node name="Countertop2" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop2" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.535695, 0, 0.496967, 0, 0.730715, 0, -0.496967, 0, -0.535695, 15.1656, 0.60491, -5.36889 )
 
-[node name="Countertop3" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop3" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.443689, 0, 0.58059, 0, 0.730715, 0, -0.58059, 0, -0.443689, 15.9112, 0.60491, -4.5626 )
 
-[node name="Countertop6" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Countertop6" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.296065, 0, 0.668049, 0, 0.730715, 0, -0.668049, 0, -0.296065, 16.4329, 0.60491, -3.69061 )
 
-[node name="Dresser" parent="Lobby" instance=ExtResource( 30 )]
+[node name="Dresser" parent="Lobby" instance=ExtResource( 31 )]
 transform = Transform( 2.03624, 0, 0, 0, 2.03624, 0, 0, 0, 2.03624, 9.88761, 0.177715, 0.534746 )
 
-[node name="Dresser2" parent="Lobby" instance=ExtResource( 30 )]
+[node name="Dresser2" parent="Lobby" instance=ExtResource( 31 )]
 transform = Transform( 2.03624, 0, 0, 0, 2.03624, 0, 0, 0, 2.03624, 11.6822, 0.177715, 0.546906 )
 
-[node name="Button1" parent="Lobby" instance=ExtResource( 31 )]
+[node name="Button1" parent="Lobby" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2028, 2.3852, 0.360838 )
 Level = NodePath("../..")
 
-[node name="Button2" parent="Lobby" instance=ExtResource( 31 )]
+[node name="Button2" parent="Lobby" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2593, 2.3852, 0.360838 )
 Level = NodePath("../..")
 
-[node name="Button3" parent="Lobby" instance=ExtResource( 31 )]
+[node name="Button3" parent="Lobby" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3324, 2.3852, 0.360838 )
 Level = NodePath("../..")
 
-[node name="Button4" parent="Lobby" instance=ExtResource( 31 )]
+[node name="Button4" parent="Lobby" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.30836, 2.3852, 0.360838 )
 Level = NodePath("../..")
 
@@ -646,22 +674,31 @@ Level = NodePath("../..")
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.0205, 2.67215, -22.5085 )
 shadow_enabled = true
 spot_range = 24.7029
-script = ExtResource( 27 )
+script = ExtResource( 28 )
 lightSourceNodePath = NodePath(".")
 delay = 0.5
 
 [node name="Area" type="Area" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6818, 1.60741, 1.12916 )
 shape = SubResource( 11 )
 
 [node name="BobDisapearEvent" type="Node" parent="."]
-script = ExtResource( 32 )
+script = ExtResource( 33 )
 
 [node name="BobAppearEvent" type="Node" parent="."]
-script = ExtResource( 33 )
+script = ExtResource( 34 )
+
+[node name="AmbientChangeArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1086, 2.91494, -7.7735 )
+
+[node name="CollisionShape" type="CollisionShape" parent="AmbientChangeArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0847038, 0, 0 )
+shape = SubResource( 12 )
 [connection signal="body_entered" from="Walls/Bobdisappeararea" to="BobDisapearEvent" method="_on_Bobdisappeararea_body_entered"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_entered" from="AmbientChangeArea" to="WorldEnvironment" method="_on_AmbientChangeArea_body_entered"]
 
 [editable path="Player/CameraController"]
