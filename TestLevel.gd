@@ -10,3 +10,8 @@ func _ready():
 func _process(delta):
 	if(Input.is_action_just_pressed("restart")):
 		get_tree().reload_current_scene()
+
+func _on_FallArea_body_entered(body):
+	print(body.name)
+	if (body.name == "Player"):
+		get_tree().change_scene("res://MineShaft.tscn")

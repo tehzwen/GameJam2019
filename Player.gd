@@ -128,17 +128,21 @@ func _physics_process(delta):
 	
 	if (Input.is_key_pressed(KEY_Q)):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
+	if (Input.is_key_pressed(KEY_O)):
+		get_tree().change_scene("res://MineShaft.tscn")
 
 #handling movement function
 func handleMovementInput(aim):
-	if (Input.is_action_pressed("ui_up") && isInteracting == false):
-		direction -= aim.z
-	if (Input.is_action_pressed("ui_down") && isInteracting == false):
-		direction += aim.z
-	if (Input.is_action_pressed("ui_left") && isInteracting == false):
-		direction -= aim.x
-	if (Input.is_action_pressed("ui_right") && isInteracting == false):
-		direction += aim.x
+	if (is_on_floor()):
+		if (Input.is_action_pressed("ui_up") && isInteracting == false):
+			direction -= aim.z
+		if (Input.is_action_pressed("ui_down") && isInteracting == false):
+			direction += aim.z
+		if (Input.is_action_pressed("ui_left") && isInteracting == false):
+			direction -= aim.x
+		if (Input.is_action_pressed("ui_right") && isInteracting == false):
+			direction += aim.x
 
 #handle mouse camera movement controls
 func _input(event):

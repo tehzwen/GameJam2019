@@ -7,12 +7,13 @@
 
 [resource]
 albedo_texture = ExtResource( 1 )
+metallic_specular = 0.0
 roughness_texture = ExtResource( 4 )
 normal_enabled = true
 normal_scale = -7.26
 normal_texture = ExtResource( 3 )
 depth_enabled = true
-depth_scale = -10.62
+depth_scale = -0.01
 depth_deep_parallax = false
 depth_flip_tangent = false
 depth_flip_binormal = false
