@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Hospital.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -26,10 +26,13 @@
 [ext_resource path="res://Curtain.tscn" type="PackedScene" id=24]
 [ext_resource path="res://FullBob.tscn" type="PackedScene" id=25]
 [ext_resource path="res://BloodSpatter.tscn" type="PackedScene" id=26]
-[ext_resource path="res://HospitalSlidingDoor.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Countertop.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Dresser.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Button.tscn" type="PackedScene" id=30]
+[ext_resource path="res://LightFlicker.gd" type="Script" id=27]
+[ext_resource path="res://HospitalSlidingDoor.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Countertop.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Dresser.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Button.tscn" type="PackedScene" id=31]
+[ext_resource path="res://BobDisapearEvent.gd" type="Script" id=32]
+[ext_resource path="res://BobAppearEvent.gd" type="Script" id=33]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -50,7 +53,7 @@ uv1_scale = Vector3( 20, 20, 20 )
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=4]
 resource_name = "Disipate"
 length = 5.0
 tracks/0/type = "bezier"
@@ -84,7 +87,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.996314, 3.31232 )
 }
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 0.627451, 0.627451, 0.627451, 1 )
 albedo_texture = ExtResource( 10 )
 roughness_texture = ExtResource( 13 )
@@ -99,12 +102,20 @@ depth_flip_binormal = false
 depth_texture = ExtResource( 11 )
 uv1_scale = Vector3( 20, 20, 20 )
 
-[sub_resource type="CubeMesh" id=5]
+[sub_resource type="CubeMesh" id=6]
 
-[sub_resource type="ConvexPolygonShape" id=6]
+[sub_resource type="ConvexPolygonShape" id=7]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[sub_resource type="Environment" id=7]
+[sub_resource type="GDScript" id=8]
+script/source = "extends Area
+
+"
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 4.71451, 1.50055, 1 )
+
+[sub_resource type="Environment" id=10]
 background_energy = 0.01
 ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.01
@@ -116,7 +127,7 @@ dof_blur_far_distance = 5.56
 glow_enabled = true
 glow_intensity = 4.59
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=11]
 extents = Vector3( 2.53792, 1, 2.97976 )
 
 [node name="Hospital" type="Spatial"]
@@ -134,6 +145,7 @@ sprintEnergy = 60
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.89606 )
 
 [node name="Walls" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="FloorEntrance" type="Spatial" parent="Walls"]
 editor/display_folded = true
@@ -164,7 +176,7 @@ material/0 = SubResource( 2 )
 shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/ExitFloor"]
-anims/Disipate = SubResource( 9 )
+anims/Disipate = SubResource( 4 )
 
 [node name="Ceiling" type="Spatial" parent="Walls"]
 editor/display_folded = true
@@ -173,7 +185,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.15813, 0 )
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Ceiling"]
 transform = Transform( 20.0447, 0, 0, 0, 0.177042, 0, 0, 0, 41.6376, 0, 0, 0 )
 mesh = SubResource( 1 )
-material/0 = SubResource( 4 )
+material/0 = SubResource( 5 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/Ceiling/MeshInstance"]
 
@@ -192,200 +204,208 @@ transform = Transform( 1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, -12.4768,
 [node name="EntranceWall" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( 20.1798, 0, 0, 0, 3.52481, 0, 0, 0, 0.149563, 0, 3.70974, -40.8835 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="EntranceWall8" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( -8.82087e-07, 0, 0.149563, 0, 3.52481, 0, -20.1798, 0, -6.53761e-09, -20.1549, 3.70974, 23.4516 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall8"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall8/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="EntranceWall9" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( -10.3408, 0, 0.128434, 0, 3.52481, 0, -17.329, 0, -0.0766407, -9.60305, 3.70974, 28.6481 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall9"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall9/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="EntranceWall6" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( -8.82087e-07, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, -6.53761e-09, 20.0903, 3.70974, -21.4948 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall6"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall6/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="InnerWall2" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( -8.82087e-07, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, -6.53761e-09, 20.0987, 3.70974, 18.7325 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/InnerWall2"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/InnerWall2/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="InnerWall3" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( -20.1798, 0, 2.25834e-08, 0, 3.52481, 0, -3.04707e-06, 0, -0.149563, -0.224566, 3.70974, 38.9234 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/InnerWall3"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/InnerWall3/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="InnerWall" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( -11.1866, 0, 2.25834e-08, 0, 3.52481, 0, -1.68912e-06, 0, -0.149563, 14.7392, 3.70974, -6.83866 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/InnerWall"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/InnerWall/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="EntranceWall7" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( -8.82087e-07, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, -6.53761e-09, -19.8562, 3.70974, -21.4948 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall7"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall7/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="EntranceWall2" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( -8.82087e-07, 0, 0.149563, 0, 3.52481, 0, -20.1798, 0, -6.5376e-09, -5.87436, 3.70974, -50.6975 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall2"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall2/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="EntranceWall4" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( 1.52353e-06, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, 1.12917e-08, 3.41045, 3.70974, -43.0223 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall4"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall4/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="DoorTopEntrance" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( 1.92001e-07, 0, -0.106271, 0, 1.38674, 0, 2.54313, 0, 8.02328e-09, 3.39144, 5.72817, -20.4173 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/DoorTopEntrance"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/DoorTopEntrance/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="DoorTopEntrance3" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( 2.54313, 0, 1.26685e-08, 0, 1.38674, 0, -3.03165e-07, 0, 0.106271, -12.4746, 5.72817, -4.26105 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/DoorTopEntrance3"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/DoorTopEntrance3/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="InnerSmallWall" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( 2.17644, 0, 1.26685e-08, 0, 3.45574, 0, -2.59451e-07, 0, 0.106271, -7.92431, 3.43422, -4.39188 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 16 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/InnerSmallWall"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/InnerSmallWall/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="InnerSmallWall2" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( 2.6604, 0, 1.26685e-08, 0, 3.45574, 0, -3.17145e-07, 0, 0.106271, -17.4017, 3.43422, -4.39188 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 16 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/InnerSmallWall2"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/InnerSmallWall2/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="DoorTopEntrance2" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( 1.92001e-07, 0, -0.106271, 0, 1.38674, 0, 2.54313, 0, 8.02328e-09, -5.808, 5.72817, -28.2136 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/DoorTopEntrance2"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/DoorTopEntrance2/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="DoorTopEntrance4" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( 1.92001e-07, 0, -0.106271, 0, 0.961631, 0, 2.54313, 0, 8.02324e-09, -20.1402, 6.17193, 0.860033 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/DoorTopEntrance4"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/DoorTopEntrance4/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="EntranceWall3" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( -4.64865e-07, 0, 0.149563, 0, 3.52481, 0, -10.6349, 0, -6.5376e-09, -5.87436, 3.70974, -15.0601 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall3"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall3/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="EntranceWall5" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
 transform = Transform( 4.31762e-07, 0, -0.149563, 0, 3.52481, 0, 5.71886, 0, 1.12917e-08, 3.41045, 3.70974, -12.3665 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
 [node name="StaticBody" type="StaticBody" parent="Walls/EntranceWall5"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/EntranceWall5/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
+
+[node name="Bobdisappeararea" type="Area" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.703751, 1.06769, -25.7225 )
+script = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Bobdisappeararea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92144, 0.614279, 0 )
+shape = SubResource( 9 )
 
 [node name="RoomProps" type="Spatial" parent="."]
 editor/display_folded = true
@@ -498,11 +518,11 @@ transform = Transform( -0.00973912, 0, 0.0110897, 0, 0.0147591, 0, -0.0110897, 0
 [node name="BloodSpatter" parent="RoomProps" instance=ExtResource( 26 )]
 transform = Transform( -0.220817, 0, 0.975315, 0, 1, 0, -0.975315, 0, -0.220817, 10.2225, 0.334637, 28.4457 )
 
-[node name="FullBob2" parent="RoomProps" instance=ExtResource( 25 )]
+[node name="EntranceBob" parent="RoomProps" instance=ExtResource( 25 )]
 transform = Transform( -1.86332e-05, 0, -0.569701, 0, 0.569701, 0, 0.569701, 0, -1.86332e-05, 5.22449, 0.193994, -22.2499 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 7 )
+environment = SubResource( 10 )
 
 [node name="Lights" type="Spatial" parent="."]
 editor/display_folded = true
@@ -543,80 +563,82 @@ light_color = Color( 0.560784, 0.8, 0.929412, 1 )
 shadow_enabled = true
 omni_range = 11.9971
 
-[node name="OmniLight4" type="OmniLight" parent="Lights"]
+[node name="VendingMachine" type="OmniLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05071, 2.63151, -4.36184 )
 light_color = Color( 0.917647, 0.929412, 0.560784, 1 )
 shadow_enabled = true
 omni_range = 2.0848
+script = ExtResource( 27 )
+lightSourceNodePath = NodePath(".")
 
 [node name="Lobby" type="Spatial" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7295, 0, 15.9772 )
 
-[node name="HospitalSlidingDoor" parent="Lobby" instance=ExtResource( 27 )]
+[node name="HospitalSlidingDoor" parent="Lobby" instance=ExtResource( 28 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.409121, 2.78267, -13.7831 )
 
-[node name="Countertop" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.598567, 0, 0.419121, 0, 0.730715, 0, -0.419121, 0, -0.598567, 14.1743, 0.60491, -6.06301 )
 
-[node name="Countertop4" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop4" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.658349, 0, 0.317051, 0, 0.730715, 0, -0.317051, 0, -0.658349, 13.1722, 0.60491, -6.59775 )
 
-[node name="Countertop5" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop5" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.726386, 0, 0.0794256, 0, 0.730715, 0, -0.0794256, 0, -0.726386, 12.1307, 0.60491, -6.89994 )
 
-[node name="Countertop7" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop7" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 9.68627, 0.60491, -6.91952 )
 
-[node name="Countertop8" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop8" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 8.62754, 0.60491, -6.90091 )
 
-[node name="Countertop9" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop9" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 7.55886, 0.60491, -6.88214 )
 
-[node name="Countertop10" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop10" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 6.51401, 0.60491, -6.86378 )
 
-[node name="Countertop11" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop11" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 5.46732, 0.60491, -6.84538 )
 
-[node name="Countertop12" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop12" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 4.41827, 0.60491, -6.82695 )
 
-[node name="Countertop13" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop13" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 3.38279, 0.60491, -6.80875 )
 
-[node name="Countertop14" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop14" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.730602, 0, -0.012838, 0, 0.730715, 0, 0.012838, 0, -0.730602, 2.30822, 0.60491, -6.78987 )
 
-[node name="Countertop2" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop2" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.535695, 0, 0.496967, 0, 0.730715, 0, -0.496967, 0, -0.535695, 15.1656, 0.60491, -5.36889 )
 
-[node name="Countertop3" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop3" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.443689, 0, 0.58059, 0, 0.730715, 0, -0.58059, 0, -0.443689, 15.9112, 0.60491, -4.5626 )
 
-[node name="Countertop6" parent="Lobby" instance=ExtResource( 28 )]
+[node name="Countertop6" parent="Lobby" instance=ExtResource( 29 )]
 transform = Transform( -0.296065, 0, 0.668049, 0, 0.730715, 0, -0.668049, 0, -0.296065, 16.4329, 0.60491, -3.69061 )
 
-[node name="Dresser" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Dresser" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( 2.03624, 0, 0, 0, 2.03624, 0, 0, 0, 2.03624, 9.88761, 0.177715, 0.534746 )
 
-[node name="Dresser2" parent="Lobby" instance=ExtResource( 29 )]
+[node name="Dresser2" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( 2.03624, 0, 0, 0, 2.03624, 0, 0, 0, 2.03624, 11.6822, 0.177715, 0.546906 )
 
-[node name="Button1" parent="Lobby" instance=ExtResource( 30 )]
+[node name="Button1" parent="Lobby" instance=ExtResource( 31 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2028, 2.3852, 0.360838 )
 Level = NodePath("../..")
 
-[node name="Button2" parent="Lobby" instance=ExtResource( 30 )]
+[node name="Button2" parent="Lobby" instance=ExtResource( 31 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2593, 2.3852, 0.360838 )
 Level = NodePath("../..")
 
-[node name="Button3" parent="Lobby" instance=ExtResource( 30 )]
+[node name="Button3" parent="Lobby" instance=ExtResource( 31 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3324, 2.3852, 0.360838 )
 Level = NodePath("../..")
 
-[node name="Button4" parent="Lobby" instance=ExtResource( 30 )]
+[node name="Button4" parent="Lobby" instance=ExtResource( 31 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.30836, 2.3852, 0.360838 )
 Level = NodePath("../..")
 
@@ -624,12 +646,22 @@ Level = NodePath("../..")
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.0205, 2.67215, -22.5085 )
 shadow_enabled = true
 spot_range = 24.7029
+script = ExtResource( 27 )
+lightSourceNodePath = NodePath(".")
+delay = 0.5
 
 [node name="Area" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6818, 1.60741, 1.12916 )
-shape = SubResource( 8 )
+shape = SubResource( 11 )
+
+[node name="BobDisapearEvent" type="Node" parent="."]
+script = ExtResource( 32 )
+
+[node name="BobAppearEvent" type="Node" parent="."]
+script = ExtResource( 33 )
+[connection signal="body_entered" from="Walls/Bobdisappeararea" to="BobDisapearEvent" method="_on_Bobdisappeararea_body_entered"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 
 [editable path="Player/CameraController"]
