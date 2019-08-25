@@ -3,6 +3,7 @@ extends KinematicBody
 export (int) var walkSpeed
 export (int) var sprintEnergy
 export (bool) var isInteracting
+export (NodePath) var apartmentKeyPath
 
 var originalSprintEnergy
 var sprintThreshold
@@ -117,8 +118,31 @@ func _physics_process(delta):
 			isInteracting = true
 			selectedObj.get_parent().get_node("Popup").popup_centered()
 			pageTurnSound.play()
+			print("test")
+			print(selectedObj.name)
+			if (selectedObj.get_parent().name == "Note1"):
+				handleNote1()
+			elif (selectedObj.get_parent().name == "Note2"):
+				handleNote2()
+			elif (selectedObj.get_parent().name == "Note3"):
+				handleNote3()
+			elif (selectedObj.get_parent().name == "Note4"):
+				handleNote4()
+			elif (selectedObj.get_parent().name == "Note5"):
+				handleNote5()
+			elif (selectedObj.get_parent().name == "Note6"):
+				handleNote6()
+			elif (selectedObj.get_parent().name == "Note7"):
+				handleNote7()
+			elif (selectedObj.get_parent().name == "Note8"):
+				handleNote8()
+			elif (selectedObj.get_parent().name == "Note9"):
+				handleNote9()
+			elif (selectedObj.get_parent().name == "Note10"):
+				handleNote10()
+				
 		# pick up object if e key is pressed and object is obtainable
-		elif ("Obtainable" in selectedObjGroups):
+		elif ("Obtainable" in selectedObjGroups && selectedObj.get_parent().isInteractable):
 			selectedObj.get_parent().get_node("Label").showLabel()
 		elif ("Door" in selectedObjGroups):
 			if (!selectedObj.get_parent().get_parent().open):
@@ -150,6 +174,37 @@ func handleMovementInput(aim):
 			direction -= aim.x
 		if (Input.is_action_pressed("ui_right") && isInteracting == false):
 			direction += aim.x
+			
+func handleNote1():
+	yield(get_tree().create_timer(2.0), "timeout")
+	print("read note 1")
+	
+func handleNote2():
+	pass
+	
+func handleNote3():
+	pass
+
+func handleNote4():
+	pass
+
+func handleNote5():
+	pass
+	
+func handleNote6():
+	pass
+	
+func handleNote7():
+	pass
+	
+func handleNote8():
+	pass
+	
+func handleNote9():
+	pass
+	
+func handleNote10():
+	get_node(apartmentKeyPath).Trigger()
 
 #handle mouse camera movement controls
 func _input(event):

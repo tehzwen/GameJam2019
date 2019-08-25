@@ -3,7 +3,7 @@ extends Spatial
 export (NodePath) var lightPath
 export (NodePath) var triggerNodePath
 export (bool) var isTrigger = false
-var enabled = false
+var enabled = true
 var light
 var triggerNode
 var originalEnergy

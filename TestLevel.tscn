@@ -6,22 +6,22 @@
 [ext_resource path="res://Player.gd" type="Script" id=4]
 [ext_resource path="res://CameraController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Key_2_Release.obj" type="ArrayMesh" id=6]
-[ext_resource path="res://Outline.gd" type="Script" id=7]
-[ext_resource path="res://ApartmentKeyLabel.gd" type="Script" id=8]
-[ext_resource path="res://ApartmentAudio.gd" type="Script" id=9]
-[ext_resource path="res://Stairs.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Materials/neutralWallPaint.tres" type="Material" id=11]
-[ext_resource path="res://Materials/RedPaint.tres" type="Material" id=12]
-[ext_resource path="res://Materials/greenWallPaint.tres" type="Material" id=13]
-[ext_resource path="res://Textures/Plaster/Plaster03_col.jpg" type="Texture" id=14]
-[ext_resource path="res://Textures/Plaster/Plaster03_disp.jpg" type="Texture" id=15]
-[ext_resource path="res://Textures/Plaster/Plaster03_nrm.jpg" type="Texture" id=16]
-[ext_resource path="res://Textures/Plaster/Plaster03_rgh.jpg" type="Texture" id=17]
-[ext_resource path="res://Stove.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Fridge.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Table.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Note.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Interactable.gd" type="Script" id=22]
+[ext_resource path="res://Interactable.gd" type="Script" id=7]
+[ext_resource path="res://Outline.gd" type="Script" id=8]
+[ext_resource path="res://ApartmentKeyLabel.gd" type="Script" id=9]
+[ext_resource path="res://ApartmentAudio.gd" type="Script" id=10]
+[ext_resource path="res://Stairs.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Materials/neutralWallPaint.tres" type="Material" id=12]
+[ext_resource path="res://Materials/RedPaint.tres" type="Material" id=13]
+[ext_resource path="res://Materials/greenWallPaint.tres" type="Material" id=14]
+[ext_resource path="res://Textures/Plaster/Plaster03_col.jpg" type="Texture" id=15]
+[ext_resource path="res://Textures/Plaster/Plaster03_disp.jpg" type="Texture" id=16]
+[ext_resource path="res://Textures/Plaster/Plaster03_nrm.jpg" type="Texture" id=17]
+[ext_resource path="res://Textures/Plaster/Plaster03_rgh.jpg" type="Texture" id=18]
+[ext_resource path="res://Stove.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Fridge.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Table.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Note.tscn" type="PackedScene" id=22]
 [ext_resource path="res://paper.jpg" type="Texture" id=23]
 [ext_resource path="res://ChildHandwriting.tres" type="DynamicFont" id=24]
 [ext_resource path="res://Countertop.tscn" type="PackedScene" id=25]
@@ -90,18 +90,18 @@ points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1,
 [sub_resource type="CubeMesh" id=7]
 
 [sub_resource type="SpatialMaterial" id=8]
-albedo_texture = ExtResource( 14 )
+albedo_texture = ExtResource( 15 )
 metallic_specular = 0.03
-roughness_texture = ExtResource( 17 )
+roughness_texture = ExtResource( 18 )
 normal_enabled = true
 normal_scale = 0.01
-normal_texture = ExtResource( 16 )
+normal_texture = ExtResource( 17 )
 depth_enabled = true
 depth_scale = -0.01
 depth_deep_parallax = false
 depth_flip_tangent = false
 depth_flip_binormal = false
-depth_texture = ExtResource( 15 )
+depth_texture = ExtResource( 16 )
 uv1_scale = Vector3( 5, 5, 5 )
 
 [sub_resource type="ConvexPolygonShape" id=9]
@@ -192,6 +192,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3, -
 script = ExtResource( 4 )
 walkSpeed = 200
 sprintEnergy = 60
+apartmentKeyPath = NodePath("../ApartmentKey")
 
 [node name="CameraController" parent="Player" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.708159 )
@@ -201,9 +202,10 @@ margin_right = 1024.0
 margin_bottom = 590.0
 
 [node name="ApartmentKey" type="MeshInstance" parent="."]
-transform = Transform( 0.023891, 0, 0, 0, 0.023891, 0, 0, 0, 0.023891, -4.36285, 0.383754, -13.4934 )
+transform = Transform( 0.023891, 0, 0, 0, 0.023891, 0, 0, 0, 0.023891, 0.424162, 1.64853, -11.4159 )
 mesh = ExtResource( 6 )
 material/0 = null
+script = ExtResource( 7 )
 
 [node name="StaticBody" type="StaticBody" parent="ApartmentKey" groups=[
 "Obtainable",
@@ -216,7 +218,7 @@ shape = SubResource( 2 )
 visible = false
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="ApartmentKey"]
 visible = false
@@ -227,16 +229,16 @@ margin_bottom = 347.0
 text = "Picked Up Key."
 align = 2
 valign = 2
-script = ExtResource( 8 )
+script = ExtResource( 9 )
+DoorNodePath = NodePath("../../LivingRoom/Door2")
 
 [node name="ApartmentAudio" type="Node" parent="."]
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
-[node name="Stairs" parent="." instance=ExtResource( 10 )]
+[node name="Stairs" parent="." instance=ExtResource( 11 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.67877, -2.4367, -14.3336 )
 
 [node name="Walls" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340942, 11.2973 )
 
 [node name="Wall" type="Spatial" parent="Walls"]
@@ -246,7 +248,7 @@ transform = Transform( 0.880586, 0, 0, 0, 1.6875, 0, 0, 0, 0.100862, 3.18056, 3.
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Wall"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 11 )
+material/0 = ExtResource( 12 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/Wall/MeshInstance"]
 
@@ -260,7 +262,7 @@ transform = Transform( 0.588289, 0, 0, 0, 1.6875, 0, 0, 0, 0.100862, -0.321527, 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Wall5"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 11 )
+material/0 = ExtResource( 12 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/Wall5/MeshInstance"]
 
@@ -274,7 +276,7 @@ transform = Transform( 0.588289, 0, 0, 0, 1.6875, 0, 0, 0, 0.100862, -12.5293, 3
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Stairs1"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 11 )
+material/0 = ExtResource( 12 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/Stairs1/MeshInstance"]
 
@@ -288,7 +290,7 @@ transform = Transform( 0.588289, 0, 0, 0, 1.6875, 0, 0, 0, 0.100862, -12.5293, 3
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Stairs3"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 11 )
+material/0 = ExtResource( 12 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/Stairs3/MeshInstance"]
 
@@ -302,7 +304,7 @@ transform = Transform( 0.588289, 0, 0, 0, 1.6875, 0, 0, 0, 0.100862, -12.5293, -
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Stairs2"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 11 )
+material/0 = ExtResource( 12 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/Stairs2/MeshInstance"]
 
@@ -316,7 +318,7 @@ transform = Transform( 0.588289, 0, 0, 0, 1.6875, 0, 0, 0, 0.100862, -12.5293, -
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Stairs4"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 11 )
+material/0 = ExtResource( 12 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/Stairs4/MeshInstance"]
 
@@ -329,7 +331,7 @@ transform = Transform( -1.7866e-07, 7.3763e-08, 0.100862, 4.08728, -7.3763e-08, 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/StairDropWall"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 11 )
+material/0 = ExtResource( 12 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/StairDropWall/MeshInstance"]
 
@@ -349,13 +351,12 @@ transform = Transform( 0.244662, 2.66454e-15, 3.50597e-14, -7.10543e-15, 0.59259
 transform = Transform( 0.244662, 2.66454e-15, 4.03887e-14, -7.10543e-15, 0.592593, 1.95399e-14, -1.69582e-12, -3.69482e-13, 9.91454, -7.84316, -1.04055, 6.71547 )
 
 [node name="Wall3" type="Spatial" parent="Walls"]
-editor/display_folded = true
 transform = Transform( -3.71411e-08, 0, 0.100862, 0, 1.6875, 0, -0.227971, 0, -1.64325e-08, -5.76857, 3.2222, -28.6532 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Wall3"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 11 )
+material/0 = ExtResource( 12 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/Wall3/MeshInstance"]
 
@@ -369,7 +370,7 @@ transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.203153, 0, -1
 [node name="MeshInstance" type="MeshInstance" parent="Walls/KitchenWall1"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 12 )
+material/0 = ExtResource( 13 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/KitchenWall1/MeshInstance"]
 
@@ -383,7 +384,7 @@ transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.203153, 0, -1
 [node name="MeshInstance" type="MeshInstance" parent="Walls/BathroomWall1"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/BathroomWall1/MeshInstance"]
 
@@ -397,7 +398,7 @@ transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.126187, 0, -9
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Wall4"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 11 )
+material/0 = ExtResource( 12 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/Wall4/MeshInstance"]
 
@@ -411,7 +412,7 @@ transform = Transform( -9.60816e-08, 0, 0.100862, 0, 1.6875, 0, -0.126595, 0, -7
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Wall6"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 11 )
+material/0 = ExtResource( 12 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/Wall6/MeshInstance"]
 
@@ -425,7 +426,7 @@ transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.0467386, 0, -
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Wall8"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 11 )
+material/0 = ExtResource( 12 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/Wall8/MeshInstance"]
 
@@ -433,13 +434,12 @@ material/0 = ExtResource( 11 )
 shape = SubResource( 6 )
 
 [node name="Wall7" type="Spatial" parent="Walls"]
-editor/display_folded = true
 transform = Transform( -0.0678651, 0, -1.52297e-08, 0, 1.6875, 0, 1.02474e-08, 0, -0.100862, 7.65804, 3.2222, -22.2373 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Wall7"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 11 )
+material/0 = ExtResource( 12 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/Wall7/MeshInstance"]
 
@@ -453,7 +453,7 @@ transform = Transform( -0.182652, 0, -1.52297e-08, 0, 1.6875, 0, 2.75796e-08, 0,
 [node name="MeshInstance" type="MeshInstance" parent="Walls/BathroomWall2"]
 transform = Transform( 15.5538, 0, 7.10543e-14, 0, 1, 0, -2.27374e-12, 0, 1, 0.1064, -1, 10.5135 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/BathroomWall2/MeshInstance"]
 
@@ -467,7 +467,7 @@ transform = Transform( -0.418579, 0, -1.25136e-08, 0, 1.6875, 0, 6.32037e-08, 0,
 [node name="MeshInstance" type="MeshInstance" parent="Walls/KitchenThinWall"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 12 )
+material/0 = ExtResource( 13 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/KitchenThinWall/MeshInstance"]
 
@@ -481,7 +481,7 @@ transform = Transform( -0.418579, 0, -2.9693e-09, 0, 1.6875, 0, 6.32037e-08, 0, 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/BathroomThinWall"]
 transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 
 [node name="WallCollider" type="StaticBody" parent="Walls/BathroomThinWall/MeshInstance"]
 
@@ -502,50 +502,486 @@ shape = SubResource( 9 )
 [node name="Kitchen" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340942, 11.2973 )
 
-[node name="Stove" parent="Kitchen" instance=ExtResource( 18 )]
+[node name="Stove" parent="Kitchen" instance=ExtResource( 19 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.5291, 0.0547034, -28.071 )
 
-[node name="Fridge" parent="Kitchen" instance=ExtResource( 19 )]
+[node name="Fridge" parent="Kitchen" instance=ExtResource( 20 )]
 transform = Transform( -5.64659e-10, 0, -0.0129179, 0, 0.0129179, 0, 0.0129179, 0, -5.64659e-10, 10.5617, 0.053733, -29.6514 )
 
-[node name="Table" parent="Kitchen" instance=ExtResource( 20 )]
+[node name="Table" parent="Kitchen" instance=ExtResource( 21 )]
 transform = Transform( 0.0285191, 0, 0, 0, 0.0285191, 0, 0, 0, 0.0285191, 4.52572, 0.058752, -27.4799 )
 
-[node name="Note" parent="Kitchen/Table" instance=ExtResource( 21 )]
+[node name="Note1" parent="Kitchen/Table" instance=ExtResource( 22 )]
 transform = Transform( 5.40339, 0, 5.76251, 0, 0.19075, 0, -5.33843, 0, 5.83263, 27.252, 33.191, 9.90869 )
-script = ExtResource( 22 )
+script = ExtResource( 7 )
 
-[node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note" groups=[
+[node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note1" groups=[
 "Interactable",
 ]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Table/Note/NoteCollider"]
+[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Table/Note1/NoteCollider"]
 transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
 shape = SubResource( 10 )
 
-[node name="Outline" type="MeshInstance" parent="Kitchen/Table/Note/NoteCollider"]
+[node name="Outline" type="MeshInstance" parent="Kitchen/Table/Note1/NoteCollider"]
 transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
 visible = false
 mesh = SubResource( 11 )
 material/0 = SubResource( 12 )
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
-[node name="Popup" type="PopupPanel" parent="Kitchen/Table/Note"]
+[node name="Popup" type="PopupPanel" parent="Kitchen/Table/Note1"]
 visible = true
 margin_left = 295.0
 margin_top = 101.0
 margin_right = 708.0
-margin_bottom = 498.0
+margin_bottom = 569.0
 custom_styles/panel = SubResource( 13 )
 
-[node name="Label" type="Label" parent="Kitchen/Table/Note/Popup"]
+[node name="Label1" type="Label" parent="Kitchen/Table/Note1/Popup"]
 margin_right = 413.0
-margin_bottom = 397.0
+margin_bottom = 468.0
 custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "A child wrote this shit"
-align = 1
-valign = 1
+text = "Note 1: Jan. 4 2006
+
+Dear Dave,
+
+I know I know, I promised I'd write consistently since you 
+begged me too before you left but in my defense I did 
+say that I'd rather email.... But whatever! I'm just glad to 
+be able to put a smile on your face. 
+
+Regardless of our history as brothers I just want you to 
+know that I do care about you. Sure alot of fucked up shit
+has happened between us but it doesn't change that. We 
+grew up with fucked up parents and I'm glad I had you. 
+I'm sorry for ranting, just worry with you going away for 
+school and shit. 
+
+Please take care of yourself, study hard and I'll do my best 
+to send these fucking letters instead of a simple email haha.
+
+Take care bro,
+
+Rene"
+autowrap = true
+
+[node name="Note2" parent="Kitchen/Table" instance=ExtResource( 22 )]
+transform = Transform( 1.50353, 0, 7.81953, 0, 0.191, 0, -4.76859, 0, 2.46548, 210.285, 35.7448, 21.0025 )
+script = ExtResource( 7 )
+
+[node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note2" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Table/Note2/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="Outline" type="MeshInstance" parent="Kitchen/Table/Note2/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+script = ExtResource( 8 )
+
+[node name="Popup" type="PopupPanel" parent="Kitchen/Table/Note2"]
+visible = true
+margin_left = 295.0
+margin_top = 101.0
+margin_right = 708.0
+margin_bottom = 569.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Label2" type="Label" parent="Kitchen/Table/Note2/Popup"]
+margin_right = 413.0
+margin_bottom = 468.0
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "
+
+Happy 22nd Birthday Dave! 
+
+I hope you have a great day! Keep working hard in school but don't forget to think about us once in a while or you might go crazy! 
+
+Always with you,
+
+Rene & Carol"
+autowrap = true
+
+[node name="Note3" parent="Kitchen/Table" instance=ExtResource( 22 )]
+transform = Transform( 4.99506, 0, -0.364232, 0, 0.191, 0, 0.22212, 0, 8.19091, -169.763, 43.9079, 169.847 )
+script = ExtResource( 7 )
+
+[node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note3" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Table/Note3/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="Outline" type="MeshInstance" parent="Kitchen/Table/Note3/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+script = ExtResource( 8 )
+
+[node name="Popup" type="PopupPanel" parent="Kitchen/Table/Note3"]
+visible = true
+margin_left = 295.0
+margin_top = 101.0
+margin_right = 708.0
+margin_bottom = 578.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Label3" type="Label" parent="Kitchen/Table/Note3/Popup"]
+margin_right = 413.0
+margin_bottom = 477.0
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "
+
+Aug 4, 2006
+
+Dear Dave,
+
+First just wanted to say thanks for the pictures you sent although one of them you looked pretty upset... you doing okay little brother? You know you can talk to me right? Like sure we write letters but feel free to always pick up the phone and call me should you need. How's school? Meet any friends or anything? Living in that little apartment by youself you need company! 
+
+Btw, Carol was mentioning you and I should do like a brother's fishing trip or something together. At first I was like there's no way Dave would wanna do that but the more I think about it, might be good for us both to get out and enjoy some fresh air. I'm thinking in the spring next year sometime? Lemme know man!
+
+Alright I gotta run,
+
+Love Rene & Carol"
+autowrap = true
+
+[node name="Note4" parent="Kitchen/Table" instance=ExtResource( 22 )]
+transform = Transform( 4.99972, 0, 0.0866735, 0, 0.191, 0, -0.0528559, 0, 8.19854, 206.806, 32.984, 60.2298 )
+script = ExtResource( 7 )
+
+[node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note4" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Table/Note4/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="Outline" type="MeshInstance" parent="Kitchen/Table/Note4/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+script = ExtResource( 8 )
+
+[node name="Popup" type="PopupPanel" parent="Kitchen/Table/Note4"]
+visible = true
+margin_left = 295.0
+margin_top = 101.0
+margin_right = 708.0
+margin_bottom = 578.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Label4" type="Label" parent="Kitchen/Table/Note4/Popup"]
+margin_right = 413.0
+margin_bottom = 477.0
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "
+
+Report card:
+Aug. 24, 2006
+
+	Math 211 : C-
+	Engl 140: D
+	Phys 246: C+
+	Phil 215: D-
+	Acct 322: F
+
+ACADEMIC WARNING: If registered students receive a grade point average lower than 2.0 for 2 consecutive semesters they may be eligible for academic probation or expulsion from the University.
+
+Regards,
+
+Deans Office
+461 4213"
+autowrap = true
+
+[node name="Note5" parent="Kitchen/Table" instance=ExtResource( 22 )]
+transform = Transform( 4.99972, 0, 0.0866735, 0, 0.191, 0, -0.0528559, 0, 8.19854, 7.26701, 34.142, 12.8279 )
+script = ExtResource( 7 )
+
+[node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note5" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Table/Note5/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="Outline" type="MeshInstance" parent="Kitchen/Table/Note5/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+script = ExtResource( 8 )
+
+[node name="Popup" type="PopupPanel" parent="Kitchen/Table/Note5"]
+visible = true
+margin_left = 295.0
+margin_top = 101.0
+margin_right = 708.0
+margin_bottom = 578.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Label5" type="Label" parent="Kitchen/Table/Note5/Popup"]
+margin_right = 413.0
+margin_bottom = 477.0
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "
+
+Oct. 4, 2006
+
+To whom it may concern,
+
+This letter is to serve as notice to the tenant listed at this apartment (415) that a complaint concerning loud noises, specifically screaming, shouting and loud talking between tenants and overnight guests has been registered with the office. Please respect your neighbors and keep the talking to a minimum between the hours of 10pm - 7am.
+
+Regards,
+
+Greenpoint Rental"
+autowrap = true
+
+[node name="Note6" parent="Kitchen/Table" instance=ExtResource( 22 )]
+transform = Transform( 0.976087, 0, -8.04125, 0, 0.191, 0, 4.9038, 0, 1.60059, 208.21, 35.5823, -46.5736 )
+script = ExtResource( 7 )
+
+[node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note6" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Table/Note6/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="Outline" type="MeshInstance" parent="Kitchen/Table/Note6/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+script = ExtResource( 8 )
+
+[node name="Popup" type="PopupPanel" parent="Kitchen/Table/Note6"]
+visible = true
+margin_left = 196.0
+margin_top = 59.0
+margin_right = 848.0
+margin_bottom = 571.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Label6" type="Label" parent="Kitchen/Table/Note6/Popup"]
+margin_right = 652.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "
+
+Nov. 24, 2006
+
+Dave!
+
+It was really good to hear from you finally. What's happened to your writing man hahah maybe doing all those hard courses is making it so your writing is deteriorating (I think I spelt that correctly? haha price you pay writing instead of using a computer with spell check haha).
+
+You mentioned you haven't had any friends over or anything and that its just been pretty quiet there, that sounds boring! You should have people over, talk loud and piss off your neighbors having parties and shit haha. I wish we lived closer, I'd come visit all the time.
+
+Our family is doing well, Carol is just about done her internship and I'm stuck at old work as usual. Nothing too excited to report.... oh wait we did get a dog (after Carol begged me). It's pretty cute but fuck its alot of work. Your landlord would kill you if you had a dog this loud, but shes growing on me. 
+
+So you mentioned April would be best for a fishing trip? I'll email (I know heresy) the dates and what not of our trip, don't worry about cost, I've got you covered! No if ands or buts. 
+
+Okay gotta run,
+
+Love Rene"
+autowrap = true
+
+[node name="Note7" parent="Kitchen/Table" instance=ExtResource( 22 )]
+transform = Transform( 0.976087, 0, -8.04125, 0, 0.191, 0, 4.9038, 0, 1.60059, -1.268, 34.142, -6.782 )
+script = ExtResource( 7 )
+
+[node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note7" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Table/Note7/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="Outline" type="MeshInstance" parent="Kitchen/Table/Note7/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+script = ExtResource( 8 )
+
+[node name="Popup" type="PopupPanel" parent="Kitchen/Table/Note7"]
+visible = true
+margin_left = 272.0
+margin_top = 59.0
+margin_right = 766.0
+margin_bottom = 571.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Label7" type="Label" parent="Kitchen/Table/Note7/Popup"]
+margin_right = 494.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "
+
+To tenant of 415,
+
+You mind keeping it down dude? like what the fuck is your problem? Literally like 4 in the fucking morning and you and your buddy are shouting and shit. Like come on dude. 
+
+Not trying to be a dick but like I can't sleep when you're making so much fucking noise"
+autowrap = true
+
+[node name="Note8" parent="Kitchen/Table" instance=ExtResource( 22 )]
+transform = Transform( -4.9999, 0, -0.0523196, 0, 0.191, 0, 0.0319058, 0, -8.19883, -124.003, 31.1518, 57.9707 )
+script = ExtResource( 7 )
+
+[node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note8" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Table/Note8/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="Outline" type="MeshInstance" parent="Kitchen/Table/Note8/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+script = ExtResource( 8 )
+
+[node name="Popup" type="PopupPanel" parent="Kitchen/Table/Note8"]
+visible = true
+margin_left = 272.0
+margin_top = 59.0
+margin_right = 766.0
+margin_bottom = 571.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Label8" type="Label" parent="Kitchen/Table/Note8/Popup"]
+margin_right = 494.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "
+
+Jan 3, 2007
+
+To whom it may concern,
+
+Our records show your power bill of $126.45 as of Dec 27, 2006 is overdue. Please promptly pay the bill to avoid experiencing outtages or interruptions of service. You may pay through your bank or use our online service at www.energco.com/payment.
+
+Thank you"
+autowrap = true
+
+[node name="Note9" parent="Kitchen/Table" instance=ExtResource( 22 )]
+transform = Transform( -4.9999, 0, -0.0523196, 0, 0.191, 0, 0.0319058, 0, -8.19883, -19.847, 34.142, 11.008 )
+script = ExtResource( 7 )
+
+[node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note9" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Table/Note9/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="Outline" type="MeshInstance" parent="Kitchen/Table/Note9/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+script = ExtResource( 8 )
+
+[node name="Popup" type="PopupPanel" parent="Kitchen/Table/Note9"]
+visible = true
+margin_left = 272.0
+margin_top = 59.0
+margin_right = 766.0
+margin_bottom = 571.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Label9" type="Label" parent="Kitchen/Table/Note9/Popup"]
+margin_right = 494.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "
+
+Feb 16, 2007
+
+Dear David Atkins,
+
+We regret to inform you that due to consistent poor performance in your classes that you are required to withdraw from the university. Please check your email for additional information including your grades detail report.
+
+Regards,
+
+GreenWay University Campus West"
+autowrap = true
+
+[node name="Note10" parent="Kitchen/Table" instance=ExtResource( 22 )]
+transform = Transform( 0.0379207, 0, 8.19876, 0, 0.191, 0, -4.99986, 0, 0.0621818, 211.766, 36.4609, 1.85992 )
+script = ExtResource( 7 )
+
+[node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note10" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Table/Note10/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="Outline" type="MeshInstance" parent="Kitchen/Table/Note10/NoteCollider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+script = ExtResource( 8 )
+
+[node name="Popup" type="PopupPanel" parent="Kitchen/Table/Note10"]
+visible = true
+margin_left = 272.0
+margin_top = 59.0
+margin_right = 766.0
+margin_bottom = 571.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Label10" type="Label" parent="Kitchen/Table/Note10/Popup"]
+margin_right = 494.0
+margin_bottom = 512.0
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "
+
+March 2, 2007
+
+Dear Dave,
+
+Hey bro, was really good to hear from you even if your letter was really short. Any specific reason the letter was fucking covered in like mud or something? I assume the mailman dropped it but wasn't sure. If that's the case it's pretty funny honestly. 
+
+You getting excited for our fishing trip or what? Can't believe its less than a month away! I'm really looking forward to that time together as brothers. Let me know what equipment and shit you need but worse comes to worse when we meet up I can just take you to Cabela's or something and we can buy a bunch.
+
+
+Okay sorry for this one being short but I figured since we'll see each other soon anyways I'd keep it short.
+
+Love ya and see you soon.
+
+Rene"
+autowrap = true
 
 [node name="Countertop" parent="Kitchen" instance=ExtResource( 25 )]
 transform = Transform( -2.0002e-08, 0, -0.457593, 0, 0.582141, 0, 0.45621, 0, -1.99416e-08, 10.657, -0.340942, -28.8263 )
@@ -639,7 +1075,7 @@ omni_attenuation = 3.13834
 [node name="LightSwitch" parent="LivingRoom" instance=ExtResource( 31 )]
 transform = Transform( -4.37114e-10, -0.01, 4.37114e-10, 0, -4.37114e-10, -0.01, 0.01, -4.37114e-10, 1.91069e-17, 5.067, 1.80419, -11.1097 )
 lightPath = NodePath("../CeilingLight/OmniLight")
-triggerNodePath = NodePath("../../Kitchen/Table/Note")
+triggerNodePath = NodePath("../../Kitchen/Table/Note1")
 isTrigger = true
 
 [node name="Door" parent="LivingRoom" instance=ExtResource( 39 )]
@@ -649,7 +1085,6 @@ transform = Transform( -1.21413e-08, 0, -0.322989, 0, 0.386896, 0, 0.277761, 0, 
 transform = Transform( -0.277761, 0, -3.30489e-08, 0, 0.396189, 0, 2.42826e-08, 0, -0.378036, -5.78813, 0.77652, -13.5213 )
 
 [node name="Pivot" parent="LivingRoom/Door2" index="0"]
-transform = Transform( 0.99623, 0, -0.0867496, 0, 1, 0, 0.0867496, 0, 0.99623, 0, 0, 0 )
 locked = true
 
 [node name="GIProbe" type="GIProbe" parent="."]
@@ -667,10 +1102,46 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3459, -32.3982, -9.91841 )
 [node name="CollisionShape" type="CollisionShape" parent="FallArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.18675, -30.792, -4.14173 )
 shape = SubResource( 19 )
-[connection signal="focus_exited" from="Kitchen/Table/Note/Popup" to="Player" method="_on_Popup_focus_exited"]
-[connection signal="gui_input" from="Kitchen/Table/Note/Popup" to="Player" method="_on_Popup_gui_input"]
-[connection signal="modal_closed" from="Kitchen/Table/Note/Popup" to="Player" method="_on_Popup_modal_closed"]
-[connection signal="popup_hide" from="Kitchen/Table/Note/Popup" to="Player" method="_on_Popup_popup_hide"]
+[connection signal="focus_exited" from="Kitchen/Table/Note1/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="Kitchen/Table/Note1/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="Kitchen/Table/Note1/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="Kitchen/Table/Note1/Popup" to="Player" method="_on_Popup_popup_hide"]
+[connection signal="focus_exited" from="Kitchen/Table/Note2/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="Kitchen/Table/Note2/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="Kitchen/Table/Note2/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="Kitchen/Table/Note2/Popup" to="Player" method="_on_Popup_popup_hide"]
+[connection signal="focus_exited" from="Kitchen/Table/Note3/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="Kitchen/Table/Note3/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="Kitchen/Table/Note3/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="Kitchen/Table/Note3/Popup" to="Player" method="_on_Popup_popup_hide"]
+[connection signal="focus_exited" from="Kitchen/Table/Note4/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="Kitchen/Table/Note4/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="Kitchen/Table/Note4/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="Kitchen/Table/Note4/Popup" to="Player" method="_on_Popup_popup_hide"]
+[connection signal="focus_exited" from="Kitchen/Table/Note5/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="Kitchen/Table/Note5/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="Kitchen/Table/Note5/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="Kitchen/Table/Note5/Popup" to="Player" method="_on_Popup_popup_hide"]
+[connection signal="focus_exited" from="Kitchen/Table/Note6/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="Kitchen/Table/Note6/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="Kitchen/Table/Note6/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="Kitchen/Table/Note6/Popup" to="Player" method="_on_Popup_popup_hide"]
+[connection signal="focus_exited" from="Kitchen/Table/Note7/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="Kitchen/Table/Note7/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="Kitchen/Table/Note7/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="Kitchen/Table/Note7/Popup" to="Player" method="_on_Popup_popup_hide"]
+[connection signal="focus_exited" from="Kitchen/Table/Note8/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="Kitchen/Table/Note8/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="Kitchen/Table/Note8/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="Kitchen/Table/Note8/Popup" to="Player" method="_on_Popup_popup_hide"]
+[connection signal="focus_exited" from="Kitchen/Table/Note9/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="Kitchen/Table/Note9/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="Kitchen/Table/Note9/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="Kitchen/Table/Note9/Popup" to="Player" method="_on_Popup_popup_hide"]
+[connection signal="focus_exited" from="Kitchen/Table/Note10/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="Kitchen/Table/Note10/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="Kitchen/Table/Note10/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="Kitchen/Table/Note10/Popup" to="Player" method="_on_Popup_popup_hide"]
 [connection signal="body_entered" from="FallArea" to="." method="_on_FallArea_body_entered"]
 
 [editable path="LivingRoom/Door2"]
