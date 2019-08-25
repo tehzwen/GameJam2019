@@ -13,6 +13,7 @@ var runSpeed
 var gravity = 9.8 * 3
 var raycast
 var lastInteracted = null
+var pageTurnSound
 
 var velocity = Vector3()
 var direction = Vector3()
@@ -25,7 +26,11 @@ func _ready():
 	isInteracting = false
 	originalSprintEnergy = sprintEnergy
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+	# prepare page turn sound
+	pageTurnSound = AudioStreamPlayer.new()
+	self.add_child(pageTurnSound)
+	pageTurnSound.stream = load("res://PageTurn.wav")
+	pageTurnSound.volume_db = -22
 	
 func _process(delta):
 #	$"/root/global".lives -= 1
@@ -111,6 +116,7 @@ func _physics_process(delta):
 		if ("Interactable" in selectedObjGroups):
 			isInteracting = true
 			selectedObj.get_parent().get_node("Popup").popup_centered()
+			pageTurnSound.play()
 		# pick up object if e key is pressed and object is obtainable
 		elif ("Obtainable" in selectedObjGroups):
 			selectedObj.get_parent().get_node("Label").showLabel()
