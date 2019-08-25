@@ -13,5 +13,12 @@ func _on_Bobdisappeararea_body_entered(body):
 		print(spotlight.light_energy)
 		#bob.queue_free()
 		toggled = true
-		
 		bob.visible = false
+		#violin music
+		var violin = AudioStreamPlayer.new()
+		self.add_child(violin)
+		violin.stream = load("res://HorrorViolin.wav")
+		violin.volume_db = -10
+		violin.play()
+		yield(get_tree().create_timer(4.0), "timeout")
+		violin.stop()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Hospital.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -40,6 +40,7 @@
 [ext_resource path="res://Outline.gd" type="Script" id=38]
 [ext_resource path="res://paper.jpg" type="Texture" id=39]
 [ext_resource path="res://ChildHandwriting.tres" type="DynamicFont" id=40]
+[ext_resource path="res://HospitalAudio.gd" type="Script" id=41]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -186,6 +187,7 @@ sprintEnergy = 60
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.89606 )
 
 [node name="Walls" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="FloorEntrance" type="Spatial" parent="Walls"]
 
@@ -726,6 +728,7 @@ script = ExtResource( 33 )
 script = ExtResource( 34 )
 
 [node name="AmbientChangeArea" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1086, 2.91494, -7.7735 )
 
 [node name="CollisionShape" type="CollisionShape" parent="AmbientChangeArea"]
@@ -736,6 +739,7 @@ shape = SubResource( 12 )
 extents = Vector3( 25.1695, 10, 43.0133 )
 
 [node name="FallArea" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.1802, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="FallArea"]
@@ -746,34 +750,35 @@ shape = SubResource( 13 )
 script = ExtResource( 35 )
 
 [node name="Notes" type="Spatial" parent="."]
+editor/display_folded = true
 
-[node name="Note" parent="Notes" instance=ExtResource( 36 )]
+[node name="HospitalNote" parent="Notes" instance=ExtResource( 36 )]
 editor/display_folded = true
 transform = Transform( 0.16931, 0, -0.338102, 0, 0.0133823, 0, 0.225647, 0, 0.253689, -2.06974, 0.359669, -30.6746 )
 script = ExtResource( 37 )
 isInteractable = true
 
-[node name="NoteCollider" type="StaticBody" parent="Notes/Note" groups=[
+[node name="NoteCollider" type="StaticBody" parent="Notes/HospitalNote" groups=[
 "Interactable",
 ]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Notes/Note/NoteCollider"]
+[node name="CollisionShape" type="CollisionShape" parent="Notes/HospitalNote/NoteCollider"]
 shape = SubResource( 14 )
 
-[node name="Outline" type="MeshInstance" parent="Notes/Note/NoteCollider"]
+[node name="Outline" type="MeshInstance" parent="Notes/HospitalNote/NoteCollider"]
 transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 visible = false
 mesh = SubResource( 15 )
 material/0 = SubResource( 16 )
 script = ExtResource( 38 )
 
-[node name="Popup" type="PopupPanel" parent="Notes/Note"]
+[node name="Popup" type="PopupPanel" parent="Notes/HospitalNote"]
 visible = true
 margin_right = 1026.0
 margin_bottom = 604.0
 custom_styles/panel = SubResource( 17 )
 
-[node name="Label" type="Label" parent="Notes/Note/Popup"]
+[node name="Label" type="Label" parent="Notes/HospitalNote/Popup"]
 margin_right = 1026.0
 margin_bottom = 604.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -788,72 +793,68 @@ Patient seems to be suffering mental trauma and is showing signs of abnormal beh
 Suggest trying Aripiprazole and therapy sessions to learn what is causing trauma."
 autowrap = true
 
-[node name="Note2" parent="Notes" instance=ExtResource( 36 )]
+[node name="HospitalNote2" parent="Notes" instance=ExtResource( 36 )]
 editor/display_folded = true
 transform = Transform( 0.174162, 0.00149307, -0.329162, -0.00850072, 0.0132822, 0.05001, 0.221761, -0.000663451, 0.260427, -4.34952, 0.328047, -8.6267 )
 script = ExtResource( 37 )
 isInteractable = true
 
-[node name="NoteCollider" type="StaticBody" parent="Notes/Note2" groups=[
+[node name="NoteCollider" type="StaticBody" parent="Notes/HospitalNote2" groups=[
 "Interactable",
 ]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Notes/Note2/NoteCollider"]
+[node name="CollisionShape" type="CollisionShape" parent="Notes/HospitalNote2/NoteCollider"]
 shape = SubResource( 14 )
 
-[node name="Outline" type="MeshInstance" parent="Notes/Note2/NoteCollider"]
+[node name="Outline" type="MeshInstance" parent="Notes/HospitalNote2/NoteCollider"]
 transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 visible = false
 mesh = SubResource( 15 )
 material/0 = SubResource( 16 )
 script = ExtResource( 38 )
 
-[node name="Popup" type="PopupPanel" parent="Notes/Note2"]
+[node name="Popup" type="PopupPanel" parent="Notes/HospitalNote2"]
 visible = true
 margin_right = 1026.0
 margin_bottom = 604.0
 custom_styles/panel = SubResource( 17 )
 
-[node name="Label" type="Label" parent="Notes/Note2/Popup"]
-margin_left = 5.69998
-margin_top = 57.95
-margin_right = 1031.7
-margin_bottom = 661.95
+[node name="Label" type="Label" parent="Notes/HospitalNote2/Popup"]
+margin_right = 1026.0
+margin_bottom = 604.0
 custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "My name is Dave, I live in a CIA prison. A secret doctor agent runs my prison, my prison, my prison. We can help remove his weapons by offering to GOD. Plan B? No I'm not going. When I'm the new King of England, I'll run this shit. My prison. Who knows? Wanna talk to God? Fuck yerself. Fuck you. My prison."
 autowrap = true
 
-[node name="Note3" parent="Notes" instance=ExtResource( 36 )]
+[node name="HospitalNote3" parent="Notes" instance=ExtResource( 36 )]
 transform = Transform( 0.174162, 0.000450366, -0.332219, -0.00850073, 0.0133738, 0.00808278, 0.221761, 0.000158956, 0.261221, 11.8973, 1.66211, -2.20129 )
 script = ExtResource( 37 )
 isInteractable = true
 
-[node name="NoteCollider" type="StaticBody" parent="Notes/Note3" groups=[
+[node name="NoteCollider" type="StaticBody" parent="Notes/HospitalNote3" groups=[
 "Interactable",
 ]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Notes/Note3/NoteCollider"]
+[node name="CollisionShape" type="CollisionShape" parent="Notes/HospitalNote3/NoteCollider"]
 shape = SubResource( 14 )
 
-[node name="Outline" type="MeshInstance" parent="Notes/Note3/NoteCollider"]
+[node name="Outline" type="MeshInstance" parent="Notes/HospitalNote3/NoteCollider"]
 transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 visible = false
 mesh = SubResource( 15 )
 material/0 = SubResource( 16 )
 script = ExtResource( 38 )
 
-[node name="Popup" type="PopupPanel" parent="Notes/Note3"]
+[node name="Popup" type="PopupPanel" parent="Notes/HospitalNote3"]
 visible = true
 margin_right = 1026.0
 margin_bottom = 604.0
 custom_styles/panel = SubResource( 17 )
 
-[node name="Label" type="Label" parent="Notes/Note3/Popup"]
-margin_left = 3.79996
-margin_top = 58.9
-margin_right = 1029.8
-margin_bottom = 662.9
+[node name="Label" type="Label" parent="Notes/HospitalNote3/Popup"]
+margin_right = 1026.0
+margin_bottom = 604.0
 custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Hahahahah fuckin assholes. My prison. If you see a glow in the dark Doctor agent you can hit them with your 2003 Honda Accord. It's fine, just hit them and kill them. They're assholes so it still counts. In 1961 my friend and I killed a glow in the dark agent. Not listening? Fuck them. My prison. Did dad throw out the shitty wire cutters? What the fuck. Such an asshole. Doctor, fuck you. My prison. 
@@ -861,36 +862,34 @@ text = "Hahahahah fuckin assholes. My prison. If you see a glow in the dark Doct
 01010110 01001111 01001001 01000011 01000101 01010011"
 autowrap = true
 
-[node name="Note4" parent="Notes" instance=ExtResource( 36 )]
+[node name="HospitalNote4" parent="Notes" instance=ExtResource( 36 )]
 transform = Transform( 0.281089, 0, -0.0358174, 0, 0.0133823, 0, 0.0239043, 0, 0.421175, -5.52079, 2.4729, 9.90609 )
 script = ExtResource( 37 )
 isInteractable = true
 
-[node name="NoteCollider" type="StaticBody" parent="Notes/Note4" groups=[
+[node name="NoteCollider" type="StaticBody" parent="Notes/HospitalNote4" groups=[
 "Interactable",
 ]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Notes/Note4/NoteCollider"]
+[node name="CollisionShape" type="CollisionShape" parent="Notes/HospitalNote4/NoteCollider"]
 shape = SubResource( 14 )
 
-[node name="Outline" type="MeshInstance" parent="Notes/Note4/NoteCollider"]
+[node name="Outline" type="MeshInstance" parent="Notes/HospitalNote4/NoteCollider"]
 transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 visible = false
 mesh = SubResource( 15 )
 material/0 = SubResource( 16 )
 script = ExtResource( 38 )
 
-[node name="Popup" type="PopupPanel" parent="Notes/Note4"]
+[node name="Popup" type="PopupPanel" parent="Notes/HospitalNote4"]
 visible = true
 margin_right = 1026.0
 margin_bottom = 604.0
 custom_styles/panel = SubResource( 17 )
 
-[node name="Label" type="Label" parent="Notes/Note4/Popup"]
-margin_left = -0.950012
-margin_top = 4.75
-margin_right = 1025.05
-margin_bottom = 608.75
+[node name="Label" type="Label" parent="Notes/HospitalNote4/Popup"]
+margin_right = 1026.0
+margin_bottom = 604.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Aug. 14, 2018
 
@@ -909,6 +908,9 @@ autowrap = true
 
 [node name="BloodSpatter" parent="." instance=ExtResource( 26 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23934, 0.163905, -8.90917 )
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 41 )
 [connection signal="body_entered" from="Walls/Bobdisappeararea" to="BobDisapearEvent" method="_on_Bobdisappeararea_body_entered"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_entered" from="AmbientChangeArea" to="WorldEnvironment" method="_on_AmbientChangeArea_body_entered"]

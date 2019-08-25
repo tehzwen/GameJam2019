@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/HorrorViolin.ogg-b34e59c4d92728ddb6819a0c1f7ca5d3.oggstr"
+
+[deps]
+
+source_file="res://HorrorViolin.ogg"
+dest_files=[ "res://.import/HorrorViolin.ogg-b34e59c4d92728ddb6819a0c1f7ca5d3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
