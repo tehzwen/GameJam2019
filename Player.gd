@@ -101,6 +101,7 @@ func _physics_process(delta):
 	#if we are looking at an interactable object and we press interact key
 	if (Input.is_key_pressed(KEY_E) && raycast.is_colliding()):
 		var selectedObj = raycast.get_collider()
+		print(selectedObj.name)
 		# interact with object if e key is pressed and object is interactable
 		if ("Interactable" in selectedObj.get_groups()):
 			isInteracting = true
@@ -109,7 +110,7 @@ func _physics_process(delta):
 		elif ("Obtainable" in selectedObj.get_groups()):
 			selectedObj.get_parent().get_node("Label").showLabel()
 		elif ("Door" in selectedObj.get_groups()):
-			print("DOOR")
+			 selectedObj.get_parent().get_parent().OpenDoor()
 
 	if (Input.is_key_pressed(KEY_ESCAPE) && isInteracting == true):
 		isInteracting = false
