@@ -15,6 +15,7 @@ var gravity = 9.8 * 3
 var raycast
 var lastInteracted = null
 var pageTurnSound
+var doorKnockSound
 
 var velocity = Vector3()
 var direction = Vector3()
@@ -32,6 +33,10 @@ func _ready():
 	self.add_child(pageTurnSound)
 	pageTurnSound.stream = load("res://PageTurn.wav")
 	pageTurnSound.volume_db = -22
+	# prepare doorknock sound
+	doorKnockSound = AudioStreamPlayer.new()
+	self.add_child(doorKnockSound)
+	doorKnockSound.stream = load("res://DoorKnock.wav")
 	
 func _process(delta):
 #	$"/root/global".lives -= 1
@@ -121,25 +126,25 @@ func _physics_process(delta):
 			print("test")
 			print(selectedObj.name)
 			if (selectedObj.get_parent().name == "Note1"):
-				handleNote1()
+				handleNote1(selectedObj.get_parent().get_parent())
 			elif (selectedObj.get_parent().name == "Note2"):
-				handleNote2()
+				handleNote2(selectedObj.get_parent().get_parent())
 			elif (selectedObj.get_parent().name == "Note3"):
-				handleNote3()
+				handleNote3(selectedObj.get_parent().get_parent())
 			elif (selectedObj.get_parent().name == "Note4"):
-				handleNote4()
+				handleNote4(selectedObj.get_parent().get_parent())
 			elif (selectedObj.get_parent().name == "Note5"):
-				handleNote5()
+				handleNote5(selectedObj.get_parent().get_parent())
 			elif (selectedObj.get_parent().name == "Note6"):
-				handleNote6()
+				handleNote6(selectedObj.get_parent().get_parent())
 			elif (selectedObj.get_parent().name == "Note7"):
-				handleNote7()
+				handleNote7(selectedObj.get_parent().get_parent())
 			elif (selectedObj.get_parent().name == "Note8"):
-				handleNote8()
+				handleNote8(selectedObj.get_parent().get_parent())
 			elif (selectedObj.get_parent().name == "Note9"):
-				handleNote9()
+				handleNote9(selectedObj.get_parent().get_parent())
 			elif (selectedObj.get_parent().name == "Note10"):
-				handleNote10()
+				handleNote10(selectedObj.get_parent().get_parent())
 				
 		# pick up object if e key is pressed and object is obtainable
 		elif ("Obtainable" in selectedObjGroups && selectedObj.get_parent().isInteractable):
@@ -175,35 +180,40 @@ func handleMovementInput(aim):
 		if (Input.is_action_pressed("ui_right") && isInteracting == false):
 			direction += aim.x
 			
-func handleNote1():
-	yield(get_tree().create_timer(2.0), "timeout")
-	print("read note 1")
+func handleNote1(kitchenTable):
+	#Turn off kitchen light
+	kitchenTable.get_parent().get_node("KitchenLightSwitch").toggle()
 	
-func handleNote2():
-	pass
+	#kitchenTable.get_node("Note2").Trigger()
+	#yield(get_tree().create_timer(2.0), "timeout")
 	
-func handleNote3():
+func handleNote2(kitchenTable):
+	yield(get_tree().create_timer(5.0), "timeout")
+	doorKnockSound.play()
+	global.hasReadNote2 = true
+	
+func handleNote3(kitchenTable):
 	pass
 
-func handleNote4():
+func handleNote4(kitchenTable):
 	pass
 
-func handleNote5():
+func handleNote5(kitchenTable):
 	pass
 	
-func handleNote6():
+func handleNote6(kitchenTable):
 	pass
 	
-func handleNote7():
+func handleNote7(kitchenTable):
 	pass
 	
-func handleNote8():
+func handleNote8(kitchenTable):
 	pass
 	
-func handleNote9():
+func handleNote9(kitchenTable):
 	pass
 	
-func handleNote10():
+func handleNote10(kitchenTable):
 	get_node(apartmentKeyPath).Trigger()
 
 #handle mouse camera movement controls

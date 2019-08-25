@@ -19,7 +19,7 @@ func _ready():
 	player = AudioStreamPlayer.new()
 	self.add_child(player)
 	player.stream = load("res://LightSwitch.wav")
-	player.volume_db = -22	
+	player.volume_db = -22
 
 
 func toggle():
@@ -29,6 +29,8 @@ func toggle():
 		light.light_energy = 0
 		enabled = false
 	else:
+		if (self.name == "KitchenLightSwitch"):
+			print(self.get_parent().get_node("Table").get_node("Note2").Trigger())
 		player.play()
 		light.light_energy = originalEnergy
 		enabled = true

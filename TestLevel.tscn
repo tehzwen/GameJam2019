@@ -934,6 +934,7 @@ GreenWay University Campus West"
 autowrap = true
 
 [node name="Note10" parent="Kitchen/Table" instance=ExtResource( 22 )]
+editor/display_folded = true
 transform = Transform( 0.0379207, 0, 8.19876, 0, 0.191, 0, -4.99986, 0, 0.0621818, 211.766, 36.4609, 1.85992 )
 script = ExtResource( 7 )
 
@@ -1009,7 +1010,7 @@ material/0 = SubResource( 15 )
 [node name="CollisionShape" type="CollisionShape" parent="Kitchen/KitchenFloor/StaticBody"]
 shape = SubResource( 16 )
 
-[node name="LightSwitch" parent="Kitchen" instance=ExtResource( 31 )]
+[node name="KitchenLightSwitch" parent="Kitchen" instance=ExtResource( 31 )]
 transform = Transform( -4.37114e-10, -0.01, 4.37114e-10, 0, -4.37114e-10, -0.01, 0.01, -4.37114e-10, 1.91069e-17, 8.579, 1.53774, -26.4808 )
 lightPath = NodePath("../OverheadLight/OmniLight2")
 
@@ -1086,6 +1087,7 @@ transform = Transform( -0.277761, 0, -3.30489e-08, 0, 0.396189, 0, 2.42826e-08, 
 
 [node name="Pivot" parent="LivingRoom/Door2" index="0"]
 locked = true
+note3Path = NodePath("../../../Kitchen/Table/Note3")
 
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, -1, 0, 0, 0, 1, 4.32307, 2.62868, -13.7315 )
