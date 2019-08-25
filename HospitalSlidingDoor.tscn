@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Materials/MetallicSilver.tres" type="Material" id=1]
+[ext_resource path="res://HospitalSlidingDoor.gd" type="Script" id=1]
+[ext_resource path="res://Materials/MetallicSilver.tres" type="Material" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -17,10 +18,33 @@ points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1,
 [sub_resource type="ConvexPolygonShape" id=5]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
+[sub_resource type="Animation" id=6]
+resource_name = "Open"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Door1:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 1.10775, 0.325477, -1.44219, -1.45476, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.0255532, 0.35103 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Door2:translation:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 2.34433, -0.25, -1.07827, 0.318987, 1.37582, 3.72888, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.0255532, 0.345622 )
+}
+
 [node name="HospitalSlidingDoor" type="Spatial"]
+script = ExtResource( 1 )
 
 [node name="Door1" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Door1"]
 editor/display_folded = true
@@ -37,7 +61,7 @@ shape = SubResource( 3 )
 editor/display_folded = true
 transform = Transform( 0.090918, 0, 0, 0, 2.48015, 0, 0, 0, 0.0816892, 1.09219, 0, 0 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Door1/MeshInstance2"]
 
@@ -48,7 +72,7 @@ shape = SubResource( 4 )
 editor/display_folded = true
 transform = Transform( 0.0904434, 0, 0, 0, 0.278765, 0, 0, 0, 0.0816892, 1.15147, 0, 0.100127 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Door1/MeshInstance7"]
 
@@ -59,7 +83,7 @@ shape = SubResource( 4 )
 editor/display_folded = true
 transform = Transform( -1.18241e-08, 1.15023, 0, -0.270504, -5.02783e-08, 0, 0, 0, 0.0816892, -0.0168872, 1.04883e-07, 0 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Door1/MeshInstance4"]
 
@@ -70,7 +94,7 @@ shape = SubResource( 4 )
 editor/display_folded = true
 transform = Transform( -3.97415e-09, 1.15023, 0, -0.090918, -5.02783e-08, 0, 0, 0, 0.0816892, -0.0168871, 2.37334, 0 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Door1/MeshInstance5"]
 
@@ -81,7 +105,7 @@ shape = SubResource( 4 )
 editor/display_folded = true
 transform = Transform( -3.97415e-09, 1.15023, 0, -0.090918, -5.02783e-08, 0, 0, 0, 0.0816892, -0.0168873, -2.37758, 0 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Door1/MeshInstance6"]
 
@@ -92,7 +116,7 @@ shape = SubResource( 4 )
 editor/display_folded = true
 transform = Transform( 0.090918, 0, 0, 0, 2.48015, 0, 0, 0, 0.0816892, -1.08614, 0, 0 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Door1/MeshInstance3"]
 
@@ -100,8 +124,7 @@ material/0 = ExtResource( 1 )
 shape = SubResource( 5 )
 
 [node name="Door2" type="Spatial" parent="."]
-editor/display_folded = true
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 2.40651, 0, -3.63373e-07 )
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 2.34433, 0, -7.17357e-07 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Door2"]
 editor/display_folded = true
@@ -118,7 +141,7 @@ shape = SubResource( 3 )
 editor/display_folded = true
 transform = Transform( 0.090918, 0, 0, 0, 2.48015, 0, 0, 0, 0.0816892, 1.09219, 0, 0 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Door2/MeshInstance2"]
 
@@ -129,7 +152,7 @@ shape = SubResource( 4 )
 editor/display_folded = true
 transform = Transform( 0.0904434, 0, 0, 0, 0.278765, 0, 0, 0, 0.0816892, 1.15147, 0, 0.100127 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Door2/MeshInstance7"]
 
@@ -140,7 +163,7 @@ shape = SubResource( 4 )
 editor/display_folded = true
 transform = Transform( -1.18241e-08, 1.15023, 0, -0.270504, -5.02783e-08, 0, 0, 0, 0.0816892, -0.0168872, 1.04883e-07, 0 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Door2/MeshInstance4"]
 
@@ -151,7 +174,7 @@ shape = SubResource( 4 )
 editor/display_folded = true
 transform = Transform( -3.97415e-09, 1.15023, 0, -0.090918, -5.02783e-08, 0, 0, 0, 0.0816892, -0.0168871, 2.37334, 0 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Door2/MeshInstance5"]
 
@@ -162,7 +185,7 @@ shape = SubResource( 4 )
 editor/display_folded = true
 transform = Transform( -3.97415e-09, 1.15023, 0, -0.090918, -5.02783e-08, 0, 0, 0, 0.0816892, -0.0168873, -2.37758, 0 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Door2/MeshInstance6"]
 
@@ -173,9 +196,12 @@ shape = SubResource( 4 )
 editor/display_folded = true
 transform = Transform( 0.090918, 0, 0, 0, 2.48015, 0, 0, 0, 0.0816892, -1.08614, 0, 0 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Door2/MeshInstance3"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Door2/MeshInstance3/StaticBody"]
 shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Open = SubResource( 6 )

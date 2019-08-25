@@ -66,17 +66,17 @@ func _physics_process(delta):
 		velocity.y = 5
 	
 	#handle sprinting
-	if (Input.is_key_pressed(KEY_SHIFT) && sprintEnergy > sprintThreshold):
-		speed = runSpeed
-		sprintEnergy -= 1
+	#if (Input.is_key_pressed(KEY_SHIFT) && sprintEnergy > sprintThreshold):
+	#	speed = runSpeed
+	#	sprintEnergy -= 1
 	
-	elif (Input.is_key_pressed(KEY_SHIFT) && sprintEnergy <= sprintThreshold):
-		speed = walkSpeed
+	#elif (Input.is_key_pressed(KEY_SHIFT) && sprintEnergy <= sprintThreshold):
+	#	speed = walkSpeed
 	
-	else:
-		speed = walkSpeed
-		if (sprintEnergy < originalSprintEnergy):
-			sprintEnergy += 1
+	#else:
+	#	speed = walkSpeed
+	#	if (sprintEnergy < originalSprintEnergy):
+	#		sprintEnergy += 1
 		
 			
 	#perform raycast to see current target in sight
@@ -138,8 +138,6 @@ func _physics_process(delta):
 	if (Input.is_key_pressed(KEY_Q)):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
-	if (Input.is_key_pressed(KEY_O)):
-		get_tree().change_scene("res://MineShaft.tscn")
 
 #handling movement function
 func handleMovementInput(aim):
