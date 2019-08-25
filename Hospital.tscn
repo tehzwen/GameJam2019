@@ -127,7 +127,6 @@ material/0 = SubResource( 2 )
 shape = SubResource( 3 )
 
 [node name="Ceiling" type="Spatial" parent="Walls"]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.15813, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Ceiling"]

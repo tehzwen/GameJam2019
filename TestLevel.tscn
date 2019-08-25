@@ -660,7 +660,6 @@ propagation = 0.5
 data = SubResource( 18 )
 
 [node name="FallArea" type="Area" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3459, -32.3982, -9.91841 )
 
 [node name="CollisionShape" type="CollisionShape" parent="FallArea"]
