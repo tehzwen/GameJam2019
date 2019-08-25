@@ -113,7 +113,7 @@ func _physics_process(delta):
 		var selectedObj = raycast.get_collider()
 		var selectedObjGroups = selectedObj.get_groups()
 		# interact with object if e key is pressed and object is interactable
-		if ("Interactable" in selectedObjGroups):
+		if ("Interactable" in selectedObjGroups && selectedObj.get_parent().isInteractable):
 			isInteracting = true
 			selectedObj.get_parent().get_node("Popup").popup_centered()
 			pageTurnSound.play()

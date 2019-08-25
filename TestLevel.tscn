@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
@@ -21,27 +21,28 @@
 [ext_resource path="res://Fridge.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Table.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Note.tscn" type="PackedScene" id=21]
-[ext_resource path="res://paper.jpg" type="Texture" id=22]
-[ext_resource path="res://ChildHandwriting.tres" type="DynamicFont" id=23]
-[ext_resource path="res://Countertop.tscn" type="PackedScene" id=24]
-[ext_resource path="res://OverheadLight.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Textures/OrangeTile/Tiles13_col.jpg" type="Texture" id=26]
-[ext_resource path="res://Textures/OrangeTile/Tiles13_disp.jpg" type="Texture" id=27]
-[ext_resource path="res://Textures/OrangeTile/Tiles13_nrm.jpg" type="Texture" id=28]
-[ext_resource path="res://Textures/OrangeTile/Tiles13_rgh.jpg" type="Texture" id=29]
-[ext_resource path="res://LightSwitch.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Bathtub.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Sink.tscn" type="PackedScene" id=32]
-[ext_resource path="res://Toilet.tscn" type="PackedScene" id=33]
-[ext_resource path="res://Textures/BathroomTiles/Tiles53_col.jpg" type="Texture" id=34]
-[ext_resource path="res://Textures/BathroomTiles/Tiles53_disp.jpg" type="Texture" id=35]
-[ext_resource path="res://Textures/BathroomTiles/Tiles53_nrm.jpg" type="Texture" id=36]
-[ext_resource path="res://Textures/BathroomTiles/Tiles53_rgh.jpg" type="Texture" id=37]
-[ext_resource path="res://Door.tscn" type="PackedScene" id=38]
-[ext_resource path="res://Couch.tscn" type="PackedScene" id=39]
-[ext_resource path="res://TV.tscn" type="PackedScene" id=40]
-[ext_resource path="res://Dresser.tscn" type="PackedScene" id=41]
-[ext_resource path="res://CeilingLight.tscn" type="PackedScene" id=42]
+[ext_resource path="res://Interactable.gd" type="Script" id=22]
+[ext_resource path="res://paper.jpg" type="Texture" id=23]
+[ext_resource path="res://ChildHandwriting.tres" type="DynamicFont" id=24]
+[ext_resource path="res://Countertop.tscn" type="PackedScene" id=25]
+[ext_resource path="res://OverheadLight.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Textures/OrangeTile/Tiles13_col.jpg" type="Texture" id=27]
+[ext_resource path="res://Textures/OrangeTile/Tiles13_disp.jpg" type="Texture" id=28]
+[ext_resource path="res://Textures/OrangeTile/Tiles13_nrm.jpg" type="Texture" id=29]
+[ext_resource path="res://Textures/OrangeTile/Tiles13_rgh.jpg" type="Texture" id=30]
+[ext_resource path="res://LightSwitch.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Bathtub.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Sink.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Toilet.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Textures/BathroomTiles/Tiles53_col.jpg" type="Texture" id=35]
+[ext_resource path="res://Textures/BathroomTiles/Tiles53_disp.jpg" type="Texture" id=36]
+[ext_resource path="res://Textures/BathroomTiles/Tiles53_nrm.jpg" type="Texture" id=37]
+[ext_resource path="res://Textures/BathroomTiles/Tiles53_rgh.jpg" type="Texture" id=38]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Couch.tscn" type="PackedScene" id=40]
+[ext_resource path="res://TV.tscn" type="PackedScene" id=41]
+[ext_resource path="res://Dresser.tscn" type="PackedScene" id=42]
+[ext_resource path="res://CeilingLight.tscn" type="PackedScene" id=43]
 
 [sub_resource type="Environment" id=1]
 background_mode = 2
@@ -130,39 +131,39 @@ emission_operator = 0
 emission_on_uv2 = false
 
 [sub_resource type="StyleBoxTexture" id=13]
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
 region_rect = Rect2( 0, 0, 526, 696 )
 
 [sub_resource type="CubeMesh" id=14]
 
 [sub_resource type="SpatialMaterial" id=15]
-albedo_texture = ExtResource( 26 )
-roughness_texture = ExtResource( 29 )
+albedo_texture = ExtResource( 27 )
+roughness_texture = ExtResource( 30 )
 normal_enabled = true
 normal_scale = -6.24
-normal_texture = ExtResource( 28 )
+normal_texture = ExtResource( 29 )
 depth_enabled = true
 depth_scale = -0.01
 depth_deep_parallax = false
 depth_flip_tangent = false
 depth_flip_binormal = false
-depth_texture = ExtResource( 27 )
+depth_texture = ExtResource( 28 )
 
 [sub_resource type="ConvexPolygonShape" id=16]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [sub_resource type="SpatialMaterial" id=17]
-albedo_texture = ExtResource( 34 )
-roughness_texture = ExtResource( 37 )
+albedo_texture = ExtResource( 35 )
+roughness_texture = ExtResource( 38 )
 normal_enabled = true
 normal_scale = 1.0
-normal_texture = ExtResource( 36 )
+normal_texture = ExtResource( 37 )
 depth_enabled = true
 depth_scale = -0.01
 depth_deep_parallax = false
 depth_flip_tangent = false
 depth_flip_binormal = false
-depth_texture = ExtResource( 35 )
+depth_texture = ExtResource( 36 )
 
 [sub_resource type="GIProbeData" id=18]
 bounds = AABB( -13.6085, -2.82062, -5.92634, 27.217, 5.64123, 11.8527 )
@@ -200,7 +201,6 @@ margin_right = 1024.0
 margin_bottom = 590.0
 
 [node name="ApartmentKey" type="MeshInstance" parent="."]
-editor/display_folded = true
 transform = Transform( 0.023891, 0, 0, 0, 0.023891, 0, 0, 0, 0.023891, -4.36285, 0.383754, -13.4934 )
 mesh = ExtResource( 6 )
 material/0 = null
@@ -500,7 +500,6 @@ material/0 = SubResource( 8 )
 shape = SubResource( 9 )
 
 [node name="Kitchen" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340942, 11.2973 )
 
 [node name="Stove" parent="Kitchen" instance=ExtResource( 18 )]
@@ -514,6 +513,7 @@ transform = Transform( 0.0285191, 0, 0, 0, 0.0285191, 0, 0, 0, 0.0285191, 4.5257
 
 [node name="Note" parent="Kitchen/Table" instance=ExtResource( 21 )]
 transform = Transform( 5.40339, 0, 5.76251, 0, 0.19075, 0, -5.33843, 0, 5.83263, 27.252, 33.191, 9.90869 )
+script = ExtResource( 22 )
 
 [node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note" groups=[
 "Interactable",
@@ -541,19 +541,19 @@ custom_styles/panel = SubResource( 13 )
 [node name="Label" type="Label" parent="Kitchen/Table/Note/Popup"]
 margin_right = 413.0
 margin_bottom = 397.0
-custom_fonts/font = ExtResource( 23 )
+custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "A child wrote this shit"
 align = 1
 valign = 1
 
-[node name="Countertop" parent="Kitchen" instance=ExtResource( 24 )]
+[node name="Countertop" parent="Kitchen" instance=ExtResource( 25 )]
 transform = Transform( -2.0002e-08, 0, -0.457593, 0, 0.582141, 0, 0.45621, 0, -1.99416e-08, 10.657, -0.340942, -28.8263 )
 
-[node name="Countertop2" parent="Kitchen" instance=ExtResource( 24 )]
+[node name="Countertop2" parent="Kitchen" instance=ExtResource( 25 )]
 transform = Transform( -2.0002e-08, 0, -0.457593, 0, 0.582141, 0, 0.845759, 0, -3.69693e-08, 10.657, -0.340942, -27.0467 )
 
-[node name="OverheadLight" parent="Kitchen" instance=ExtResource( 25 )]
+[node name="OverheadLight" parent="Kitchen" instance=ExtResource( 26 )]
 transform = Transform( 0.000341662, 0, 0, 0, 0.000341662, 0, 0, 0, 0.000341662, 8.42419, 2.58662, -27.9983 )
 
 [node name="OmniLight2" type="OmniLight" parent="Kitchen/OverheadLight"]
@@ -573,23 +573,23 @@ material/0 = SubResource( 15 )
 [node name="CollisionShape" type="CollisionShape" parent="Kitchen/KitchenFloor/StaticBody"]
 shape = SubResource( 16 )
 
-[node name="LightSwitch" parent="Kitchen" instance=ExtResource( 30 )]
+[node name="LightSwitch" parent="Kitchen" instance=ExtResource( 31 )]
 transform = Transform( -4.37114e-10, -0.01, 4.37114e-10, 0, -4.37114e-10, -0.01, 0.01, -4.37114e-10, 1.91069e-17, 8.579, 1.53774, -26.4808 )
 lightPath = NodePath("../OverheadLight/OmniLight2")
 
 [node name="Bathroom" type="Spatial" parent="."]
 editor/display_folded = true
 
-[node name="Bathtub" parent="Bathroom" instance=ExtResource( 31 )]
+[node name="Bathtub" parent="Bathroom" instance=ExtResource( 32 )]
 transform = Transform( -1.20416e-08, 0, -0.27548, 0, 0.27548, 0, 0.27548, 0, -1.20416e-08, 12, 0.411967, -12.5389 )
 
-[node name="Sink" parent="Bathroom" instance=ExtResource( 32 )]
+[node name="Sink" parent="Bathroom" instance=ExtResource( 33 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74017, 0.391789, -14.5351 )
 
-[node name="Toilet" parent="Bathroom" instance=ExtResource( 33 )]
+[node name="Toilet" parent="Bathroom" instance=ExtResource( 34 )]
 transform = Transform( 0.174808, 0, 0, 0, 0.174808, 0, 0, 0, 0.174808, 10.399, 0.401083, -11.4284 )
 
-[node name="OverheadLight2" parent="Bathroom" instance=ExtResource( 25 )]
+[node name="OverheadLight2" parent="Bathroom" instance=ExtResource( 26 )]
 transform = Transform( 0.000341662, 0, 0, 0, 0.000341662, 0, 0, 0, 0.000341662, 9.40274, 2.92757, -13.1816 )
 
 [node name="OmniLight2" type="OmniLight" parent="Bathroom/OverheadLight2"]
@@ -608,26 +608,25 @@ material/0 = SubResource( 17 )
 [node name="CollisionShape" type="CollisionShape" parent="Bathroom/BathroomFloor/StaticBody"]
 shape = SubResource( 16 )
 
-[node name="LightSwitch" parent="Bathroom" instance=ExtResource( 30 )]
+[node name="LightSwitch" parent="Bathroom" instance=ExtResource( 31 )]
 transform = Transform( -4.37114e-10, -0.01, 4.37114e-10, 0, -4.37114e-10, -0.01, 0.01, -4.37114e-10, 1.91069e-17, 9.011, 1.83602, -11.1104 )
 lightPath = NodePath("../OverheadLight2/OmniLight2")
 
-[node name="BathroomDoor" parent="Bathroom" instance=ExtResource( 38 )]
+[node name="BathroomDoor" parent="Bathroom" instance=ExtResource( 39 )]
 transform = Transform( 0.277761, 0, 0, 0, 0.396189, 0, 0, 0, 0.378036, 8.50208, 0.77652, -14.0474 )
 
 [node name="LivingRoom" type="Spatial" parent="."]
-editor/display_folded = true
 
-[node name="Couch" parent="LivingRoom" instance=ExtResource( 39 )]
+[node name="Couch" parent="LivingRoom" instance=ExtResource( 40 )]
 transform = Transform( -0.122468, 0, 1.07065e-08, 0, 0.122468, 0, -1.07065e-08, 0, -0.122468, -0.0107298, 0.449714, -14.7687 )
 
-[node name="TV" parent="LivingRoom" instance=ExtResource( 40 )]
+[node name="TV" parent="LivingRoom" instance=ExtResource( 41 )]
 transform = Transform( 0.0258359, 0, 0, 0, 0.0258359, 0, 0, 0, 0.0258359, -0.50276, 0.37702, -18.2557 )
 
-[node name="Dresser" parent="LivingRoom" instance=ExtResource( 41 )]
+[node name="Dresser" parent="LivingRoom" instance=ExtResource( 42 )]
 transform = Transform( -1.21641, 0, -1.06342e-07, 0, 1.21641, 0, 1.06342e-07, 0, -1.21641, 0, 0.393533, -11.3605 )
 
-[node name="CeilingLight" parent="LivingRoom" instance=ExtResource( 42 )]
+[node name="CeilingLight" parent="LivingRoom" instance=ExtResource( 43 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32395, -13.9084 )
 
 [node name="OmniLight" type="OmniLight" parent="LivingRoom/CeilingLight"]
@@ -637,14 +636,16 @@ shadow_enabled = true
 omni_range = 12.4029
 omni_attenuation = 3.13834
 
-[node name="LightSwitch" parent="LivingRoom" instance=ExtResource( 30 )]
+[node name="LightSwitch" parent="LivingRoom" instance=ExtResource( 31 )]
 transform = Transform( -4.37114e-10, -0.01, 4.37114e-10, 0, -4.37114e-10, -0.01, 0.01, -4.37114e-10, 1.91069e-17, 5.067, 1.80419, -11.1097 )
 lightPath = NodePath("../CeilingLight/OmniLight")
+triggerNodePath = NodePath("../../Kitchen/Table/Note")
+isTrigger = true
 
-[node name="Door" parent="LivingRoom" instance=ExtResource( 38 )]
+[node name="Door" parent="LivingRoom" instance=ExtResource( 39 )]
 transform = Transform( -1.21413e-08, 0, -0.322989, 0, 0.386896, 0, 0.277761, 0, -1.41183e-08, 6.93608, 0.77652, -10.9462 )
 
-[node name="Door2" parent="LivingRoom" instance=ExtResource( 38 )]
+[node name="Door2" parent="LivingRoom" instance=ExtResource( 39 )]
 transform = Transform( -0.277761, 0, -3.30489e-08, 0, 0.396189, 0, 2.42826e-08, 0, -0.378036, -5.78813, 0.77652, -13.5213 )
 
 [node name="GIProbe" type="GIProbe" parent="."]
