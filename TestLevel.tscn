@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
@@ -12,19 +12,18 @@
 [ext_resource path="res://Trigger.gd" type="Script" id=10]
 [ext_resource path="res://Key_2_Release.obj" type="ArrayMesh" id=11]
 [ext_resource path="res://ApartmentKeyLabel.gd" type="Script" id=12]
-[ext_resource path="res://ApartmentAudio.gd" type="Script" id=13]
-[ext_resource path="res://Stairs.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Stove.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Fridge.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Table.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Note.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Countertop.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Bathtub.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Sink.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Toilet.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Couch.tscn" type="PackedScene" id=23]
-[ext_resource path="res://TV.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Dresser.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Couch.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Bathtub.tscn" type="PackedScene" id=14]
+[ext_resource path="res://ApartmentAudio.gd" type="Script" id=15]
+[ext_resource path="res://Table.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Note.tscn" type="PackedScene" id=17]
+[ext_resource path="res://TV.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Fridge.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Sink.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Toilet.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Dresser.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Stairs.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=24]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.270588, 0.145098, 0.145098, 1 )
@@ -93,15 +92,10 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="CubeMesh" id=12]
-
-[sub_resource type="ConvexPolygonShape" id=13]
+[sub_resource type="ConvexPolygonShape" id=12]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[sub_resource type="ConvexPolygonShape" id=14]
-points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
-
-[sub_resource type="ArrayMesh" id=15]
+[sub_resource type="ArrayMesh" id=13]
 surfaces/0 = {
 "aabb": AABB( -1.02887, -1.02887, -1.02887, 2.05773, 2.05774, 2.05774 ),
 "array_data": PoolByteArray( 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 63, 0, 0, 127, 0, 127, 0, 0, 127, 0, 0, 0, 0, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 191, 0, 0, 129, 0, 129, 0, 0, 127, 85, 57, 0, 0, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 63, 0, 0, 127, 0, 127, 0, 0, 127, 85, 53, 0, 0, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 191, 0, 0, 129, 0, 129, 0, 0, 127, 0, 60, 0, 0, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 63, 0, 0, 127, 0, 127, 0, 0, 127, 0, 0, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 191, 0, 0, 129, 0, 129, 0, 0, 127, 85, 57, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 63, 0, 0, 127, 0, 127, 0, 0, 127, 85, 53, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 191, 0, 0, 129, 0, 129, 0, 0, 127, 0, 60, 0, 56, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 63, 127, 0, 0, 0, 0, 0, 129, 127, 85, 53, 0, 0, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 191, 129, 0, 0, 0, 0, 0, 127, 127, 0, 0, 0, 56, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 191, 127, 0, 0, 0, 0, 0, 129, 127, 85, 57, 0, 0, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 63, 129, 0, 0, 0, 0, 0, 127, 127, 85, 53, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 63, 127, 0, 0, 0, 0, 0, 129, 127, 85, 53, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 191, 129, 0, 0, 0, 0, 0, 127, 127, 0, 0, 0, 60, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 191, 127, 0, 0, 0, 0, 0, 129, 127, 85, 57, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 63, 129, 0, 0, 0, 0, 0, 127, 127, 85, 53, 0, 60, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 63, 0, 127, 0, 0, 129, 0, 0, 127, 85, 53, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 63, 0, 129, 0, 0, 127, 0, 0, 127, 85, 57, 0, 56, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 63, 0, 127, 0, 0, 129, 0, 0, 127, 85, 57, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 63, 0, 129, 0, 0, 127, 0, 0, 127, 0, 60, 0, 56, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 191, 0, 127, 0, 0, 129, 0, 0, 127, 85, 53, 0, 60, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 191, 0, 129, 0, 0, 127, 0, 0, 127, 85, 57, 0, 60, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 191, 0, 127, 0, 0, 129, 0, 0, 127, 85, 57, 0, 60, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 191, 0, 129, 0, 0, 127, 0, 0, 127, 0, 60, 0, 60 ),
@@ -114,12 +108,17 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="SpatialMaterial" id=16]
+[sub_resource type="SpatialMaterial" id=14]
 emission_enabled = true
 emission = Color( 0.803922, 1, 0, 1 )
 emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
+
+[sub_resource type="CubeMesh" id=15]
+
+[sub_resource type="ConvexPolygonShape" id=16]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [node name="TestLevel" type="Spatial"]
 script = ExtResource( 1 )
@@ -203,6 +202,8 @@ shape = SubResource( 8 )
 margin_right = 1024.0
 margin_bottom = 590.0
 
+[node name="Spatial" type="Spatial" parent="."]
+
 [node name="ApartmentKey" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 0.023891, 0, 0, 0, 0.023891, 0, 0, 0, 0.023891, -4.36285, 0.383754, -13.4934 )
@@ -233,204 +234,38 @@ align = 2
 valign = 2
 script = ExtResource( 12 )
 
-[node name="ApartmentAudio" type="Node" parent="."]
-script = ExtResource( 13 )
+[node name="Couch" parent="." instance=ExtResource( 13 )]
+transform = Transform( -0.122468, 0, 1.07065e-08, 0, 0.122468, 0, -1.07065e-08, 0, -0.122468, -0.0107298, 0.449714, -14.7687 )
 
-[node name="Stairs" parent="." instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340942, 11.2973 )
+[node name="Bathtub" parent="." instance=ExtResource( 14 )]
+transform = Transform( -1.20416e-08, 0, -0.27548, 0, 0.27548, 0, 0.27548, 0, -1.20416e-08, 12, 0.411967, -12.5389 )
 
-[node name="Walls" type="Spatial" parent="."]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340942, 11.2973 )
+[node name="SceneAudio" type="Node" parent="."]
+script = ExtResource( 15 )
 
-[node name="Wall" type="Spatial" parent="Walls"]
-editor/display_folded = true
-transform = Transform( 0.880586, 0, 0, 0, 1.6875, 0, 0, 0, 0.100862, 3.18056, 3.2222, -30.2453 )
+[node name="Table" parent="." instance=ExtResource( 16 )]
+transform = Transform( 0.0285191, 0, 0, 0, 0.0285191, 0, 0, 0, 0.0285191, 4.52572, 0.399694, -16.1826 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall"]
-transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="WallCollider" type="StaticBody" parent="Walls/Wall/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall/MeshInstance/WallCollider"]
-shape = SubResource( 13 )
-
-[node name="Wall5" type="Spatial" parent="Walls"]
-editor/display_folded = true
-transform = Transform( 0.5625, 0, 0, 0, 1.6875, 0, 0, 0, 0.100862, 0, 3.2222, -22.2326 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall5"]
-transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="WallCollider" type="StaticBody" parent="Walls/Wall5/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall5/MeshInstance/WallCollider"]
-shape = SubResource( 13 )
-
-[node name="Wall3" type="Spatial" parent="Walls"]
-editor/display_folded = true
-transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.178055, 0, -1.39558e-09, -5.76857, 3.2222, -28.8675 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall3"]
-transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="WallCollider" type="StaticBody" parent="Walls/Wall3/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall3/MeshInstance/WallCollider"]
-shape = SubResource( 13 )
-
-[node name="Wall9" type="Spatial" parent="Walls"]
-editor/display_folded = true
-transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.203153, 0, -1.59229e-09, 11.1449, 3.2222, -28.4628 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall9"]
-transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="WallCollider" type="StaticBody" parent="Walls/Wall9/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall9/MeshInstance/WallCollider"]
-shape = SubResource( 13 )
-
-[node name="Wall11" type="Spatial" parent="Walls"]
-editor/display_folded = true
-transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.203153, 0, -1.59229e-09, 13.3442, 3.2222, -24.2771 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall11"]
-transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="WallCollider" type="StaticBody" parent="Walls/Wall11/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall11/MeshInstance/WallCollider"]
-shape = SubResource( 13 )
-
-[node name="Wall4" type="Spatial" parent="Walls"]
-editor/display_folded = true
-transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.126187, 0, -9.89043e-10, -5.76857, 3.2222, -23.561 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall4"]
-transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="WallCollider" type="StaticBody" parent="Walls/Wall4/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall4/MeshInstance/WallCollider"]
-shape = SubResource( 13 )
-
-[node name="Wall6" type="Spatial" parent="Walls"]
-editor/display_folded = true
-transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.0293189, 0, -2.29799e-10, 8.39682, 3.2222, -22.6259 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall6"]
-transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="WallCollider" type="StaticBody" parent="Walls/Wall6/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall6/MeshInstance/WallCollider"]
-shape = SubResource( 13 )
-
-[node name="Wall8" type="Spatial" parent="Walls"]
-editor/display_folded = true
-transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.0467386, 0, -3.66333e-10, 8.39682, 3.2222, -25.8014 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall8"]
-transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="WallCollider" type="StaticBody" parent="Walls/Wall8/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall8/MeshInstance/WallCollider"]
-shape = SubResource( 13 )
-
-[node name="Wall7" type="Spatial" parent="Walls"]
-editor/display_folded = true
-transform = Transform( -0.418579, 0, -2.34522e-08, 0, 1.6875, 0, 2.85867e-08, 0, -0.100862, 11.1799, 3.2222, -22.2373 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall7"]
-transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="WallCollider" type="StaticBody" parent="Walls/Wall7/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall7/MeshInstance/WallCollider"]
-shape = SubResource( 13 )
-
-[node name="Wall10" type="Spatial" parent="Walls"]
-editor/display_folded = true
-transform = Transform( -0.418579, 0, -2.34522e-08, 0, 1.6875, 0, 2.85867e-08, 0, -0.100862, 12.5581, 3.2222, -26.3378 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall10"]
-transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="WallCollider" type="StaticBody" parent="Walls/Wall10/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall10/MeshInstance/WallCollider"]
-shape = SubResource( 13 )
-
-[node name="Wall2" type="Spatial" parent="Walls"]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.65906, -8.29734 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall2"]
-editor/display_folded = true
-transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="Walls/Wall2/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall2/MeshInstance/StaticBody"]
-shape = SubResource( 13 )
-
-[node name="Kitchen" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340942, 11.2973 )
-
-[node name="Stove" parent="Kitchen" instance=ExtResource( 15 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.5291, 0.0547034, -28.071 )
-
-[node name="Fridge" parent="Kitchen" instance=ExtResource( 16 )]
-transform = Transform( -5.64659e-10, 0, -0.0129179, 0, 0.0129179, 0, 0.0129179, 0, -5.64659e-10, 10.5617, 0.053733, -29.6514 )
-
-[node name="Table" parent="Kitchen" instance=ExtResource( 17 )]
-editor/display_folded = true
-transform = Transform( 0.0285191, 0, 0, 0, 0.0285191, 0, 0, 0, 0.0285191, 4.52572, 0.058752, -27.4799 )
-
-[node name="Note" parent="Kitchen/Table" instance=ExtResource( 18 )]
+[node name="Note" parent="Table" instance=ExtResource( 17 )]
 editor/display_folded = true
 transform = Transform( 5.40339, 0, 5.76251, 0, 0.19075, 0, -5.33843, 0, 5.83263, 27.252, 33.191, 9.90869 )
 
-[node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note" groups=[
+[node name="NoteCollider" type="StaticBody" parent="Table/Note" groups=[
 "Interactable",
 ]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Kitchen/Table/Note/NoteCollider"]
+[node name="CollisionShape" type="CollisionShape" parent="Table/Note/NoteCollider"]
 transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
-[node name="Outline" type="MeshInstance" parent="Kitchen/Table/Note/NoteCollider"]
+[node name="Outline" type="MeshInstance" parent="Table/Note/NoteCollider"]
 transform = Transform( 1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
 visible = false
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 13 )
+material/0 = SubResource( 14 )
 script = ExtResource( 3 )
 
-[node name="Popup" type="PopupPanel" parent="Kitchen/Table/Note"]
+[node name="Popup" type="PopupPanel" parent="Table/Note"]
 visible = true
 margin_left = 295.0
 margin_top = 101.0
@@ -438,7 +273,7 @@ margin_right = 708.0
 margin_bottom = 498.0
 custom_styles/panel = SubResource( 6 )
 
-[node name="Label" type="Label" parent="Kitchen/Table/Note/Popup"]
+[node name="Label" type="Label" parent="Table/Note/Popup"]
 margin_right = 413.0
 margin_bottom = 397.0
 custom_fonts/font = ExtResource( 5 )
@@ -447,41 +282,190 @@ text = "A child wrote this shit"
 align = 1
 valign = 1
 
-[node name="Countertop" parent="Kitchen" instance=ExtResource( 19 )]
-transform = Transform( -2.0002e-08, 0, -0.457593, 0, 0.582141, 0, 0.45621, 0, -1.99416e-08, 10.657, -0.340942, -28.8263 )
-
-[node name="Countertop2" parent="Kitchen" instance=ExtResource( 19 )]
-transform = Transform( -2.0002e-08, 0, -0.457593, 0, 0.582141, 0, 0.845759, 0, -3.69693e-08, 10.657, -0.340942, -27.0467 )
-
-[node name="Bathroom" type="Spatial" parent="."]
-editor/display_folded = true
-
-[node name="Bathtub" parent="Bathroom" instance=ExtResource( 20 )]
-transform = Transform( -1.20416e-08, 0, -0.27548, 0, 0.27548, 0, 0.27548, 0, -1.20416e-08, 12, 0.411967, -12.5389 )
-
-[node name="Sink" parent="Bathroom" instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74017, 0.391789, -14.5351 )
-
-[node name="Toilet" parent="Bathroom" instance=ExtResource( 22 )]
-transform = Transform( 0.174808, 0, 0, 0, 0.174808, 0, 0, 0, 0.174808, 10.399, 0.401083, -11.4284 )
-
-[node name="LivingRoom" type="Spatial" parent="."]
-editor/display_folded = true
-
-[node name="Couch" parent="LivingRoom" instance=ExtResource( 23 )]
-transform = Transform( -0.122468, 0, 1.07065e-08, 0, 0.122468, 0, -1.07065e-08, 0, -0.122468, -0.0107298, 0.449714, -14.7687 )
-
-[node name="TV" parent="LivingRoom" instance=ExtResource( 24 )]
+[node name="TV" parent="." instance=ExtResource( 18 )]
 transform = Transform( 0.0258359, 0, 0, 0, 0.0258359, 0, 0, 0, 0.0258359, -0.50276, 0.37702, -18.2557 )
 
-[node name="Dresser" parent="LivingRoom" instance=ExtResource( 25 )]
+[node name="Fridge" parent="." instance=ExtResource( 19 )]
+transform = Transform( -5.64659e-10, 0, -0.0129179, 0, 0.0129179, 0, 0.0129179, 0, -5.64659e-10, 10.5617, 0.394675, -18.3541 )
+
+[node name="Sink" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74017, 0.391789, -14.5351 )
+
+[node name="Toilet" parent="." instance=ExtResource( 21 )]
+transform = Transform( 0.174808, 0, 0, 0, 0.174808, 0, 0, 0, 0.174808, 10.399, 0.401083, -11.4284 )
+
+[node name="Dresser" parent="." instance=ExtResource( 22 )]
 transform = Transform( -1.21641, 0, -1.06342e-07, 0, 1.21641, 0, 1.06342e-07, 0, -1.21641, 0, 0.393533, -11.3605 )
+
+[node name="Stairs" parent="." instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340942, 11.2973 )
+
+[node name="Walls" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340942, 11.2973 )
+
+[node name="Wall" type="Spatial" parent="Walls"]
+editor/display_folded = true
+transform = Transform( 0.880586, 0, 0, 0, 1.6875, 0, 0, 0, 0.100862, 3.18056, 3.2222, -30.2453 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall"]
+transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="WallCollider" type="StaticBody" parent="Walls/Wall/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall/MeshInstance/WallCollider"]
+shape = SubResource( 16 )
+
+[node name="Wall5" type="Spatial" parent="Walls"]
+editor/display_folded = true
+transform = Transform( 0.5625, 0, 0, 0, 1.6875, 0, 0, 0, 0.100862, 0, 3.2222, -22.2326 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall5"]
+transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="WallCollider" type="StaticBody" parent="Walls/Wall5/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall5/MeshInstance/WallCollider"]
+shape = SubResource( 16 )
+
+[node name="Wall3" type="Spatial" parent="Walls"]
+editor/display_folded = true
+transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.178055, 0, -1.39558e-09, -5.76857, 3.2222, -28.8675 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall3"]
+transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="WallCollider" type="StaticBody" parent="Walls/Wall3/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall3/MeshInstance/WallCollider"]
+shape = SubResource( 16 )
+
+[node name="Wall9" type="Spatial" parent="Walls"]
+editor/display_folded = true
+transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.203153, 0, -1.59229e-09, 11.1449, 3.2222, -28.4628 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall9"]
+transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="WallCollider" type="StaticBody" parent="Walls/Wall9/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall9/MeshInstance/WallCollider"]
+shape = SubResource( 16 )
+
+[node name="Wall11" type="Spatial" parent="Walls"]
+editor/display_folded = true
+transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.203153, 0, -1.59229e-09, 13.3442, 3.2222, -24.2771 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall11"]
+transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="WallCollider" type="StaticBody" parent="Walls/Wall11/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall11/MeshInstance/WallCollider"]
+shape = SubResource( 16 )
+
+[node name="Wall4" type="Spatial" parent="Walls"]
+editor/display_folded = true
+transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.126187, 0, -9.89043e-10, -5.76857, 3.2222, -23.561 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall4"]
+transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="WallCollider" type="StaticBody" parent="Walls/Wall4/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall4/MeshInstance/WallCollider"]
+shape = SubResource( 16 )
+
+[node name="Wall6" type="Spatial" parent="Walls"]
+editor/display_folded = true
+transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.0293189, 0, -2.29799e-10, 8.39682, 3.2222, -22.6259 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall6"]
+transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="WallCollider" type="StaticBody" parent="Walls/Wall6/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall6/MeshInstance/WallCollider"]
+shape = SubResource( 16 )
+
+[node name="Wall8" type="Spatial" parent="Walls"]
+editor/display_folded = true
+transform = Transform( -2.45877e-08, 0, 0.100862, 0, 1.6875, 0, -0.0467386, 0, -3.66333e-10, 8.39682, 3.2222, -25.8014 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall8"]
+transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="WallCollider" type="StaticBody" parent="Walls/Wall8/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall8/MeshInstance/WallCollider"]
+shape = SubResource( 16 )
+
+[node name="Wall7" type="Spatial" parent="Walls"]
+editor/display_folded = true
+transform = Transform( -0.418579, 0, -2.34522e-08, 0, 1.6875, 0, 2.85867e-08, 0, -0.100862, 11.1799, 3.2222, -22.2373 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall7"]
+transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="WallCollider" type="StaticBody" parent="Walls/Wall7/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall7/MeshInstance/WallCollider"]
+shape = SubResource( 16 )
+
+[node name="Wall10" type="Spatial" parent="Walls"]
+editor/display_folded = true
+transform = Transform( -0.418579, 0, -2.34522e-08, 0, 1.6875, 0, 2.85867e-08, 0, -0.100862, 12.5581, 3.2222, -26.3378 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall10"]
+transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="WallCollider" type="StaticBody" parent="Walls/Wall10/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall10/MeshInstance/WallCollider"]
+shape = SubResource( 16 )
+
+[node name="Wall2" type="Spatial" parent="Walls"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.65906, -8.29734 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall2"]
+editor/display_folded = true
+transform = Transform( 10.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Walls/Wall2/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall2/MeshInstance/StaticBody"]
+shape = SubResource( 16 )
+
+[node name="Door" parent="." instance=ExtResource( 24 )]
+transform = Transform( 0.277761, 0, 0, 0, 0.27776, 0, 0, 0, 0.277761, -10, 0.75, -13 )
 [connection signal="focus_exited" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_focus_exited"]
 [connection signal="gui_input" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_gui_input"]
 [connection signal="modal_closed" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_modal_closed"]
 [connection signal="popup_hide" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_popup_hide"]
 [connection signal="body_entered" from="LightTrigger" to="Player" method="_on_Area_body_entered"]
-[connection signal="focus_exited" from="Kitchen/Table/Note/Popup" to="Player" method="_on_Popup_focus_exited"]
-[connection signal="gui_input" from="Kitchen/Table/Note/Popup" to="Player" method="_on_Popup_gui_input"]
-[connection signal="modal_closed" from="Kitchen/Table/Note/Popup" to="Player" method="_on_Popup_modal_closed"]
-[connection signal="popup_hide" from="Kitchen/Table/Note/Popup" to="Player" method="_on_Popup_popup_hide"]
+[connection signal="focus_exited" from="Table/Note/Popup" to="Player" method="_on_Popup_focus_exited"]
+[connection signal="gui_input" from="Table/Note/Popup" to="Player" method="_on_Popup_gui_input"]
+[connection signal="modal_closed" from="Table/Note/Popup" to="Player" method="_on_Popup_modal_closed"]
+[connection signal="popup_hide" from="Table/Note/Popup" to="Player" method="_on_Popup_popup_hide"]

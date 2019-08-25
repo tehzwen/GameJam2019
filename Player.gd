@@ -111,6 +111,7 @@ func _physics_process(delta):
 			selectedObj.get_parent().get_node("Label").showLabel()
 		elif ("Door" in selectedObj.get_groups()):
 			 selectedObj.get_parent().get_parent().OpenDoor()
+			 selectedObj.get_parent().get_parent().playDoorSqueak()
 
 	if (Input.is_key_pressed(KEY_ESCAPE) && isInteracting == true):
 		isInteracting = false
