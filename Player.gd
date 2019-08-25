@@ -166,6 +166,7 @@ func _physics_process(delta):
 	
 	if (Input.is_key_pressed(KEY_Q)):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().quit()
 		
 
 #handling movement function

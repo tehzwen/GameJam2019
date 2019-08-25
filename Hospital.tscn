@@ -697,6 +697,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1086, 2.91494, -7.7735 )
 [node name="CollisionShape" type="CollisionShape" parent="AmbientChangeArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0847038, 0, 0 )
 shape = SubResource( 12 )
+
+[node name="GIProbe" type="GIProbe" parent="."]
+extents = Vector3( 25.1695, 10, 43.0133 )
 [connection signal="body_entered" from="Walls/Bobdisappeararea" to="BobDisapearEvent" method="_on_Bobdisappeararea_body_entered"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_entered" from="AmbientChangeArea" to="WorldEnvironment" method="_on_AmbientChangeArea_body_entered"]
