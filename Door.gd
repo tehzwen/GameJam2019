@@ -6,6 +6,7 @@ export (NodePath) var note3Path
 var open
 var anim
 var player
+var tryToOpenSound
 
 func _ready():
 	open = false
@@ -14,9 +15,16 @@ func _ready():
 	self.add_child(player)
 	player.stream = load("res://DoorSqueak.wav")
 	player.volume_db = -22
+	
+	tryToOpenSound = AudioStreamPlayer.new()
+	self.add_child(tryToOpenSound)
+	tryToOpenSound.stream = load("res://TryToOpen.wav")
+	tryToOpenSound.volume_db = -10
 
 func OpenDoor():
-	if (locked && global.hasReadNote2):
+	if (locked):
+		tryToOpenSound.play()
+	if (locked && global.hasReadNote2 && self.get_parent().name == "Door2"):
 		get_node(note3Path).Trigger()
 	if (!open && !anim.is_playing() && !locked):
 		anim.play("Open")

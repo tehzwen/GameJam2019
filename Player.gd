@@ -4,6 +4,7 @@ export (int) var walkSpeed
 export (int) var sprintEnergy
 export (bool) var isInteracting
 export (NodePath) var apartmentKeyPath
+export (NodePath) var bathRoomDoorPath
 
 var originalSprintEnergy
 var sprintThreshold
@@ -16,6 +17,7 @@ var raycast
 var lastInteracted = null
 var pageTurnSound
 var doorKnockSound
+var screamSound
 
 var velocity = Vector3()
 var direction = Vector3()
@@ -37,6 +39,11 @@ func _ready():
 	doorKnockSound = AudioStreamPlayer.new()
 	self.add_child(doorKnockSound)
 	doorKnockSound.stream = load("res://DoorKnock.wav")
+	doorKnockSound.volume_db = -10
+	# prepare scream sound
+	screamSound = AudioStreamPlayer.new()
+	self.add_child(screamSound)
+	screamSound.stream = load("res://Textures/Scream.wav")
 	
 func _process(delta):
 #	$"/root/global".lives -= 1
@@ -194,25 +201,30 @@ func handleNote2(kitchenTable):
 	global.hasReadNote2 = true
 	
 func handleNote3(kitchenTable):
-	pass
+	yield(get_tree().create_timer(10.0), "timeout")
+	get_node(bathRoomDoorPath).get_node("Pivot").Unlock()
+	get_node(bathRoomDoorPath).get_node("Pivot").OpenDoor()
+	kitchenTable.get_node("Note4").Trigger()
 
 func handleNote4(kitchenTable):
-	pass
+	yield(get_tree().create_timer(20.0), "timeout")
+	screamSound.play()
+	kitchenTable.get_node("Note5").Trigger()
 
 func handleNote5(kitchenTable):
-	pass
+	kitchenTable.get_node("Note6").Trigger()
 	
 func handleNote6(kitchenTable):
-	pass
+	kitchenTable.get_node("Note7").Trigger()
 	
 func handleNote7(kitchenTable):
-	pass
+	kitchenTable.get_node("Note8").Trigger()
 	
 func handleNote8(kitchenTable):
-	pass
+	kitchenTable.get_node("Note9").Trigger()
 	
 func handleNote9(kitchenTable):
-	pass
+	kitchenTable.get_node("Note10").Trigger()
 	
 func handleNote10(kitchenTable):
 	get_node(apartmentKeyPath).Trigger()
