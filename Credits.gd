@@ -15,7 +15,4 @@ func _process(delta):
 		
 	if ($Label.percent_visible < 1):
 		$Label.percent_visible += delta * 0.08
-		$Terry.modulate.r += delta * 0.08
-		$Terry.modulate.g += delta * 0.08
-		$Terry.modulate.b += delta * 0.08
 	

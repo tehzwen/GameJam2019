@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Hospital.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -34,6 +34,12 @@
 [ext_resource path="res://Button.tscn" type="PackedScene" id=32]
 [ext_resource path="res://BobDisapearEvent.gd" type="Script" id=33]
 [ext_resource path="res://BobAppearEvent.gd" type="Script" id=34]
+[ext_resource path="res://FallEvent.gd" type="Script" id=35]
+[ext_resource path="res://Note.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Interactable.gd" type="Script" id=37]
+[ext_resource path="res://Outline.gd" type="Script" id=38]
+[ext_resource path="res://paper.jpg" type="Texture" id=39]
+[ext_resource path="res://ChildHandwriting.tres" type="DynamicFont" id=40]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -135,6 +141,36 @@ extents = Vector3( 2.53792, 1, 2.97976 )
 [sub_resource type="BoxShape" id=12]
 extents = Vector3( 4.70555, 2.77145, 1.5425 )
 
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 109.06, 4.87224, 91.7208 )
+
+[sub_resource type="ConvexPolygonShape" id=14]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="ArrayMesh" id=15]
+surfaces/0 = {
+"aabb": AABB( -1.02887, -1.02887, -1.02887, 2.05773, 2.05774, 2.05774 ),
+"array_data": PoolByteArray( 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 63, 0, 0, 127, 0, 127, 0, 0, 127, 0, 0, 0, 0, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 191, 0, 0, 129, 0, 129, 0, 0, 127, 85, 57, 0, 0, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 63, 0, 0, 127, 0, 127, 0, 0, 127, 85, 53, 0, 0, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 191, 0, 0, 129, 0, 129, 0, 0, 127, 0, 60, 0, 0, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 63, 0, 0, 127, 0, 127, 0, 0, 127, 0, 0, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 191, 0, 0, 129, 0, 129, 0, 0, 127, 85, 57, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 63, 0, 0, 127, 0, 127, 0, 0, 127, 85, 53, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 191, 0, 0, 129, 0, 129, 0, 0, 127, 0, 60, 0, 56, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 63, 127, 0, 0, 0, 0, 0, 129, 127, 85, 53, 0, 0, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 191, 129, 0, 0, 0, 0, 0, 127, 127, 0, 0, 0, 56, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 191, 127, 0, 0, 0, 0, 0, 129, 127, 85, 57, 0, 0, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 63, 129, 0, 0, 0, 0, 0, 127, 127, 85, 53, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 63, 127, 0, 0, 0, 0, 0, 129, 127, 85, 53, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 191, 129, 0, 0, 0, 0, 0, 127, 127, 0, 0, 0, 60, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 191, 127, 0, 0, 0, 0, 0, 129, 127, 85, 57, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 63, 129, 0, 0, 0, 0, 0, 127, 127, 85, 53, 0, 60, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 63, 0, 127, 0, 0, 129, 0, 0, 127, 85, 53, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 63, 0, 129, 0, 0, 127, 0, 0, 127, 85, 57, 0, 56, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 63, 0, 127, 0, 0, 129, 0, 0, 127, 85, 57, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 63, 0, 129, 0, 0, 127, 0, 0, 127, 0, 60, 0, 56, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 191, 0, 127, 0, 0, 129, 0, 0, 127, 85, 53, 0, 60, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 191, 0, 129, 0, 0, 127, 0, 0, 127, 85, 57, 0, 60, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 191, 0, 127, 0, 0, 129, 0, 0, 127, 85, 57, 0, 60, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 191, 0, 129, 0, 0, 127, 0, 0, 127, 0, 60, 0, 60 ),
+"array_index_data": PoolByteArray( 0, 0, 4, 0, 2, 0, 2, 0, 4, 0, 6, 0, 1, 0, 5, 0, 3, 0, 3, 0, 5, 0, 7, 0, 8, 0, 12, 0, 10, 0, 10, 0, 12, 0, 14, 0, 9, 0, 13, 0, 11, 0, 11, 0, 13, 0, 15, 0, 16, 0, 20, 0, 18, 0, 18, 0, 20, 0, 22, 0, 17, 0, 21, 0, 19, 0, 19, 0, 21, 0, 23, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 36,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="SpatialMaterial" id=16]
+emission_enabled = true
+emission = Color( 0.968627, 1, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 39 )
+region_rect = Rect2( 0, 0, 526, 696 )
+
 [node name="Hospital" type="Spatial"]
 script = ExtResource( 1 )
 Buttons = [ NodePath("Lobby/Button1"), NodePath("Lobby/Button2"), NodePath("Lobby/Button3"), NodePath("Lobby/Button4") ]
@@ -150,10 +186,8 @@ sprintEnergy = 60
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.89606 )
 
 [node name="Walls" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="FloorEntrance" type="Spatial" parent="Walls"]
-editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/FloorEntrance"]
 transform = Transform( 20.0447, 0, 0, 0, 0.177042, 0, 0, 0, 41.6376, 0, 0, 0 )
@@ -700,8 +734,184 @@ shape = SubResource( 12 )
 
 [node name="GIProbe" type="GIProbe" parent="."]
 extents = Vector3( 25.1695, 10, 43.0133 )
+
+[node name="FallArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.1802, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="FallArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -80.7278, 0 )
+shape = SubResource( 13 )
+
+[node name="FallEvent" type="Node" parent="."]
+script = ExtResource( 35 )
+
+[node name="Notes" type="Spatial" parent="."]
+
+[node name="Note" parent="Notes" instance=ExtResource( 36 )]
+editor/display_folded = true
+transform = Transform( 0.16931, 0, -0.338102, 0, 0.0133823, 0, 0.225647, 0, 0.253689, -2.06974, 0.359669, -30.6746 )
+script = ExtResource( 37 )
+isInteractable = true
+
+[node name="NoteCollider" type="StaticBody" parent="Notes/Note" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Notes/Note/NoteCollider"]
+shape = SubResource( 14 )
+
+[node name="Outline" type="MeshInstance" parent="Notes/Note/NoteCollider"]
+transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+script = ExtResource( 38 )
+
+[node name="Popup" type="PopupPanel" parent="Notes/Note"]
+visible = true
+margin_right = 1026.0
+margin_bottom = 604.0
+custom_styles/panel = SubResource( 17 )
+
+[node name="Label" type="Label" parent="Notes/Note/Popup"]
+margin_right = 1026.0
+margin_bottom = 604.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Dec. 8, 2007
+
+Patient: David Atkins 23 M
+Attending Physician: Michael J Fox MD.
+
+Initial Diagnosis:
+Patient seems to be suffering mental trauma and is showing signs of abnormal behavior, strange speech, and is losing touch on reality. Cause of trauma is unknown at this time. 
+
+Suggest trying Aripiprazole and therapy sessions to learn what is causing trauma."
+autowrap = true
+
+[node name="Note2" parent="Notes" instance=ExtResource( 36 )]
+editor/display_folded = true
+transform = Transform( 0.174162, 0.00149307, -0.329162, -0.00850072, 0.0132822, 0.05001, 0.221761, -0.000663451, 0.260427, -4.34952, 0.328047, -8.6267 )
+script = ExtResource( 37 )
+isInteractable = true
+
+[node name="NoteCollider" type="StaticBody" parent="Notes/Note2" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Notes/Note2/NoteCollider"]
+shape = SubResource( 14 )
+
+[node name="Outline" type="MeshInstance" parent="Notes/Note2/NoteCollider"]
+transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+script = ExtResource( 38 )
+
+[node name="Popup" type="PopupPanel" parent="Notes/Note2"]
+visible = true
+margin_right = 1026.0
+margin_bottom = 604.0
+custom_styles/panel = SubResource( 17 )
+
+[node name="Label" type="Label" parent="Notes/Note2/Popup"]
+margin_left = 5.69998
+margin_top = 57.95
+margin_right = 1031.7
+margin_bottom = 661.95
+custom_fonts/font = ExtResource( 40 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "My name is Dave, I live in a CIA prison. A secret doctor agent runs my prison, my prison, my prison. We can help remove his weapons by offering to GOD. Plan B? No I'm not going. When I'm the new King of England, I'll run this shit. My prison. Who knows? Wanna talk to God? Fuck yerself. Fuck you. My prison."
+autowrap = true
+
+[node name="Note3" parent="Notes" instance=ExtResource( 36 )]
+transform = Transform( 0.174162, 0.000450366, -0.332219, -0.00850073, 0.0133738, 0.00808278, 0.221761, 0.000158956, 0.261221, 11.8973, 1.66211, -2.20129 )
+script = ExtResource( 37 )
+isInteractable = true
+
+[node name="NoteCollider" type="StaticBody" parent="Notes/Note3" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Notes/Note3/NoteCollider"]
+shape = SubResource( 14 )
+
+[node name="Outline" type="MeshInstance" parent="Notes/Note3/NoteCollider"]
+transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+script = ExtResource( 38 )
+
+[node name="Popup" type="PopupPanel" parent="Notes/Note3"]
+visible = true
+margin_right = 1026.0
+margin_bottom = 604.0
+custom_styles/panel = SubResource( 17 )
+
+[node name="Label" type="Label" parent="Notes/Note3/Popup"]
+margin_left = 3.79996
+margin_top = 58.9
+margin_right = 1029.8
+margin_bottom = 662.9
+custom_fonts/font = ExtResource( 40 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Hahahahah fuckin assholes. My prison. If you see a glow in the dark Doctor agent you can hit them with your 2003 Honda Accord. It's fine, just hit them and kill them. They're assholes so it still counts. In 1961 my friend and I killed a glow in the dark agent. Not listening? Fuck them. My prison. Did dad throw out the shitty wire cutters? What the fuck. Such an asshole. Doctor, fuck you. My prison. 
+
+01010110 01001111 01001001 01000011 01000101 01010011"
+autowrap = true
+
+[node name="Note4" parent="Notes" instance=ExtResource( 36 )]
+transform = Transform( 0.281089, 0, -0.0358174, 0, 0.0133823, 0, 0.0239043, 0, 0.421175, -5.52079, 2.4729, 9.90609 )
+script = ExtResource( 37 )
+isInteractable = true
+
+[node name="NoteCollider" type="StaticBody" parent="Notes/Note4" groups=[
+"Interactable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Notes/Note4/NoteCollider"]
+shape = SubResource( 14 )
+
+[node name="Outline" type="MeshInstance" parent="Notes/Note4/NoteCollider"]
+transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+script = ExtResource( 38 )
+
+[node name="Popup" type="PopupPanel" parent="Notes/Note4"]
+visible = true
+margin_right = 1026.0
+margin_bottom = 604.0
+custom_styles/panel = SubResource( 17 )
+
+[node name="Label" type="Label" parent="Notes/Note4/Popup"]
+margin_left = -0.950012
+margin_top = 4.75
+margin_right = 1025.05
+margin_bottom = 608.75
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Aug. 14, 2018
+
+Patient: David Atkins 35 M
+Attending Physician: Michael J Fox MD.
+
+Physician Notes:
+Working with David for the past years has been unfruitful. He refuses to respond, and when he does its usually about CIA agents or him being in a prison. 
+
+I fear any regiment of medication, therapy and other methods will never help us understand what happened to David. We have however just learned this week that David lost his older brother in a fishing accident. The details of which weren't given. We only learned this because we were able to contact his brother's widow. 
+She refused to go into detail. Bringing it up to David seems to put him in a trance as if he were in another place, talking about his apartment, and an abandoned hospital. 
+
+Suggest continuing to bring up this trauma with him in the hopes of freeing him from MY PRISON MY PRISON MY PRISON MY PRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+"
+autowrap = true
+
+[node name="BloodSpatter" parent="." instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23934, 0.163905, -8.90917 )
 [connection signal="body_entered" from="Walls/Bobdisappeararea" to="BobDisapearEvent" method="_on_Bobdisappeararea_body_entered"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_entered" from="AmbientChangeArea" to="WorldEnvironment" method="_on_AmbientChangeArea_body_entered"]
+[connection signal="body_entered" from="FallArea" to="FallEvent" method="_on_FallArea_body_entered"]
 
 [editable path="Player/CameraController"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Credits.gd" type="Script" id=1]
-[ext_resource path="res://Terry_A._Davis_in_1985.jpg" type="Texture" id=2]
 
 [sub_resource type="AnimatedTexture" id=1]
 
@@ -18,14 +17,11 @@ margin_left = 606.569
 margin_top = 301.154
 margin_right = 1257.57
 margin_bottom = 613.154
-text = "This game was made as a tribute to Terry A. Davis. A brilliant man who was plagued by mental illness.
+text = "This game was made as a tribute to all those who struggle with schizophrenia, dementia and other mental illnesses
 
 Mental illness is real. It may be obvious, or it may lie beneath.
 
-Thank you for playing."
-percent_visible = 0.0
+Thank you for playing.
 
-[node name="Terry" type="Sprite" parent="."]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 754.014, 790.975 )
-texture = ExtResource( 2 )
+Tyler, Lukas and Zach"
+percent_visible = 0.0
