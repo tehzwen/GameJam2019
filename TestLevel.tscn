@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
@@ -23,7 +23,6 @@
 [ext_resource path="res://Toilet.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Dresser.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Stairs.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Door.tscn" type="PackedScene" id=24]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.270588, 0.145098, 0.145098, 1 )
@@ -457,9 +456,6 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/Wall2/MeshInstance/StaticBody"]
 shape = SubResource( 16 )
-
-[node name="Door" parent="." instance=ExtResource( 24 )]
-transform = Transform( 0.277761, 0, 0, 0, 0.27776, 0, 0, 0, 0.277761, -10, 0.75, -13 )
 [connection signal="focus_exited" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_focus_exited"]
 [connection signal="gui_input" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_gui_input"]
 [connection signal="modal_closed" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_modal_closed"]
