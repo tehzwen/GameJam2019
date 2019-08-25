@@ -165,7 +165,7 @@ emission_on_uv2 = false
 
 [sub_resource type="CubeMesh" id=20]
 
-[sub_resource type="SpatialMaterial" id=24]
+[sub_resource type="SpatialMaterial" id=21]
 albedo_texture = ExtResource( 28 )
 roughness_texture = ExtResource( 31 )
 normal_enabled = true
@@ -178,10 +178,10 @@ depth_flip_tangent = false
 depth_flip_binormal = false
 depth_texture = ExtResource( 29 )
 
-[sub_resource type="ConvexPolygonShape" id=21]
+[sub_resource type="ConvexPolygonShape" id=22]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[sub_resource type="SpatialMaterial" id=22]
+[sub_resource type="SpatialMaterial" id=23]
 albedo_texture = ExtResource( 35 )
 roughness_texture = ExtResource( 38 )
 normal_enabled = true
@@ -194,7 +194,7 @@ depth_flip_tangent = false
 depth_flip_binormal = false
 depth_texture = ExtResource( 36 )
 
-[sub_resource type="GIProbeData" id=23]
+[sub_resource type="GIProbeData" id=24]
 bounds = AABB( -13.6085, -2.82062, -5.92634, 27.217, 5.64123, 11.8527 )
 cell_size = 0.212633
 to_cell_xform = Transform( 4.70294, 0, 0, 0, 4.70294, 0, 0, 0, 4.70294, 64, 13.2652, 27.8712 )
@@ -568,12 +568,12 @@ omni_range = 5.81307
 editor/display_folded = true
 transform = Transform( 1.58953, 0, 0, 0, 0.0729287, 0, 0, 0, 2.21915, 9.85358, -0.0158397, -28.6737 )
 mesh = SubResource( 20 )
-material/0 = SubResource( 24 )
+material/0 = SubResource( 21 )
 
 [node name="StaticBody" type="StaticBody" parent="Kitchen/KitchenFloor"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Kitchen/KitchenFloor/StaticBody"]
-shape = SubResource( 21 )
+shape = SubResource( 22 )
 
 [node name="Bathroom" type="Spatial" parent="."]
 
@@ -598,12 +598,12 @@ omni_range = 5.81307
 [node name="BathroomFloor" type="MeshInstance" parent="Bathroom"]
 transform = Transform( 3.01301, 0, 0, 0, 0.0729287, 0, 0, 0, 3.08416, 11.3216, 0.325102, -12.0646 )
 mesh = SubResource( 20 )
-material/0 = SubResource( 22 )
+material/0 = SubResource( 23 )
 
 [node name="StaticBody" type="StaticBody" parent="Bathroom/BathroomFloor"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Bathroom/BathroomFloor/StaticBody"]
-shape = SubResource( 21 )
+shape = SubResource( 22 )
 
 [node name="LivingRoom" type="Spatial" parent="."]
 
@@ -633,7 +633,7 @@ extents = Vector3( 13.6085, 2.82062, 5.92634 )
 dynamic_range = 1
 energy = 0.0
 propagation = 0.5
-data = SubResource( 23 )
+data = SubResource( 24 )
 [connection signal="focus_exited" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_focus_exited"]
 [connection signal="gui_input" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_gui_input"]
 [connection signal="modal_closed" from="TestCube/MeshInstance/Popup" to="Player" method="_on_Popup_modal_closed"]

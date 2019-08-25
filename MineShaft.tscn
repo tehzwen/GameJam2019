@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Rocks.tres" type="Material" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://CameraController.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Textures/WoodBeam/Wood.jpg" type="Texture" id=5]
 [ext_resource path="res://MineShaftAudio.gd" type="Script" id=6]
+[ext_resource path="res://rock.obj" type="ArrayMesh" id=7]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 1 )
@@ -28,6 +29,18 @@ points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1,
 material = ExtResource( 1 )
 
 [sub_resource type="ConvexPolygonShape" id=7]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="CubeMesh" id=9]
+material = SubResource( 8 )
+
+[sub_resource type="ConvexPolygonShape" id=10]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="ConvexPolygonShape" id=11]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [node name="MineShaft" type="Spatial"]
@@ -183,5 +196,49 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="SideWalls/MeshInstance2/StaticBody"]
 shape = SubResource( 7 )
 
-[node name="Node" type="Node" parent="."]
+[node name="MineShaftAudio" type="Node" parent="."]
 script = ExtResource( 6 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 0.396056, 0, 0, 0, 0.270954, -0.30846, 0, 0.223832, 0.373398, -0.697344, 2.89207, -6.79652 )
+
+[node name="Rock" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="rock" type="MeshInstance" parent="Rock"]
+transform = Transform( 0.396056, 0, 0, 0, 0.351449, 0, 0, 0, 0.484328, -7.94648, 2.62293, -4.7632 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 1 )
+
+[node name="rock2" type="MeshInstance" parent="Rock"]
+transform = Transform( 0.396056, 0, 0, 0, 0.270954, -0.30846, 0, 0.223832, 0.373398, -0.697344, 2.89207, -6.79652 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 1 )
+
+[node name="rock3" type="MeshInstance" parent="Rock"]
+transform = Transform( 0.396056, 0, 0, 0, 0.351449, 0, 0, 0, 0.484328, -5.12281, 3.49831, -6.46187 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 1 )
+
+[node name="EntrancePlane" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.403526 )
+
+[node name="MeshInstance" type="MeshInstance" parent="EntrancePlane"]
+transform = Transform( 0.0962821, 1.35069, 0, -0.0270138, 4.81411, 0, 0, 0, 7, -8.1618, 7.12095, 0 )
+mesh = SubResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="EntrancePlane/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="EntrancePlane/MeshInstance/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="EntrancePlane"]
+transform = Transform( 0.0962821, 1.35069, 0, -0.0270138, 4.81411, 0, 0, 0, 7, 10.5436, 2.5434, 0 )
+mesh = SubResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="EntrancePlane/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="EntrancePlane/MeshInstance2/StaticBody"]
+shape = SubResource( 11 )
