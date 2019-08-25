@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Rocks.tres" type="Material" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.gd" type="Script" id=3]
 [ext_resource path="res://CameraController.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Textures/WoodBeam/Wood.jpg" type="Texture" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 1 )
@@ -12,7 +13,9 @@ material = ExtResource( 1 )
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [sub_resource type="SpatialMaterial" id=3]
-uv1_scale = Vector3( 0.01, 1, 0.01 )
+albedo_color = Color( 1, 0.643137, 0.643137, 1 )
+albedo_texture = ExtResource( 5 )
+uv1_scale = Vector3( 0.1, 2, 0.01 )
 
 [sub_resource type="CubeMesh" id=4]
 material = SubResource( 3 )
@@ -118,13 +121,43 @@ sprintEnergy = 60
 [node name="WoodBeam" type="Spatial" parent="."]
 
 [node name="MeshInstance" type="MeshInstance" parent="WoodBeam"]
-transform = Transform( 0.589812, 0, 0, 0, 6, 0, 0, 0, 0.191152, -4.51347, 5.16224, -5.12059 )
+transform = Transform( 0.589812, 0, 0, 0, 6, 0, 0, 0, 0.191152, -4.51347, 5.16224, -5.19945 )
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="WoodBeam/MeshInstance"]
 
 [node name="CollisionShape" type="CollisionShape" parent="WoodBeam/MeshInstance/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="WoodBeam"]
+transform = Transform( 0.589812, 0, 0, 0, 6, 0, 0, 0, 0.191152, -4.51347, 5.16224, 4.57559 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WoodBeam/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WoodBeam/MeshInstance2/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="WoodBeam"]
+transform = Transform( 0.589812, 0, 0, 0, 6, 0, 0, 0, 0.191152, 5.38115, 1.08113, 4.57559 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WoodBeam/MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WoodBeam/MeshInstance3/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="WoodBeam"]
+transform = Transform( 0.589812, 0, 0, 0, 6, 0, 0, 0, 0.191152, 5.38115, 2.74398, -5.71913 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WoodBeam/MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WoodBeam/MeshInstance4/StaticBody"]
 shape = SubResource( 5 )
 
 [node name="SideWalls" type="Spatial" parent="."]
@@ -148,3 +181,5 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="SideWalls/MeshInstance2/StaticBody"]
 shape = SubResource( 7 )
+
+[node name="Node" type="Node" parent="."]

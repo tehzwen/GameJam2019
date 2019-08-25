@@ -111,7 +111,8 @@ func _physics_process(delta):
 			selectedObj.get_parent().get_node("Label").showLabel()
 		elif ("Door" in selectedObj.get_groups()):
 			if (!selectedObj.get_parent().get_parent().open):
-			 	selectedObj.get_parent().get_parent().OpenDoor()
+				selectedObj.get_parent().get_parent().OpenDoor()
+				selectedObj.get_parent().get_parent().playDoorSqueak()
 			else:
 				selectedObj.get_parent().get_parent().CloseDoor()
 
