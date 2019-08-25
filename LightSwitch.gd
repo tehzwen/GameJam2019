@@ -1,16 +1,20 @@
 extends Spatial
 
 export (NodePath) var lightPath
-var enabled
+export (NodePath) var triggerNodePath
+export (bool) var isTrigger = false
+var enabled = false
 var light
+var triggerNode
 var originalEnergy
 var player
 
 func _ready():
-	enabled = true
-	if(lightPath):
+	if (triggerNodePath):
+		triggerNode = get_node(triggerNodePath)
+	if (lightPath):
 		light = get_node(lightPath)
-		if(light):
+		if (light):
 			originalEnergy = light.light_energy
 	player = AudioStreamPlayer.new()
 	self.add_child(player)
@@ -28,3 +32,6 @@ func toggle():
 		player.play()
 		light.light_energy = originalEnergy
 		enabled = true
+	
+	if (isTrigger):
+		triggerNode.Trigger()
