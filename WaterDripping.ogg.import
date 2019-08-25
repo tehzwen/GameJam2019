@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/WaterDripping.ogg-7ba6be2924317c4c1ee7a91f7485179a.oggstr"
+
+[deps]
+
+source_file="res://WaterDripping.ogg"
+dest_files=[ "res://.import/WaterDripping.ogg-7ba6be2924317c4c1ee7a91f7485179a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
