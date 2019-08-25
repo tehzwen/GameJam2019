@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/AC_Lam_Cei_Mod_2313_obj.obj-e008a53496131ddc30f6f2772c73dd0f.mesh"
+
+[deps]
+
+files=[ "res://.import/AC_Lam_Cei_Mod_2313_obj.obj-e008a53496131ddc30f6f2772c73dd0f.mesh" ]
+
+source_file="res://Models/CeilingLight/AC_Lam_Cei_Mod_2313_obj.obj"
+dest_files=[ "res://.import/AC_Lam_Cei_Mod_2313_obj.obj-e008a53496131ddc30f6f2772c73dd0f.mesh", "res://.import/AC_Lam_Cei_Mod_2313_obj.obj-e008a53496131ddc30f6f2772c73dd0f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
