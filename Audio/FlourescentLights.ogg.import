@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/FlourescentLights.ogg-b7d1b0d4294504c07ab47497bd7527cb.oggstr"
+
+[deps]
+
+source_file="res://Audio/FlourescentLights.ogg"
+dest_files=[ "res://.import/FlourescentLights.ogg-b7d1b0d4294504c07ab47497bd7527cb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

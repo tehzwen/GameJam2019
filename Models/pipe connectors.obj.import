@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pipe connectors.obj-b805f8928e17c7d8a8be2b84d138a3fc.mesh"
+
+[deps]
+
+files=[ "res://.import/pipe connectors.obj-b805f8928e17c7d8a8be2b84d138a3fc.mesh" ]
+
+source_file="res://Models/pipe connectors.obj"
+dest_files=[ "res://.import/pipe connectors.obj-b805f8928e17c7d8a8be2b84d138a3fc.mesh", "res://.import/pipe connectors.obj-b805f8928e17c7d8a8be2b84d138a3fc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

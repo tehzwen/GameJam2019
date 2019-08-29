@@ -1,19 +1,19 @@
 [gd_scene load_steps=35 format=2]
 
-[ext_resource path="res://MineShaft.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/MineShaft.gd" type="Script" id=1]
 [ext_resource path="res://Rocks.tres" type="Material" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Player.gd" type="Script" id=4]
-[ext_resource path="res://CameraController.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ObjectScenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
+[ext_resource path="res://ObjectScenes/CameraController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Textures/WoodBeam/Wood.jpg" type="Texture" id=6]
-[ext_resource path="res://MineShaftAudio.gd" type="Script" id=7]
-[ext_resource path="res://rock.obj" type="ArrayMesh" id=8]
-[ext_resource path="res://RustPipe.obj" type="ArrayMesh" id=9]
-[ext_resource path="res://Rust Metal.bmp" type="Texture" id=10]
-[ext_resource path="res://Note.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Interactable.gd" type="Script" id=12]
-[ext_resource path="res://Outline.gd" type="Script" id=13]
-[ext_resource path="res://paper.jpg" type="Texture" id=14]
+[ext_resource path="res://Scripts/MineShaftAudio.gd" type="Script" id=7]
+[ext_resource path="res://Models/rock.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://Models/RustPipe.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://Textures/Rust Metal.bmp" type="Texture" id=10]
+[ext_resource path="res://ObjectScenes/Note.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scripts/Interactable.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/Outline.gd" type="Script" id=13]
+[ext_resource path="res://Textures/paper.jpg" type="Texture" id=14]
 [ext_resource path="res://ChildHandwriting.tres" type="DynamicFont" id=15]
 
 [sub_resource type="BoxShape" id=1]
@@ -150,14 +150,14 @@ material/0 = null
 [node name="StaticBody" type="StaticBody" parent="EntranceFloors/EntranceFloor5/MeshInstance"]
 
 [node name="CollisionShape" type="CollisionShape" parent="EntranceFloors/EntranceFloor5/MeshInstance/StaticBody"]
-transform = Transform( 1, 4.40195e-10, -5.82077e-09, -7.7486e-07, 1, 7.62939e-06, -9.40636e-08, 3.72529e-09, 1, 0, 0, 0 )
+transform = Transform( 1, 4.40195e-010, -5.82077e-009, -7.7486e-007, 1, 7.62939e-006, -9.40636e-008, 3.72529e-009, 1, 0, 0, 0 )
 shape = SubResource( 3 )
 
 [node name="EntranceFloor2" type="Spatial" parent="EntranceFloors"]
 transform = Transform( 0.999876, 0.0156087, 0.00186527, -0.00953068, 0.696302, -0.717686, -0.0125011, 0.71758, 0.696364, 0.286526, 2.79437, -6.625 )
 
 [node name="MeshInstance" type="MeshInstance" parent="EntranceFloors/EntranceFloor2"]
-transform = Transform( 10, 5.00586e-09, 4.4331e-07, 4.02331e-07, 0.1, -2.98023e-06, -9.68575e-08, 3.35276e-08, 4, -0.24396, 0.130571, 0.220078 )
+transform = Transform( 10, 5.00586e-009, 4.4331e-007, 4.02331e-007, 0.1, -2.98023e-006, -9.68575e-008, 3.35276e-008, 4, -0.24396, 0.130571, 0.220078 )
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -170,7 +170,7 @@ shape = SubResource( 3 )
 transform = Transform( 0.999747, 0.0225142, 0.000201702, 0.01698, -0.748063, -0.663409, -0.0147854, 0.663245, -0.748257, 0.376615, 8.25371, -6.125 )
 
 [node name="MeshInstance" type="MeshInstance" parent="EntranceFloors/EntranceFloor3"]
-transform = Transform( 10, 5.00586e-09, 4.4331e-07, 4.02331e-07, 0.1, -2.98023e-06, -9.68575e-08, 3.35276e-08, 4, -0.24396, 0.130571, 0.220078 )
+transform = Transform( 10, 5.00586e-009, 4.4331e-007, 4.02331e-007, 0.1, -2.98023e-006, -9.68575e-008, 3.35276e-008, 4, -0.24396, 0.130571, 0.220078 )
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -181,13 +181,13 @@ shape = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.41476, 4.49493, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -7.41476, 4.49493, 0 )
 script = ExtResource( 4 )
 walkSpeed = 200
 sprintEnergy = 60
 
 [node name="CameraController" parent="Player" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.35531e-08, -1.6827 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.35531e-008, -1.6827 )
 
 [node name="WoodBeams" type="Spatial" parent="."]
 editor/display_folded = true
@@ -204,7 +204,7 @@ material/0 = null
 shape = SubResource( 6 )
 
 [node name="MeshInstance5" type="MeshInstance" parent="WoodBeams"]
-transform = Transform( -0.159383, 10.5794, 0.00862954, -0.568019, -2.97458, 1.78232e-13, 0.00720841, -0.478473, 0.190805, 0.737963, 5.16224, -5.44297 )
+transform = Transform( -0.159383, 10.5794, 0.00862954, -0.568019, -2.97458, 1.78232e-013, 0.00720841, -0.478473, 0.190805, 0.737963, 5.16224, -5.44297 )
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -214,7 +214,7 @@ material/0 = null
 shape = SubResource( 6 )
 
 [node name="MeshInstance6" type="MeshInstance" parent="WoodBeams"]
-transform = Transform( -0.159518, 10.5883, -0.00355926, -0.568019, -2.97458, 1.78232e-13, -0.00297311, 0.197347, 0.190967, 0.737963, 5.16224, 4.64281 )
+transform = Transform( -0.159518, 10.5883, -0.00355926, -0.568019, -2.97458, 1.78232e-013, -0.00297311, 0.197347, 0.190967, 0.737963, 5.16224, 4.64281 )
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -420,11 +420,11 @@ isInteractable = true
 ]]
 
 [node name="CollisionShape" type="CollisionShape" parent="Note/StaticBody"]
-transform = Transform( 1.00048, -8.06525e-05, 0, -0.0358434, 1.00598, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1.00048, -8.06525e-005, 0, -0.0358434, 1.00598, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 15 )
 
 [node name="Outline" type="MeshInstance" parent="Note/StaticBody"]
-transform = Transform( 1, 0, 0, -1.43051e-06, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, -1.43051e-006, 1, 0, 0, 0, 1, 0, 0, 0 )
 visible = false
 mesh = SubResource( 16 )
 material/0 = SubResource( 17 )

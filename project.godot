@@ -21,11 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-global="*res://global.gd"
-
-[display]
-
-window/size/fullscreen=true
+global="*res://Scripts/global.gd"
 
 [input]
 

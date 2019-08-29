@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PowerOff.wav-736a428d963a728711e629e28e88f1b0.sample"
+
+[deps]
+
+source_file="res://Audio/PowerOff.wav"
+dest_files=[ "res://.import/PowerOff.wav-736a428d963a728711e629e28e88f1b0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

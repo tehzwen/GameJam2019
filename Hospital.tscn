@@ -1,46 +1,46 @@
 [gd_scene load_steps=59 format=2]
 
-[ext_resource path="res://Hospital.gd" type="Script" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player.gd" type="Script" id=3]
-[ext_resource path="res://CameraController.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Hospital.gd" type="Script" id=1]
+[ext_resource path="res://ObjectScenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=3]
+[ext_resource path="res://ObjectScenes/CameraController.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Textures/Hospital Floor/Tiles02_col.jpg" type="Texture" id=5]
 [ext_resource path="res://Textures/Hospital Floor/Tiles02_disp.jpg" type="Texture" id=6]
 [ext_resource path="res://Textures/Hospital Floor/Tiles02_nrm.jpg" type="Texture" id=7]
 [ext_resource path="res://Textures/Hospital Floor/Tiles02_rgh.jpg" type="Texture" id=8]
-[ext_resource path="res://ExitFloor.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/ExitFloor.gd" type="Script" id=9]
 [ext_resource path="res://Textures/Plaster/Plaster03_col.jpg" type="Texture" id=10]
 [ext_resource path="res://Textures/Plaster/Plaster03_disp.jpg" type="Texture" id=11]
 [ext_resource path="res://Textures/Plaster/Plaster03_nrm.jpg" type="Texture" id=12]
 [ext_resource path="res://Textures/Plaster/Plaster03_rgh.jpg" type="Texture" id=13]
-[ext_resource path="res://HospitalDoor.tscn" type="PackedScene" id=14]
+[ext_resource path="res://ObjectScenes/HospitalDoor.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Materials/HospitalWall.tres" type="Material" id=15]
 [ext_resource path="res://Materials/RedPaint.tres" type="Material" id=16]
-[ext_resource path="res://HospitalBed.tscn" type="PackedScene" id=17]
-[ext_resource path="res://DeadBody.tscn" type="PackedScene" id=18]
-[ext_resource path="res://DeadBody2.tscn" type="PackedScene" id=19]
-[ext_resource path="res://DeadBody3.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Couch.tscn" type="PackedScene" id=21]
-[ext_resource path="res://VendingMachine.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Trashcan.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Curtain.tscn" type="PackedScene" id=24]
-[ext_resource path="res://FullBob.tscn" type="PackedScene" id=25]
-[ext_resource path="res://BloodSpatter.tscn" type="PackedScene" id=26]
-[ext_resource path="res://WorldEnvironment.gd" type="Script" id=27]
-[ext_resource path="res://LightFlicker.gd" type="Script" id=28]
-[ext_resource path="res://HospitalSlidingDoor.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Countertop.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Dresser.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Button.tscn" type="PackedScene" id=32]
-[ext_resource path="res://BobDisapearEvent.gd" type="Script" id=33]
-[ext_resource path="res://BobAppearEvent.gd" type="Script" id=34]
-[ext_resource path="res://FallEvent.gd" type="Script" id=35]
-[ext_resource path="res://Note.tscn" type="PackedScene" id=36]
-[ext_resource path="res://Interactable.gd" type="Script" id=37]
-[ext_resource path="res://Outline.gd" type="Script" id=38]
-[ext_resource path="res://paper.jpg" type="Texture" id=39]
+[ext_resource path="res://ObjectScenes/HospitalBed.tscn" type="PackedScene" id=17]
+[ext_resource path="res://ObjectScenes/DeadBody.tscn" type="PackedScene" id=18]
+[ext_resource path="res://ObjectScenes/DeadBody2.tscn" type="PackedScene" id=19]
+[ext_resource path="res://ObjectScenes/DeadBody3.tscn" type="PackedScene" id=20]
+[ext_resource path="res://ObjectScenes/Couch.tscn" type="PackedScene" id=21]
+[ext_resource path="res://ObjectScenes/VendingMachine.tscn" type="PackedScene" id=22]
+[ext_resource path="res://ObjectScenes/Trashcan.tscn" type="PackedScene" id=23]
+[ext_resource path="res://ObjectScenes/Curtain.tscn" type="PackedScene" id=24]
+[ext_resource path="res://ObjectScenes/FullBob.tscn" type="PackedScene" id=25]
+[ext_resource path="res://ObjectScenes/BloodSpatter.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scripts/WorldEnvironment.gd" type="Script" id=27]
+[ext_resource path="res://Scripts/LightFlicker.gd" type="Script" id=28]
+[ext_resource path="res://ObjectScenes/HospitalSlidingDoor.tscn" type="PackedScene" id=29]
+[ext_resource path="res://ObjectScenes/Countertop.tscn" type="PackedScene" id=30]
+[ext_resource path="res://ObjectScenes/Dresser.tscn" type="PackedScene" id=31]
+[ext_resource path="res://ObjectScenes/Button.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scripts/BobDisapearEvent.gd" type="Script" id=33]
+[ext_resource path="res://Scripts/BobAppearEvent.gd" type="Script" id=34]
+[ext_resource path="res://Scripts/FallEvent.gd" type="Script" id=35]
+[ext_resource path="res://ObjectScenes/Note.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Scripts/Interactable.gd" type="Script" id=37]
+[ext_resource path="res://Scripts/Outline.gd" type="Script" id=38]
+[ext_resource path="res://Textures/paper.jpg" type="Texture" id=39]
 [ext_resource path="res://ChildHandwriting.tres" type="DynamicFont" id=40]
-[ext_resource path="res://HospitalAudio.gd" type="Script" id=41]
+[ext_resource path="res://Scripts/HospitalAudio.gd" type="Script" id=41]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -134,7 +134,8 @@ fog_depth_end = 34.5
 dof_blur_far_enabled = true
 dof_blur_far_distance = 5.56
 glow_enabled = true
-glow_intensity = 4.59
+glow_intensity = 1.41
+glow_strength = 1.5
 
 [sub_resource type="BoxShape" id=11]
 extents = Vector3( 2.53792, 1, 2.97976 )
@@ -178,7 +179,7 @@ Buttons = [ NodePath("Lobby/Button1"), NodePath("Lobby/Button2"), NodePath("Lobb
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 editor/display_folded = true
-transform = Transform( -1, 1.50996e-07, -6.60024e-15, 0, -4.37114e-08, -1, -1.50996e-07, -1, 4.37114e-08, -0.388029, 2.88841, -36.6824 )
+transform = Transform( -1, 1.50996e-007, -6.60024e-015, 0, -4.37114e-008, -1, -1.50996e-007, -1, 4.37114e-008, -0.388029, 2.88841, -36.6824 )
 script = ExtResource( 3 )
 walkSpeed = 200
 sprintEnergy = 60
@@ -237,10 +238,10 @@ shape = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.49073, 0, -28.1318 )
 
 [node name="HospitalDoor2" parent="Walls" instance=ExtResource( 14 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 2.89117, 0, -20.4892 )
+transform = Transform( -1, 0, -1.50996e-007, 0, 1, 0, 1.50996e-007, 0, -1, 2.89117, 0, -20.4892 )
 
 [node name="HospitalDoor3" parent="Walls" instance=ExtResource( 14 )]
-transform = Transform( 1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, -12.4768, 0, -3.82639 )
+transform = Transform( 1.94707e-007, 0, -1, 0, 1, 0, 1, 0, 1.94707e-007, -12.4768, 0, -3.82639 )
 
 [node name="EntranceWall" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
@@ -255,7 +256,7 @@ shape = SubResource( 7 )
 
 [node name="EntranceWall8" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( -8.82087e-07, 0, 0.149563, 0, 3.52481, 0, -20.1798, 0, -6.53761e-09, -20.1549, 3.70974, 23.4516 )
+transform = Transform( -8.82087e-007, 0, 0.149563, 0, 3.52481, 0, -20.1798, 0, -6.53761e-009, -20.1549, 3.70974, 23.4516 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -277,7 +278,7 @@ shape = SubResource( 7 )
 
 [node name="EntranceWall6" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( -8.82087e-07, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, -6.53761e-09, 20.0903, 3.70974, -21.4948 )
+transform = Transform( -8.82087e-007, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, -6.53761e-009, 20.0903, 3.70974, -21.4948 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -288,7 +289,7 @@ shape = SubResource( 7 )
 
 [node name="InnerWall2" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( -8.82087e-07, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, -6.53761e-09, 20.0987, 3.70974, 18.7325 )
+transform = Transform( -8.82087e-007, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, -6.53761e-009, 20.0987, 3.70974, 18.7325 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -299,7 +300,7 @@ shape = SubResource( 7 )
 
 [node name="InnerWall3" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( -20.1798, 0, 2.25834e-08, 0, 3.52481, 0, -3.04707e-06, 0, -0.149563, -0.224566, 3.70974, 38.9234 )
+transform = Transform( -20.1798, 0, 2.25834e-008, 0, 3.52481, 0, -3.04707e-006, 0, -0.149563, -0.224566, 3.70974, 38.9234 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -310,7 +311,7 @@ shape = SubResource( 7 )
 
 [node name="InnerWall" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( -11.1866, 0, 2.25834e-08, 0, 3.52481, 0, -1.68912e-06, 0, -0.149563, 14.7392, 3.70974, -6.83866 )
+transform = Transform( -11.1866, 0, 2.25834e-008, 0, 3.52481, 0, -1.68912e-006, 0, -0.149563, 14.7392, 3.70974, -6.83866 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -321,7 +322,7 @@ shape = SubResource( 7 )
 
 [node name="EntranceWall7" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( -8.82087e-07, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, -6.53761e-09, -19.8562, 3.70974, -21.4948 )
+transform = Transform( -8.82087e-007, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, -6.53761e-009, -19.8562, 3.70974, -21.4948 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -332,7 +333,7 @@ shape = SubResource( 7 )
 
 [node name="EntranceWall2" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( -8.82087e-07, 0, 0.149563, 0, 3.52481, 0, -20.1798, 0, -6.5376e-09, -5.87436, 3.70974, -50.6975 )
+transform = Transform( -8.82087e-007, 0, 0.149563, 0, 3.52481, 0, -20.1798, 0, -6.5376e-009, -5.87436, 3.70974, -50.6975 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -343,7 +344,7 @@ shape = SubResource( 7 )
 
 [node name="EntranceWall4" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( 1.52353e-06, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, 1.12917e-08, 3.41045, 3.70974, -43.0223 )
+transform = Transform( 1.52353e-006, 0, -0.149563, 0, 3.52481, 0, 20.1798, 0, 1.12917e-008, 3.41045, 3.70974, -43.0223 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -354,7 +355,7 @@ shape = SubResource( 7 )
 
 [node name="DoorTopEntrance" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( 1.92001e-07, 0, -0.106271, 0, 1.38674, 0, 2.54313, 0, 8.02328e-09, 3.39144, 5.72817, -20.4173 )
+transform = Transform( 1.92001e-007, 0, -0.106271, 0, 1.38674, 0, 2.54313, 0, 8.02328e-009, 3.39144, 5.72817, -20.4173 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -365,7 +366,7 @@ shape = SubResource( 7 )
 
 [node name="DoorTopEntrance3" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( 2.54313, 0, 1.26685e-08, 0, 1.38674, 0, -3.03165e-07, 0, 0.106271, -12.4746, 5.72817, -4.26105 )
+transform = Transform( 2.54313, 0, 1.26685e-008, 0, 1.38674, 0, -3.03165e-007, 0, 0.106271, -12.4746, 5.72817, -4.26105 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -376,7 +377,7 @@ shape = SubResource( 7 )
 
 [node name="InnerSmallWall" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( 2.17644, 0, 1.26685e-08, 0, 3.45574, 0, -2.59451e-07, 0, 0.106271, -7.92431, 3.43422, -4.39188 )
+transform = Transform( 2.17644, 0, 1.26685e-008, 0, 3.45574, 0, -2.59451e-007, 0, 0.106271, -7.92431, 3.43422, -4.39188 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 16 )
 
@@ -387,7 +388,7 @@ shape = SubResource( 7 )
 
 [node name="InnerSmallWall2" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( 2.6604, 0, 1.26685e-08, 0, 3.45574, 0, -3.17145e-07, 0, 0.106271, -17.4017, 3.43422, -4.39188 )
+transform = Transform( 2.6604, 0, 1.26685e-008, 0, 3.45574, 0, -3.17145e-007, 0, 0.106271, -17.4017, 3.43422, -4.39188 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 16 )
 
@@ -398,7 +399,7 @@ shape = SubResource( 7 )
 
 [node name="DoorTopEntrance2" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( 1.92001e-07, 0, -0.106271, 0, 1.38674, 0, 2.54313, 0, 8.02328e-09, -5.808, 5.72817, -28.2136 )
+transform = Transform( 1.92001e-007, 0, -0.106271, 0, 1.38674, 0, 2.54313, 0, 8.02328e-009, -5.808, 5.72817, -28.2136 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -409,7 +410,7 @@ shape = SubResource( 7 )
 
 [node name="DoorTopEntrance4" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( 1.92001e-07, 0, -0.106271, 0, 0.961631, 0, 2.54313, 0, 8.02324e-09, -20.1402, 6.17193, 0.860033 )
+transform = Transform( 1.92001e-007, 0, -0.106271, 0, 0.961631, 0, 2.54313, 0, 8.02324e-009, -20.1402, 6.17193, 0.860033 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -420,7 +421,7 @@ shape = SubResource( 7 )
 
 [node name="EntranceWall3" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( -4.64865e-07, 0, 0.149563, 0, 3.52481, 0, -10.6349, 0, -6.5376e-09, -5.87436, 3.70974, -15.0601 )
+transform = Transform( -4.64865e-007, 0, 0.149563, 0, 3.52481, 0, -10.6349, 0, -6.5376e-009, -5.87436, 3.70974, -15.0601 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -431,7 +432,7 @@ shape = SubResource( 7 )
 
 [node name="EntranceWall5" type="MeshInstance" parent="Walls"]
 editor/display_folded = true
-transform = Transform( 4.31762e-07, 0, -0.149563, 0, 3.52481, 0, 5.71886, 0, 1.12917e-08, 3.41045, 3.70974, -12.3665 )
+transform = Transform( 4.31762e-007, 0, -0.149563, 0, 3.52481, 0, 5.71886, 0, 1.12917e-008, 3.41045, 3.70974, -12.3665 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 15 )
 
@@ -485,7 +486,7 @@ transform = Transform( 0.0190786, 0, 0.000551442, 0, 0.0190866, 0, -0.000551442,
 transform = Transform( -0.0127671, 0, 0.00119387, 0, 0.0128228, 0, -0.00119387, 0, -0.0127671, -10.6856, 0.174752, -23.6088 )
 
 [node name="Couch" parent="RoomProps" instance=ExtResource( 21 )]
-transform = Transform( 0.141062, -4.05066e-05, -0.147041, 3.95519e-05, 0.203763, -1.81888e-05, 0.147041, -1.59498e-05, 0.141062, 12.5013, 0.297598, -0.514404 )
+transform = Transform( 0.141062, -4.05066e-005, -0.147041, 3.95519e-005, 0.203763, -1.81888e-005, 0.147041, -1.59498e-005, 0.141062, 12.5013, 0.297598, -0.514404 )
 
 [node name="VendingMachine" parent="RoomProps" instance=ExtResource( 22 )]
 transform = Transform( 1.97246, 0, -0.0706546, 0, 1.97373, 0, 0.0706546, 0, 1.97246, 5.29132, 0.239033, -6.15241 )
@@ -533,7 +534,7 @@ transform = Transform( -0.0365002, -0.0123092, -0.152108, -0.0219925, 0.15519, -
 transform = Transform( 0.0255738, 0, 0.0234928, 0, 0.0347265, 0, -0.0234928, 0, 0.0255738, 14.9687, 0.232947, 18.3097 )
 
 [node name="FullBob" parent="RoomProps" instance=ExtResource( 25 )]
-transform = Transform( -0.411388, -0.631412, 2.98256e-09, 0.0486367, -0.0316886, 0.751366, -0.629536, 0.410166, 0.0580491, 17.2638, 0.661456, 17.0521 )
+transform = Transform( -0.411388, -0.631412, 2.98256e-009, 0.0486367, -0.0316886, 0.751366, -0.629536, 0.410166, 0.0580491, 17.2638, 0.661456, 17.0521 )
 
 [node name="HospitalBed7" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( 2.09778, 0, 1.65234, 0, 2.67038, 0, -1.65234, 0, 2.09778, 17.4443, 0.715095, 22.0987 )
@@ -545,13 +546,13 @@ transform = Transform( -1.7621, 0, 2.00647, 0, 2.67038, 0, -2.00647, 0, -1.7621,
 transform = Transform( -0.0911243, 0, 2.66882, 0, 2.67038, 0, -2.66882, 0, -0.0911243, 14.5137, 0.715095, 36.3502 )
 
 [node name="HospitalBed12" parent="RoomProps" instance=ExtResource( 17 )]
-transform = Transform( 0.0911085, -0.00169598, 2.66882, -0.0497003, -2.66992, -6.06995e-10, 2.66836, -0.0496713, -0.0911243, 9.65871, 1.42277, 36.6675 )
+transform = Transform( 0.0911085, -0.00169598, 2.66882, -0.0497003, -2.66992, -6.06995e-010, 2.66836, -0.0496713, -0.0911243, 9.65871, 1.42277, 36.6675 )
 
 [node name="HospitalBed11" parent="RoomProps" instance=ExtResource( 17 )]
 transform = Transform( 0.864021, 0, 2.52673, 0, 2.67038, 0, -2.52673, 0, 0.864021, 11.7588, 0.715095, 36.4443 )
 
 [node name="HospitalBed8" parent="RoomProps" instance=ExtResource( 17 )]
-transform = Transform( 2.06836, -0.350106, 1.65234, 0.445669, 2.63293, -3.28988e-08, -1.62916, 0.275765, 2.09778, 16.4137, 2.12936, 22.9104 )
+transform = Transform( 2.06836, -0.350106, 1.65234, 0.445669, 2.63293, -3.28988e-008, -1.62916, 0.275765, 2.09778, 16.4137, 2.12936, 22.9104 )
 
 [node name="DeadBody7" parent="RoomProps" instance=ExtResource( 20 )]
 transform = Transform( -0.00973912, 0, 0.0110897, 0, 0.0147591, 0, -0.0110897, 0, -0.00973912, 13.1347, 0.283099, 25.6816 )
@@ -560,7 +561,7 @@ transform = Transform( -0.00973912, 0, 0.0110897, 0, 0.0147591, 0, -0.0110897, 0
 transform = Transform( -0.220817, 0, 0.975315, 0, 1, 0, -0.975315, 0, -0.220817, 10.2225, 0.334637, 28.4457 )
 
 [node name="EntranceBob" parent="RoomProps" instance=ExtResource( 25 )]
-transform = Transform( -1.86332e-05, 0, -0.569701, 0, 0.569701, 0, 0.569701, 0, -1.86332e-05, 5.22449, 0.193994, -22.2499 )
+transform = Transform( -1.86332e-005, 0, -0.569701, 0, 0.569701, 0, 0.569701, 0, -1.86332e-005, 5.22449, 0.193994, -22.2499 )
 
 [node name="ToggleBeds" type="Spatial" parent="RoomProps"]
 editor/display_folded = true
@@ -570,24 +571,25 @@ visible = false
 transform = Transform( 0.1043, -0.0129033, -2.35278, 0.289154, 2.33731, 0, 2.33498, -0.288866, 0.105096, 4.88753, 0.704688, -21.0364 )
 
 [node name="HospitalBed16" parent="RoomProps/ToggleBeds" instance=ExtResource( 17 )]
-transform = Transform( 0.104493, 0.0112392, -2.35278, -0.251864, 2.34162, -9.24277e-10, 2.33929, 0.251613, 0.105096, 4.93567, 3.0074, -19.9586 )
+transform = Transform( 0.104493, 0.0112392, -2.35278, -0.251864, 2.34162, -9.24277e-010, 2.33929, 0.251613, 0.105096, 4.93567, 3.0074, -19.9586 )
 
 [node name="HospitalBed15" parent="RoomProps/ToggleBeds" instance=ExtResource( 17 )]
-transform = Transform( 0.0971481, 0.0400915, -2.35278, -0.898427, 2.17703, -4.27118e-09, 2.17486, 0.897532, 0.105096, 4.98613, 1.20823, -18.8289 )
+transform = Transform( 0.0971481, 0.0400915, -2.35278, -0.898427, 2.17703, -4.27118e-009, 2.17486, 0.897532, 0.105096, 4.98613, 1.20823, -18.8289 )
 
 [node name="HospitalBed14" parent="RoomProps/ToggleBeds" instance=ExtResource( 17 )]
-transform = Transform( 0.087754, -0.0578301, -2.35278, 1.29594, 1.96651, 7.56639e-09, 1.96456, -1.29465, 0.105096, 4.81452, 1.41962, -22.6708 )
+transform = Transform( 0.087754, -0.0578301, -2.35278, 1.29594, 1.96651, 7.56639e-009, 1.96456, -1.29465, 0.105096, 4.81452, 1.41962, -22.6708 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 10 )
 script = ExtResource( 27 )
 
 [node name="Lights" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="OmniLight5" type="OmniLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1959, 5.24378, 2.26066 )
 light_color = Color( 0.560784, 0.8, 0.929412, 1 )
+light_indirect_energy = 0.65
+light_specular = 0.99
 shadow_enabled = true
 omni_range = 6.64208
 
@@ -635,12 +637,18 @@ light_color = Color( 0.560784, 0.8, 0.929412, 1 )
 shadow_enabled = true
 omni_range = 6.64208
 
+[node name="DirectionalLight" type="DirectionalLight" parent="Lights"]
+transform = Transform( -0.300398, 0, -0.953814, 0, 1, 0, 0.953814, 0, -0.300398, -104.925, 8.10653, -1.81306 )
+light_energy = 0.4
+light_indirect_energy = 8.92
+shadow_enabled = true
+
 [node name="Lobby" type="Spatial" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7295, 0, 15.9772 )
 
 [node name="HospitalSlidingDoor" parent="Lobby" instance=ExtResource( 29 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.409121, 2.78267, -13.7831 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -0.409121, 2.78267, -13.7831 )
 
 [node name="Countertop" parent="Lobby" instance=ExtResource( 30 )]
 transform = Transform( -0.598567, 0, 0.419121, 0, 0.730715, 0, -0.419121, 0, -0.598567, 14.1743, 0.60491, -6.06301 )
@@ -692,22 +700,18 @@ transform = Transform( 2.03624, 0, 0, 0, 2.03624, 0, 0, 0, 2.03624, 11.6822, 0.1
 
 [node name="Button1" parent="Lobby" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2028, 2.3852, 0.360838 )
-Level = NodePath("../..")
 
 [node name="Button2" parent="Lobby" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2593, 2.3852, 0.360838 )
-Level = NodePath("../..")
 
 [node name="Button3" parent="Lobby" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3324, 2.3852, 0.360838 )
-Level = NodePath("../..")
 
 [node name="Button4" parent="Lobby" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.30836, 2.3852, 0.360838 )
-Level = NodePath("../..")
 
 [node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.0205, 2.67215, -22.5085 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 9.0205, 2.67215, -22.5085 )
 shadow_enabled = true
 spot_range = 24.7029
 script = ExtResource( 28 )
@@ -766,7 +770,7 @@ isInteractable = true
 shape = SubResource( 14 )
 
 [node name="Outline" type="MeshInstance" parent="Notes/HospitalNote/NoteCollider"]
-transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 visible = false
 mesh = SubResource( 15 )
 material/0 = SubResource( 16 )
@@ -807,7 +811,7 @@ isInteractable = true
 shape = SubResource( 14 )
 
 [node name="Outline" type="MeshInstance" parent="Notes/HospitalNote2/NoteCollider"]
-transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 visible = false
 mesh = SubResource( 15 )
 material/0 = SubResource( 16 )
@@ -840,7 +844,7 @@ isInteractable = true
 shape = SubResource( 14 )
 
 [node name="Outline" type="MeshInstance" parent="Notes/HospitalNote3/NoteCollider"]
-transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 visible = false
 mesh = SubResource( 15 )
 material/0 = SubResource( 16 )
@@ -875,7 +879,7 @@ isInteractable = true
 shape = SubResource( 14 )
 
 [node name="Outline" type="MeshInstance" parent="Notes/HospitalNote4/NoteCollider"]
-transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 visible = false
 mesh = SubResource( 15 )
 material/0 = SubResource( 16 )

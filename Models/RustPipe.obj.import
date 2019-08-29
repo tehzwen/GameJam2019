@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/RustPipe.obj-b6a71589a3a0e74234511ef54b99d277.mesh"
+
+[deps]
+
+files=[ "res://.import/RustPipe.obj-b6a71589a3a0e74234511ef54b99d277.mesh" ]
+
+source_file="res://Models/RustPipe.obj"
+dest_files=[ "res://.import/RustPipe.obj-b6a71589a3a0e74234511ef54b99d277.mesh", "res://.import/RustPipe.obj-b6a71589a3a0e74234511ef54b99d277.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

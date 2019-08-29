@@ -1,0 +1,113 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Models/JayleneRoom/ID181.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://Models/JayleneRoom/ID175.mesh" type="ArrayMesh" id=2]
+[ext_resource path="res://Models/JayleneRoom/ID169.mesh" type="ArrayMesh" id=3]
+[ext_resource path="res://Models/JayleneRoom/ID163.mesh" type="ArrayMesh" id=4]
+[ext_resource path="res://Models/JayleneRoom/ID150.mesh" type="ArrayMesh" id=5]
+[ext_resource path="res://Models/JayleneRoom/ID137.mesh" type="ArrayMesh" id=6]
+[ext_resource path="res://Models/JayleneRoom/ID129.mesh" type="ArrayMesh" id=7]
+[ext_resource path="res://Materials/Wood.tres" type="Material" id=8]
+[ext_resource path="res://Models/JayleneRoom/ID121.mesh" type="ArrayMesh" id=9]
+[ext_resource path="res://Models/JayleneRoom/ID113.mesh" type="ArrayMesh" id=10]
+[ext_resource path="res://Models/JayleneRoom/ID27.mesh" type="ArrayMesh" id=11]
+[ext_resource path="res://Models/JayleneRoom/ID41.mesh" type="ArrayMesh" id=12]
+[ext_resource path="res://Models/JayleneRoom/ID61.mesh" type="ArrayMesh" id=13]
+[ext_resource path="res://Models/JayleneRoom/ID75.mesh" type="ArrayMesh" id=14]
+[ext_resource path="res://Models/JayleneRoom/ID99.mesh" type="ArrayMesh" id=15]
+
+[sub_resource type="ConvexPolygonShape" id=1]
+points = PoolVector3Array( 434.142, 0, -610.913, 260.113, 0, -466.288, 260.113, 0, -610.913, 86.0841, 0, -94.1678, 86.0841, 0, -466.288, 434.142, 0, -94.1678, 434.142, 0, -610.913, 260.113, 0, -466.288, 434.142, 0, -94.1678, 86.0841, 0, -94.1678, 86.0841, 0, -466.288, 260.113, 0, -610.913 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 86.0841, 118.125, -466.288, 86.0841, 0, -466.288, 260.113, 0, -466.288, 260.113, 0, -466.288, 260.113, 118.125, -466.288, 86.0841, 118.125, -466.288, 260.113, 118.125, -610.913, 260.113, 118.125, -466.288, 260.113, 0, -466.288, 260.113, 0, -466.288, 260.113, 0, -610.913, 260.113, 118.125, -610.913, 86.0841, 118.125, -94.1678, 86.0841, 0, -94.1678, 434.142, 0, -94.1678, 434.142, 0, -94.1678, 434.142, 118.125, -94.1678, 86.0841, 118.125, -94.1678, 86.0841, 0, -466.288, 86.0841, 0, -94.1678, 86.0841, 118.125, -94.1678, 86.0841, 118.125, -94.1678, 86.0841, 118.125, -466.288, 86.0841, 0, -466.288, 434.142, 118.125, -610.913, 434.142, 118.125, -94.1678, 434.142, 0, -94.1678, 434.142, 0, -94.1678, 434.142, 0, -610.913, 434.142, 118.125, -610.913, 260.113, 118.125, -466.288, 260.113, 0, -466.288, 86.0841, 118.125, -466.288, 86.0841, 0, -466.288, 86.0841, 118.125, -466.288, 260.113, 0, -466.288, 434.142, 0, -610.913, 260.113, 0, -610.913, 369.717, 44.6215, -610.913, 369.717, 44.6215, -610.913, 434.142, 118.125, -610.913, 434.142, 0, -610.913, 369.717, 44.6215, -610.913, 369.717, 88.059, -610.913, 434.142, 118.125, -610.913, 369.717, 88.059, -610.913, 312.217, 88.059, -610.913, 434.142, 118.125, -610.913, 312.217, 88.059, -610.913, 260.113, 118.125, -610.913, 434.142, 118.125, -610.913, 260.113, 0, -610.913, 260.113, 118.125, -610.913, 312.217, 44.6215, -610.913, 312.217, 44.6215, -610.913, 369.717, 44.6215, -610.913, 260.113, 0, -610.913, 260.113, 118.125, -610.913, 312.217, 88.059, -610.913, 312.217, 44.6215, -610.913, 260.113, 0, -610.913, 260.113, 0, -466.288, 260.113, 118.125, -610.913, 260.113, 118.125, -466.288, 260.113, 118.125, -610.913, 260.113, 0, -466.288 )
+
+[node name="TestRoom" type="Spatial"]
+
+[node name="SketchUp008" type="MeshInstance" parent="."]
+transform = Transform( 0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="SketchUp007" type="MeshInstance" parent="."]
+transform = Transform( 0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="SketchUp006" type="MeshInstance" parent="."]
+transform = Transform( 0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="SketchUp005" type="MeshInstance" parent="."]
+transform = Transform( 0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="SketchUp004" type="MeshInstance" parent="."]
+transform = Transform( 0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0 )
+mesh = ExtResource( 5 )
+material/0 = null
+material/1 = null
+
+[node name="SketchUp003" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0 )
+mesh = ExtResource( 6 )
+material/0 = null
+material/1 = null
+
+[node name="StaticBody" type="StaticBody" parent="SketchUp003"]
+editor/display_folded = true
+
+[node name="CollisionShape" type="CollisionShape" parent="SketchUp003/StaticBody"]
+shape = SubResource( 1 )
+
+[node name="SketchUp002" type="MeshInstance" parent="."]
+transform = Transform( 0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 8 )
+material/1 = ExtResource( 8 )
+
+[node name="StaticBody" type="StaticBody" parent="SketchUp002"]
+
+[node name="CollisionShape" type="CollisionShape" parent="SketchUp002/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="SketchUp001" type="MeshInstance" parent="."]
+transform = Transform( 0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0 )
+mesh = ExtResource( 9 )
+material/0 = null
+material/1 = null
+
+[node name="SketchUp" type="MeshInstance" parent="."]
+transform = Transform( 0.0254, 0, 0, 0, 0.0254, 0, 0, 0, 0.0254, 0, 0, 0 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="instance_0003" type="MeshInstance" parent="SketchUp"]
+transform = Transform( 0.859185, 0, 0.511666, 0, 1, 0, -0.511666, 0, 0.859185, 18.5, 0, -14 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="instance_0005" type="MeshInstance" parent="SketchUp"]
+transform = Transform( 0.859185, 0, 0.511666, 0, 1, 0, -0.511666, 0, 0.859185, 18.5, 0, -14 )
+mesh = ExtResource( 12 )
+material/0 = null
+
+[node name="instance_0008" type="MeshInstance" parent="SketchUp"]
+transform = Transform( 0.859185, 0, 0.511666, 0, 1, 0, -0.511666, 0, 0.859185, 18.5, 0, -14 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="instance_0010" type="MeshInstance" parent="SketchUp"]
+transform = Transform( 0.859185, 0, 0.511666, 0, 1, 0, -0.511666, 0, 0.859185, 18.5, 0, -14 )
+mesh = ExtResource( 14 )
+material/0 = null
+
+[node name="instance_0014" type="MeshInstance" parent="SketchUp"]
+transform = Transform( 0.859185, 0, 0.511666, 0, 1, 0, -0.511666, 0, 0.859185, 18.5, 0, -14 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

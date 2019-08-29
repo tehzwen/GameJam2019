@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Textures/whitecrosshair.png" type="Texture" id=1]
+
+
+[node name="CameraController" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+current = true
+
+[node name="RayCast" type="RayCast" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, -4.37113e-08, -1, 0, 9.405, -4.11106e-07, 0, 0, 0 )
+enabled = true
+
+[node name="Sprite3D" type="Sprite3D" parent="Camera"]
+transform = Transform( 0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, -1.20331 )
+texture = ExtResource( 1 )
