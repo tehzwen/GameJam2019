@@ -199,10 +199,8 @@ bathRoomDoorPath = NodePath("../Bathroom/BathroomDoor")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.708159 )
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
-margin_left = -1.05263
-margin_top = -1.05264
-margin_right = 1022.95
-margin_bottom = 588.947
+margin_right = 1024.0
+margin_bottom = 590.0
 
 [node name="ApartmentKey" type="MeshInstance" parent="."]
 transform = Transform( 0.023891, 0, 0, 0, 0.023891, 0, 0, 0, 0.023891, 0.424162, 1.64853, -11.4159 )
@@ -287,6 +285,7 @@ material/0 = ExtResource( 12 )
 shape = SubResource( 6 )
 
 [node name="Stairs3" type="Spatial" parent="Walls"]
+editor/display_folded = true
 transform = Transform( 0.588289, 0, 0, 0, 1.6875, 0, 0, 0, 0.100862, -12.5293, 3.2222, -24.4314 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Stairs3"]
@@ -514,7 +513,7 @@ transform = Transform( -5.64659e-010, 0, -0.0129179, 0, 0.0129179, 0, 0.0129179,
 transform = Transform( 0.0285191, 0, 0, 0, 0.0285191, 0, 0, 0, 0.0285191, 4.52572, 0.058752, -27.4799 )
 
 [node name="Note1" parent="Kitchen/Table" instance=ExtResource( 22 )]
-transform = Transform( 3.55685, 0, 5.7624, 0, 0.191, 0, -3.51409, 0, 5.83252, 27.252, 33.191, 9.90869 )
+transform = Transform( 5.40339, 0, 5.76251, 0, 0.19075, 0, -5.33843, 0, 5.83263, 27.252, 33.191, 9.90869 )
 script = ExtResource( 7 )
 
 [node name="NoteCollider" type="StaticBody" parent="Kitchen/Table/Note1" groups=[
@@ -545,12 +544,12 @@ margin_right = 413.0
 margin_bottom = 468.0
 custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Jan. 4 2006
+text = "Note 1: Jan. 4 2006
 
 Dear Dave,
 
 I know I know, I promised I'd write consistently since you 
-begged me to before you left, but in my defense I did 
+begged me too before you left but in my defense I did 
 say that I'd rather email.... But whatever! I'm just glad to 
 be able to put a smile on your face. 
 
@@ -706,7 +705,8 @@ ACADEMIC WARNING: If registered students receive a grade point average lower tha
 
 Regards,
 
-Deans Office"
+Deans Office
+461 4213"
 autowrap = true
 
 [node name="Note5" parent="Kitchen/Table" instance=ExtResource( 22 )]

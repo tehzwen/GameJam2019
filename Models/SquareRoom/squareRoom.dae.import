@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/TESTING123.dae-fa21da15192bd2160ac94879948dd0d6.scn"
+path="res://.import/squareRoom.dae-e135adbb96290a17e06319bc92c4a2cf.scn"
 
 [deps]
 
-source_file="res://Models/JayleneRoom/TESTING123.dae"
-dest_files=[ "res://.import/TESTING123.dae-fa21da15192bd2160ac94879948dd0d6.scn" ]
+source_file="res://Models/SquareRoom/squareRoom.dae"
+dest_files=[ "res://.import/squareRoom.dae-e135adbb96290a17e06319bc92c4a2cf.scn" ]
 
 [params]
 
@@ -21,7 +21,7 @@ materials/storage=1
 materials/keep_on_reimport=true
 meshes/compress=true
 meshes/ensure_tangents=true
-meshes/storage=0
+meshes/storage=1
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
 external_files/store_in_subdir=false
