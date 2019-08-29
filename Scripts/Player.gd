@@ -18,6 +18,9 @@ var lastInteracted = null
 var pageTurnSound
 var doorKnockSound
 var screamSound
+var hasReadNote1 = false
+var hasReadNote3 = false
+var hasReadNote4 = false
 
 var velocity = Vector3()
 var direction = Vector3()
@@ -190,26 +193,33 @@ func handleMovementInput(aim):
 			
 func handleNote1(kitchenTable):
 	#Turn off kitchen light
-	kitchenTable.get_parent().get_node("KitchenLightSwitch").toggle()
+	if (hasReadNote1 == false):
+		kitchenTable.get_parent().get_node("KitchenLightSwitch").toggle()
+		hasReadNote1 = true
 	
 	#kitchenTable.get_node("Note2").Trigger()
 	#yield(get_tree().create_timer(2.0), "timeout")
 	
 func handleNote2(kitchenTable):
-	yield(get_tree().create_timer(5.0), "timeout")
-	doorKnockSound.play()
-	global.hasReadNote2 = true
+	if (global.hasReadNote2 == false):
+		yield(get_tree().create_timer(10.0), "timeout")
+		doorKnockSound.play()
+		global.hasReadNote2 = true
 	
 func handleNote3(kitchenTable):
-	yield(get_tree().create_timer(10.0), "timeout")
-	get_node(bathRoomDoorPath).get_node("Pivot").Unlock()
-	get_node(bathRoomDoorPath).get_node("Pivot").OpenDoor()
-	kitchenTable.get_node("Note4").Trigger()
+	if (hasReadNote3 == false):
+		yield(get_tree().create_timer(15.0), "timeout")
+		get_node(bathRoomDoorPath).get_node("Pivot").Unlock()
+		get_node(bathRoomDoorPath).get_node("Pivot").OpenDoor()
+		kitchenTable.get_node("Note4").Trigger()
+		hasReadNote3 = true
 
 func handleNote4(kitchenTable):
-	yield(get_tree().create_timer(20.0), "timeout")
-	screamSound.play()
-	kitchenTable.get_node("Note5").Trigger()
+	if (hasReadNote4 == false):
+		yield(get_tree().create_timer(20.0), "timeout")
+		screamSound.play()
+		kitchenTable.get_node("Note5").Trigger()
+		hasReadNote4 = true
 
 func handleNote5(kitchenTable):
 	kitchenTable.get_node("Note6").Trigger()
