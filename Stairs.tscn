@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Models/Stairs/lightwave stairs/objects/stairs.lwo.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://Materials/Metal.tres" type="Material" id=2]
+[ext_resource path="res://Materials/Wood.tres" type="Material" id=2]
 
 [sub_resource type="BoxShape" id=1]
 
